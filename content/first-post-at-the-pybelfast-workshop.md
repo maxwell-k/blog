@@ -5,23 +5,15 @@ category: Computers
 ---
 
 I created this repository at a [local meetup]. In this post I am loosely
-following the instructions set up by our host Kyle —
-<https://apoclyps.github.io/pelican-by-example/>. One deviation from the
-instructions is that I'm using [pipx]; most of the group is using Rye and my
-neighbour is using Conda. Trying to help I suggested using pipx to install
-Pelican. First you need to install pipx; the pipx install instructions for
-Windows suggest using [Scoop](https://scoop.sh); to follow these that you need
-to install Scoop… it is turtles all of the way down.
+following the [instructions] provided by our host Kyle. I did a few things
+differently and I try to document my rationale here.
 
-[pipx]: https://github.com/pypa/pipx
-[local meetup]: https://www.meetup.com/pybelfast/events/302955055
+[instructions]: https://apoclyps.github.io/pelican-by-example/
 
-<!--
-<https://github.com/apoclyps/pelican-by-example/>
-<https://scoop.sh/>
--->
+### Use a new directory
 
-_It is important to run the quick-start in a new directory._
+For what its worth; I think that it is important to work in a new directory; to
+treat this workshop as a separate project.
 
 Commands to create a new directory for today's workshop, set it as the current
 working directory and set up an empty git repository:
@@ -31,28 +23,107 @@ working directory and set up an empty git repository:
     && git init \
     && git branch -m main
 
+### Use uvx
+
+In my experience running entry-level Python workshops, initial setup is always
+time consuming. Especially installing an appropriate version of Python, possibly
+setting up a virtual environment and obtaining the correct libraries. Being able
+to help attendees who may be using Windows, Mac or Linux is challenging. This is
+both one of the hardest parts of a session and one of the first!
+
+I tried to side step some of the issues here by using `uvx` from the [uv]
+package. Most of the group used Rye and my neighbour was unsure. Trying to help
+I suggested using pipx to install Pelican. I had started out using [pipx].
+However first you need to install pipx; the pipx install instructions for
+Windows suggest using [Scoop](https://scoop.sh); that means you need the
+installation instructions for Scoop… it was turtles all of the way down. The
+neighbour was confident with Conda so I left them to it.
+
+In the end I preferred `uvx` over `pipx` for a couple of reasons:
+
+1. The uv installation instructions for Windows only use PowerShell and Scoop
+   isn't necessary.
+
+2. `uvx` supports specifying additional packages using `--with`; which will be
+   relevant in the next section.
+
+[pipx]: https://github.com/pypa/pipx
+[uv]: https://github.com/astral-sh/uv
+[local meetup]: https://www.meetup.com/pybelfast/events/302955055
+
+<!--
+<https://github.com/apoclyps/pelican-by-example/>
+<https://scoop.sh/>
+-->
+
 Command to run the quick-start:
 
-    pipx run "--spec=pelican[markdown]" pelican-quickstart
+    uvx "--from=pelican[markdown]" pelican-quickstart
 
-Answers I chose:
+Many of the default answers where fine; a couple I defined are:
 
 > What is your time zone? [Europe/Rome] Europe/London
 
 > Do you want to generate a tasks.py/Makefile to automate generation and
 > publishing? (Y/n) n
 
-I want to use YAML metadata; fortunately the plugin
-[depends on](https://github.com/pelican-plugins/yaml-metadata/blob/main/pyproject.toml#L29)
-everything I need.
+### Use YAML metadata
+
+I want to use YAML metadata because it is well supported by [my editor
+configuration]. It is also supported by the [yaml-metadata plugin]. At the
+minute it is possible to just use a
+`pipx run --spec=pelican-yaml-metadata pelican` command because the plugin
+[depends on] everything necessary. However I prefer the more transparent
+approach below.
 
 Command to create a directory to address a warning and run the site locally:
 
-    mkdir --parents content/images \
-    && pipx run --spec=pelican-yaml-metadata pelican --autoreload --listen
+```sh
+uvx \
+  "--from=pelican[markdown]" \
+  --with=pelican-yaml-metadata \
+  pelican \
+  --autoreload \
+  --listen
+```
 
-Browse to <http://127.0.0.1:8000/>.
+Then browse to <http://127.0.0.1:8000/>.
 
+[yaml-metadata plugin]: https://github.com/pelican-plugins/yaml-metadata
+[my editor configuration]: https://codeberg.org/maxwell-k/vimfiles
+[depends on]:
+  https://github.com/pelican-plugins/yaml-metadata/blob/main/pyproject.toml#L29
+
+The command above may output a warning:
+
+```
+[23:12:13] WARNING  Unable to watch path '/home/maxwell-k/github.com/maxwell-k/2024-09-18-pybelfast-workshop/content/images' as it does not exist.                                                    utils.py:843
+```
+
+Commands to address the warning:
+
+```sh
+mkdir --parents content/images \
+&& touch content/images/.keep
+```
+
+### Use the official GitHub actions workflow
+
+I adopted the [official] workflow —
+<https://github.com/getpelican/pelican/blob/main/.github/workflows/github_pages.yml>.
+A helpful feature of this workflow is that `SITEURL` will "default to the URL of
+your GitHub Pages site, which is correct in most cases." Using this official
+workflow also allows me to remove `publishconf.py`.
+
+Initially this workflow produced the following error:
+
+> Branch "main" is not allowed to deploy to github-pages due to environment
+> protection rules.
+
+To resolve this I configured permissions: go to Settings, then Environments,
+then `github-pages` and make sure `main` can deploy to this environment.
+
+<!--
 Commands to commit to git:
 
     echo '*.pyc' > .gitignore \
@@ -60,8 +131,12 @@ Commands to commit to git:
     && echo /output/ >> .gitignore \
     && rm publishconf.py \
     && git add .
+-->
 
-In settings, under Actions, under "Workflow permissions" change to "Read and
-write permissions".
+Adding `workflow_dispatch:` to allow manually triggering the workflow is helpful
+for testing the repository settings.
+
+[official]:
+  https://docs.getpelican.com/en/latest/tips.html#publishing-to-github-pages-using-a-custom-github-actions-workflow
 
 <!-- vim: set filetype=markdown.htmlCommentNoSpell : -->
