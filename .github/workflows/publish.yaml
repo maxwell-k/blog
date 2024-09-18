@@ -1,11 +1,13 @@
 on: # yamllint disable-line rule:truthy
   push: { branches: [main] }
-
+  workflow_dispatch:
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4.1.7
-      - uses: nelsonjchen/gh-pages-pelican-action@0.2.0
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  deploy:
+    uses: getpelican/pelican/.github/workflows/github_pages.yml@main
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    with:
+      settings: pelicanconf.py
+      requirements: "pelican[markdown] pelican-yaml-metadata"
