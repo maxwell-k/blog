@@ -15,17 +15,20 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Blogroll
-# LINKS = (
-#     ("Pelican", "https://getpelican.com/"),
-#     ("Python.org", "https://www.python.org/"),
-#     ("Jinja2", "https://palletsprojects.com/p/jinja/"),
-#     ("You can modify those links in your config file", "#"),
-# )
-
 SOCIAL = (("GitHub", "https://github.com/maxwell-k"),)
 
 DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
+
+IGNORE_FILES = [".*.sw?", ".keep"]
+DEFAULT_DATE_FORMAT = "%A %d %B %Y"
+
+STATIC_PATHS = [
+    "images",
+    "extra",
+]
+EXTRA_PATH_METADATA = {
+    "extra/favicon.ico": {"path": "favicon.ico"},  # and this
+}
