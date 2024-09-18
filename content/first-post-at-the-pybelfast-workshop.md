@@ -61,4 +61,7 @@ Commands to commit to git:
     && rm publishconf.py \
     && git add .
 
+In settings, under Actions, under "Workflow permissions" change to "Read and
+write permissions".
+
 <!-- vim: set filetype=markdown.htmlCommentNoSpell : -->
