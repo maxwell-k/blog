@@ -4,6 +4,7 @@ SITETITLE = SITENAME
 GRAVATAR_IMAGE = "https://avatars.githubusercontent.com/u/4786215"
 SITEURL = ""
 THEME = "./theme"
+SUMMARY_MAX_LENGTH = 0
 
 PATH = "content"
 
