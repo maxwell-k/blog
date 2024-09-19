@@ -78,9 +78,7 @@ approach below.
 
 Command to create a directory to address a warning and run the site locally:
 
-```sh
-uvx --with-requirements=requirements.txt pelican --autoreload --listen
-```
+    uvx --with-requirements=requirements.txt pelican --autoreload --listen
 
 Then browse to <http://127.0.0.1:8000/>.
 
@@ -97,10 +95,8 @@ The command above may output a warning:
 
 Commands to address the warning:
 
-```sh
-mkdir --parents content/images \
-&& touch content/images/.keep
-```
+    mkdir --parents content/images \
+    && touch content/images/.keep
 
 ### Use the official GitHub actions workflow
 

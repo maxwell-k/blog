@@ -37,3 +37,14 @@ EXTRA_PATH_METADATA = {
     "extra/favicon.ico": {"path": "favicon.ico"},  # and this
 }
 COPYRIGHT_YEAR = 2024
+
+MARKDOWN = {
+    "extension_configs": {
+        "markdown.extensions.codehilite": {
+            "css_class": "highlight",
+            "guess_lang": False,
+        },
+        "markdown.extensions.extra": {},
+    },
+    "output_format": "html5",
+}
