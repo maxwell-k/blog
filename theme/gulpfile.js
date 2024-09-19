@@ -8,7 +8,7 @@ gulp.task("watch", function () {
   gulp.watch(paths.styles, ["css"]);
 });
 
-gulp.task("css", function () {
+gulp.task("default", function () {
   const postcss = require("gulp-postcss");
   const sourcemaps = require("gulp-sourcemaps");
 
@@ -24,5 +24,3 @@ gulp.task("css", function () {
     )
     .pipe(gulp.dest("."));
 });
-
-gulp.task("default", gulp.parallel("css"));
