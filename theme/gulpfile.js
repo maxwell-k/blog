@@ -4,8 +4,6 @@ const paths = {
   styles: ["src/**/*.css"],
 };
 
-gulp.task("default", ["css"]);
-
 gulp.task("watch", function () {
   gulp.watch(paths.styles, ["css"]);
 });
@@ -26,3 +24,5 @@ gulp.task("css", function () {
     )
     .pipe(gulp.dest("."));
 });
+
+gulp.task("default", gulp.parallel("css"));
