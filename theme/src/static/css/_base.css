@@ -13,11 +13,9 @@ img {
 }
 
 blockquote {
-  width: 65%;
   display: block;
   margin: 1rem auto;
   color: rgba(0, 0, 0, 0.5);
-  font-size: 1.6rem;
   font-style: italic;
 }
 
