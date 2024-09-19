@@ -1,3 +1,4 @@
+const { spawn } = require("child_process");
 const gulp = require("gulp");
 const cssnano = require("cssnano");
 const stylelint = require("stylelint");
@@ -17,8 +18,29 @@ function css() {
     .pipe(gulp.dest("theme"));
 }
 
-gulp.task("watch", function () {
+function csswatch() {
   gulp.watch(paths.styles, css);
-});
+}
+
+function pelican(cb) {
+  const cmd = spawn(
+    "uvx",
+    [
+      "--with-requirements=requirements.txt",
+      "pelican",
+      "--autoreload",
+      "--listen",
+    ],
+    { stdio: "inherit" },
+  );
+  cmd.on("close", function (code) {
+    console.log("Server exited with code " + code);
+    cb(code);
+  });
+}
+
+gulp.task("pelican", pelican);
+
+gulp.task("watch", gulp.parallel("pelican", csswatch));
 
 gulp.task("default", css);
