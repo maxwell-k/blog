@@ -1,4 +1,9 @@
 const gulp = require("gulp");
+const cssnano = require("cssnano");
+const stylelint = require("stylelint");
+const cssimport = require("postcss-import");
+const postcss = require("gulp-postcss");
+const sourcemaps = require("gulp-sourcemaps");
 
 const paths = {
   styles: ["src/**/*.css"],
@@ -9,18 +14,9 @@ gulp.task("watch", function () {
 });
 
 gulp.task("default", function () {
-  const postcss = require("gulp-postcss");
-  const sourcemaps = require("gulp-sourcemaps");
-
   return gulp
     .src(paths.styles)
     .pipe(sourcemaps.init())
-    .pipe(
-      postcss([
-        require("stylelint"),
-        require("postcss-import"),
-        require("cssnano"),
-      ]),
-    )
+    .pipe(postcss([stylelint, cssimport, cssnano]))
     .pipe(gulp.dest("."));
 });
