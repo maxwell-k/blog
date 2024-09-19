@@ -12,7 +12,7 @@
                 {% if GRAVATAR_IMAGE %}
                 <meta itemprop="image" content="{{ GRAVATAR_IMAGE }}">
                 {% endif %}
-                Posted on {{ article.date | strftime('%d %B %Y') }} in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+                Posted on {{ article.date | strftime(DEFAULT_DATE_FORMAT) }} in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
             </p>
         </header>
 
