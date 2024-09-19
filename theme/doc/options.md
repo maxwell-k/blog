@@ -6,6 +6,5 @@ the theme fairly simple and therefore the amount of options low.
 
 |    Variable    |  Type  |   Description  |
 |----------------|--------|----------------|
-| SITETITLE      | string | Site header    |
 | SITESUBTITLE   | string | Site subheader |
 | GRAVATAR_IMAGE | URL    | User Gravatar  |
