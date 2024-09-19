@@ -11,11 +11,14 @@ const paths = {
 };
 
 function css() {
-  return gulp
-    .src(paths.styles)
-    .pipe(sourcemaps.init())
-    .pipe(postcss([stylelint, cssimport, cssnano]))
-    .pipe(gulp.dest("theme"));
+  return (
+    gulp
+      .src(paths.styles)
+      .pipe(sourcemaps.init())
+      .pipe(postcss([stylelint, cssimport, cssnano]))
+      // .pipe(sourcemaps.write()) // to debug in Chrome Developer Tools
+      .pipe(gulp.dest("theme"))
+  );
 }
 
 function csswatch() {
