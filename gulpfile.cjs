@@ -1,3 +1,4 @@
+const { rimraf } = require("rimraf");
 const { spawn } = require("child_process");
 const gulp = require("gulp");
 const cssnano = require("cssnano");
@@ -8,24 +9,10 @@ const sourcemaps = require("gulp-sourcemaps");
 
 const paths = {
   styles: ["theme/src/**/*.css"],
+  unused: ["theme/static/css/_*.css"],
 };
 
-function css() {
-  return (
-    gulp
-      .src(paths.styles)
-      .pipe(sourcemaps.init())
-      .pipe(postcss([stylelint, cssimport, cssnano]))
-      // .pipe(sourcemaps.write()) // to debug in Chrome Developer Tools
-      .pipe(gulp.dest("theme"))
-  );
-}
-
-function csswatch() {
-  gulp.watch(paths.styles, css);
-}
-
-function pelican(cb) {
+gulp.task("pelican", (cb) => {
   const cmd = spawn(
     "uvx",
     [
@@ -40,10 +27,25 @@ function pelican(cb) {
     console.log("Server exited with code " + code);
     cb(code);
   });
-}
+});
 
-gulp.task("pelican", pelican);
+gulp.task(
+  "watch",
+  gulp.parallel("pelican", () => gulp.watch(paths.styles, css)),
+);
 
-gulp.task("watch", gulp.parallel("pelican", csswatch));
+gulp.task(
+  "css",
+  gulp.series(
+    () =>
+      gulp
+        .src(paths.styles)
+        .pipe(sourcemaps.init())
+        .pipe(postcss([stylelint, cssimport, cssnano]))
+        // .pipe(sourcemaps.write()) // to debug in Chrome Developer Tools
+        .pipe(gulp.dest("theme")),
+    () => rimraf(paths.unused, { glob: true }),
+  ),
+);
 
-gulp.task("default", css);
+gulp.task("default", gulp.series("css"));
