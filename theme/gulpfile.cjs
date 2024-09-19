@@ -9,14 +9,16 @@ const paths = {
   styles: ["src/**/*.css"],
 };
 
-gulp.task("watch", function () {
-  gulp.watch(paths.styles, ["css"]);
-});
-
-gulp.task("default", function () {
+function css() {
   return gulp
     .src(paths.styles)
     .pipe(sourcemaps.init())
     .pipe(postcss([stylelint, cssimport, cssnano]))
     .pipe(gulp.dest("."));
+}
+
+gulp.task("watch", function () {
+  gulp.watch(paths.styles, css);
 });
+
+gulp.task("default", css);
