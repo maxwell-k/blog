@@ -89,9 +89,7 @@ Then browse to <http://127.0.0.1:8000/>.
 
 The command above may output a warning:
 
-```
-[23:12:13] WARNING  Unable to watch path '/home/maxwell-k/github.com/maxwell-k/2024-09-18-pybelfast-workshop/content/images' as it does not exist.                                                    utils.py:843
-```
+> `[23:12:13] WARNING  Unable to watch path '/home/maxwell-k/github.com/maxwell-k/2024-09-18-pybelfast-workshop/content/images' as it does not exist.                                                    utils.py:843`
 
 Commands to address the warning:
 
@@ -108,8 +106,7 @@ workflow also allows me to remove `publishconf.py`.
 
 Initially this workflow produced the following error:
 
-> Branch "main" is not allowed to deploy to github-pages due to environment
-> protection rules.
+> `Branch "main" is not allowed to deploy to github-pages due to environment protection rules.`
 
 To resolve this I configured permissions: go to Settings, then Environments,
 then `github-pages` and make sure `main` can deploy to this environment.
