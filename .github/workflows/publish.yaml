@@ -10,4 +10,4 @@ jobs:
       id-token: write
     with:
       settings: pelicanconf.py
-      requirements: "pelican[markdown] pelican-yaml-metadata"
+      requirements: "--requirement requirements.txt"

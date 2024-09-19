@@ -79,12 +79,7 @@ approach below.
 Command to create a directory to address a warning and run the site locally:
 
 ```sh
-uvx \
-  "--from=pelican[markdown]" \
-  --with=pelican-yaml-metadata \
-  pelican \
-  --autoreload \
-  --listen
+uvx --with-requirements=requirements.txt pelican --autoreload --listen
 ```
 
 Then browse to <http://127.0.0.1:8000/>.

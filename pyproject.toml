@@ -1,0 +1,15 @@
+[project]
+name = "2024-09-18-pybelfast-workshop"
+version = "0.0.1"
+requires-python = ">= 3.12"
+dependencies = [
+  "pelican[markdown]",
+  "pelican-yaml-metadata",
+]
+authors = [
+  {name = "Keith Maxwell", email = "keith.maxwell@gmail.com"},
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
