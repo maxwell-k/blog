@@ -6,7 +6,7 @@ const postcss = require("gulp-postcss");
 const sourcemaps = require("gulp-sourcemaps");
 
 const paths = {
-  styles: ["src/**/*.css"],
+  styles: ["theme/src/**/*.css"],
 };
 
 function css() {
@@ -14,7 +14,7 @@ function css() {
     .src(paths.styles)
     .pipe(sourcemaps.init())
     .pipe(postcss([stylelint, cssimport, cssnano]))
-    .pipe(gulp.dest("."));
+    .pipe(gulp.dest("theme"));
 }
 
 gulp.task("watch", function () {
