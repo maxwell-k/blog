@@ -21,12 +21,6 @@ blockquote {
   font-style: italic;
 }
 
-blockquote .attribution {
-  font-style: normal;
-  font-size: 1rem;
-  margin-bottom: 1.84rem;
-}
-
 hr {
   width: 50%;
   height: 0;
