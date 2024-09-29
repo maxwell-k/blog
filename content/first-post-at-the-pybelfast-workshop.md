@@ -23,7 +23,7 @@ working directory and set up an empty git repository:
     && git init \
     && git branch -m main
 
-### Use uv tool run
+### Use ‘uv tool run’
 
 In my experience running entry-level Python workshops, initial setup is always
 time consuming. Especially installing an appropriate version of Python, possibly
