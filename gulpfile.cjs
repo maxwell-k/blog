@@ -5,7 +5,6 @@ const cssnano = require("cssnano");
 const stylelint = require("stylelint");
 const cssimport = require("postcss-import");
 const postcss = require("gulp-postcss");
-const sourcemaps = require("gulp-sourcemaps");
 
 const paths = {
   styles: ["theme/src/**/*.css"],
@@ -42,9 +41,7 @@ gulp.task(
     () =>
       gulp
         .src(paths.styles)
-        .pipe(sourcemaps.init())
         .pipe(postcss([stylelint, cssimport, cssnano]))
-        // .pipe(sourcemaps.write()) // to debug in Chrome Developer Tools
         .pipe(gulp.dest("theme")),
     () => rimraf(paths.unused, { glob: true }),
   ),
