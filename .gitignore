@@ -1,4 +1,5 @@
 *.pyc
 .en.utf-8.add.spl
+/deno.lock
 /node_modules/
 /output/
