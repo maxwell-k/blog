@@ -11,7 +11,7 @@ const sourcemaps = process.env.SOURCEMAP === "true";
 
 const paths = {
   styles: ["theme/src/**/*.css"],
-  unused: ["theme/static/css/_*.css"],
+  unused: ["theme/static/_*.css"],
 };
 
 function pelican(cb) {
