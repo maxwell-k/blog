@@ -39,8 +39,8 @@ const pipelineCss = () =>
     .pipe(dest("theme", { sourcemaps }));
 const removeUnusedCss = () => rimraf(paths.unused, { glob: true });
 const css = series(pipelineCss, removeUnusedCss);
-const watchCss = () => watch(paths.styles, { ignoreInitial: false }, css);
-const serve = parallel(pelican, watchCss);
+const watchCss = () => watch(paths.styles, css);
+const serve = series(css, parallel(watchCss, pelican));
 
 export { pelican, serve };
 export default css;
