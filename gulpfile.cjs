@@ -30,21 +30,21 @@ gulp.task("pelican", (cb) => {
   });
 });
 
+const css = gulp.series(
+  () =>
+    gulp
+      .src(paths.styles)
+      // .pipe(sourcemaps.init())
+      .pipe(postcss([stylelint, cssimport, cssnano]))
+      // .pipe(sourcemaps.write()) // to debug in Chrome Developer Tools
+      .pipe(gulp.dest("theme")),
+  () => rimraf(paths.unused, { glob: true }),
+);
+
 gulp.task(
   "watch",
   gulp.parallel("pelican", () => gulp.watch(paths.styles, css)),
 );
 
-gulp.task(
-  "css",
-  gulp.series(
-    () =>
-      gulp
-        .src(paths.styles)
-        .pipe(postcss([stylelint, cssimport, cssnano]))
-        .pipe(gulp.dest("theme")),
-    () => rimraf(paths.unused, { glob: true }),
-  ),
-);
-
-gulp.task("default", gulp.series("css"));
+gulp.task("css", css);
+gulp.task("default", css);
