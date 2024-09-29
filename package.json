@@ -1,8 +1,8 @@
 {
-  "name": "genus",
-  "version": "0.1.0",
-  "description": "Genus Pelican theme",
-  "main": "index.js",
+  "name": "2024-09-18-pybelfast-workshop",
+  "version": "0.0.1",
+  "description": "2024-09-18 PyBelfast Workshop",
+  "main": "gulpfile.cjs",
   "engines": {
     "node": "^20.17.0",
     "npm": "^10.8.2"
@@ -12,10 +12,9 @@
   },
   "keywords": [
     "pelican",
-    "blog",
-    "theme"
+    "blog"
   ],
-  "author": "Eemil Väisänen <eemil.vaisanen@iki.fi>",
+  "author": "Keith Maxwell <keith.maxwell@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "cssnano": "^7.0.0",
