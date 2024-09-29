@@ -5,6 +5,9 @@ import cssnano from "cssnano";
 import stylelint from "stylelint";
 import postcssBundler from "@csstools/postcss-bundler";
 import postcss from "gulp-postcss";
+import process from "node:process";
+
+const sourcemaps = process.env.SOURCEMAP === "true";
 
 const paths = {
   styles: ["theme/src/**/*.css"],
@@ -31,12 +34,12 @@ function pelican(cb) {
 }
 
 const pipelineCss = () =>
-  src(paths.styles)
+  src(paths.styles, { sourcemaps })
     .pipe(postcss([stylelint, postcssBundler, cssnano]))
-    .pipe(dest("theme"));
+    .pipe(dest("theme", { sourcemaps }));
 const removeUnusedCss = () => rimraf(paths.unused, { glob: true });
 const css = series(pipelineCss, removeUnusedCss);
-const watchCss = () => watch(paths.styles, css);
+const watchCss = () => watch(paths.styles, { ignoreInitial: false }, css);
 const serve = parallel(pelican, watchCss);
 
 export { pelican, serve };

@@ -1,9 +1,12 @@
 <!-- vim: set filetype=markdown.htmlCommentNoSpell.cog : -->
 
-Command to run a development server on <http://127.0.0.1:8000> watching for
-changes:
+To include a source map in the generated CSS file, set the `SOURCEMAP`
+environment variable to `true`.
 
-    npm exec gulp serve
+Command to run a development server on <http://127.0.0.1:8000> watching for
+changes and including a source map:
+
+    SOURCEMAP=true npm exec gulp serve
 
 Command to process CSS:
 
