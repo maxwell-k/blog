@@ -3,7 +3,7 @@ const { spawn } = require("child_process");
 const gulp = require("gulp");
 const cssnano = require("cssnano");
 const stylelint = require("stylelint");
-const cssimport = require("postcss-import");
+const postcssBundler = require("@csstools/postcss-bundler");
 const postcss = require("gulp-postcss");
 
 const paths = {
@@ -35,7 +35,7 @@ const css = gulp.series(
     gulp
       .src(paths.styles)
       // .pipe(sourcemaps.init())
-      .pipe(postcss([stylelint, cssimport, cssnano]))
+      .pipe(postcss([stylelint, postcssBundler, cssnano]))
       // .pipe(sourcemaps.write()) // to debug in Chrome Developer Tools
       .pipe(gulp.dest("theme")),
   () => rimraf(paths.unused, { glob: true }),
