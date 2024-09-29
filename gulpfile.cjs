@@ -14,8 +14,10 @@ const paths = {
 
 gulp.task("pelican", (cb) => {
   const cmd = spawn(
-    "uvx",
+    "uv",
     [
+      "tool",
+      "run",
       "--with-requirements=requirements.txt",
       "pelican",
       "--autoreload",

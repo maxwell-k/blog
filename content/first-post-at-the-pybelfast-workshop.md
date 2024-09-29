@@ -4,9 +4,9 @@ date: 2024-09-18
 category: Computers
 ---
 
-I created this repository at a [local meetup]. In this post I am loosely
-following the [instructions] provided by our host Kyle. I did a few things
-differently and I try to document my rationale here.
+I created this repository at a [local meetup]. In this post I am loosely following
+the [instructions] provided by our host Kyle. I did a few things differently and
+I try to document my rationale here.
 
 [instructions]: https://apoclyps.github.io/pelican-by-example/
 
@@ -23,7 +23,7 @@ working directory and set up an empty git repository:
     && git init \
     && git branch -m main
 
-### Use uvx
+### Use uv tool run
 
 In my experience running entry-level Python workshops, initial setup is always
 time consuming. Especially installing an appropriate version of Python, possibly
@@ -31,21 +31,21 @@ setting up a virtual environment and obtaining the correct libraries. Being able
 to help attendees who may be using Windows, Mac or Linux is challenging. This is
 both one of the hardest parts of a session and one of the first!
 
-I tried to side step some of the issues here by using `uvx` from the [uv]
-package. Most of the group used Rye and my neighbour was unsure. Trying to help
-I suggested using pipx to install Pelican. I had started out using [pipx].
-However first you need to install pipx; the pipx install instructions for
-Windows suggest using [Scoop](https://scoop.sh); that means you need the
-installation instructions for Scoop… it was turtles all of the way down. The
-neighbour was confident with Conda so I left them to it.
+I tried to side step some of the issues here by using [uv]. Most of the group
+used Rye and my neighbour was unsure. Trying to help I suggested using pipx to
+install Pelican. I had started out using [pipx]. However first you need to
+install pipx; the pipx install instructions for Windows suggest using
+[Scoop](https://scoop.sh); that means you need the installation instructions for
+Scoop… it was turtles all of the way down. The neighbour was confident with
+Conda so I left them to it.
 
-In the end I preferred `uvx` over `pipx` for a couple of reasons:
+In the end I preferred `uv tool run` over `pipx` for a couple of reasons:
 
 1. The uv installation instructions for Windows only use PowerShell and Scoop
    isn't necessary.
 
-2. `uvx` supports specifying additional packages using `--with`; which will be
-   relevant in the next section.
+2. `uv tool run` supports specifying additional packages using `--with`; which
+   will be relevant in the next section.
 
 [pipx]: https://github.com/pypa/pipx
 [uv]: https://github.com/astral-sh/uv
@@ -58,7 +58,7 @@ In the end I preferred `uvx` over `pipx` for a couple of reasons:
 
 Command to run the quick-start:
 
-    uvx "--from=pelican[markdown]" pelican-quickstart
+    uv tool run "--from=pelican[markdown]" pelican-quickstart
 
 Many of the default answers where fine; a couple I defined are:
 
@@ -69,16 +69,15 @@ Many of the default answers where fine; a couple I defined are:
 
 ### Use YAML metadata
 
-I want to use YAML metadata because it is well supported by [my editor
-configuration]. It is also supported by the [yaml-metadata plugin]. At the
-minute it is possible to just use a
-`pipx run --spec=pelican-yaml-metadata pelican` command because the plugin
-[depends on] everything necessary. However I prefer the more transparent
-approach below.
+I want to use YAML metadata because it is well supported by [my
+editor configuration]. It is also supported by the [yaml-metadata plugin]. At the
+minute it is possible to just use a `pipx run --spec=pelican-yaml-metadata pelican`
+command because the plugin [depends on] everything necessary. However I prefer
+the more transparent approach below.
 
 Command to create a directory to address a warning and run the site locally:
 
-    uvx --with-requirements=requirements.txt pelican --autoreload --listen
+    uv tool run --with-requirements=requirements.txt pelican --autoreload --listen
 
 Then browse to <http://127.0.0.1:8000/>.
 
