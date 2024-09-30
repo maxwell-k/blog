@@ -10,4 +10,4 @@ jobs:
       id-token: write
     with:
       settings: pelicanconf.py
-      requirements: "--requirement requirements.txt"
+      requirements: --requirement requirements.txt
