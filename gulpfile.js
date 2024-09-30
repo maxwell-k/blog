@@ -10,9 +10,10 @@ import process from "node:process";
 const sourcemaps = process.env.SOURCEMAP === "true";
 
 const paths = {
-  styles: ["theme/src/**/*.css"],
-  unused: ["theme/static/_*.css"],
-  output: "output",
+  cssInputs: ["theme/src/static/*.css"],
+  cssBundle: ["theme/src/static/bundle.css"],
+  cssOutput: "theme/static",
+  pelicanOutput: "output",
 };
 
 function _spawn(extraArgs = []) {
@@ -25,32 +26,28 @@ function _spawn(extraArgs = []) {
   return spawn("uv", args, { stdio: "inherit" });
 }
 
-const pipelineCss = () =>
-  src(paths.styles, { sourcemaps })
+const css = () =>
+  src(paths.cssBundle, { sourcemaps })
     .pipe(postcss([stylelint, postcssBundler, cssnano]))
-    .pipe(dest("theme", { sourcemaps }));
-const removeUnusedCss = () => rimraf(paths.unused, { glob: true });
-const removeOutput = () => rimraf(paths.output);
-const css = series(pipelineCss, removeUnusedCss);
-const build = series(css, removeOutput, (cb) => {
+    .pipe(dest(paths.cssOutput, { sourcemaps }));
+const removeOutput = () => rimraf(paths.pelicanOutput);
+const pelican = (cb) => {
   const cmd = _spawn();
   cmd.on("close", (code) => {
     if (code !== 0) cb(new Error("Error during build"));
     else cb();
   });
-});
-const watchCss = () => watch(paths.styles, css);
-const serve = series(
-  css,
-  removeOutput,
-  parallel(watchCss, (cb) => {
-    const cmd = _spawn(["--autoreload", "--listen"]);
-    cmd.on("close", function (code) {
-      console.log("Server exited with code " + code);
-      cb(code);
-    });
-  }),
-);
+};
+const build = series(css, removeOutput, pelican);
+const watchCss = () => watch(paths.cssInputs, css);
+const pelicanListen = (cb) => {
+  const cmd = _spawn(["--autoreload", "--listen"]);
+  cmd.on("close", function (code) {
+    console.log("Server exited with code " + code);
+    cb(code);
+  });
+};
+const serve = series(css, removeOutput, parallel(watchCss, pelicanListen));
 
 export { build, serve };
 export default css;
