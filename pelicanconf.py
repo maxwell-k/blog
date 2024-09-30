@@ -1,7 +1,6 @@
 AUTHOR = "Keith Maxwell"
 SITENAME = "2024-09-18-pybelfast-workshop"
 SITETITLE = SITENAME
-GRAVATAR_IMAGE = "https://avatars.githubusercontent.com/u/4786215"
 SITEURL = ""
 THEME = "./theme"
 SUMMARY_MAX_LENGTH = 0

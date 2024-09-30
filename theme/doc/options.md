@@ -7,4 +7,3 @@ the theme fairly simple and therefore the amount of options low.
 |    Variable    |  Type  |   Description  |
 |----------------|--------|----------------|
 | SITESUBTITLE   | string | Site subheader |
-| GRAVATAR_IMAGE | URL    | User Gravatar  |

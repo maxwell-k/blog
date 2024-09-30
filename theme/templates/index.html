@@ -8,10 +8,6 @@
             </h2>
             <p>
                 <meta itemprop="datePublished" content="{{ article.date.isoformat() }}">
-                <meta itemprop="dateModified" content="{{ article.date.isoformat() }}">
-                {% if GRAVATAR_IMAGE %}
-                <meta itemprop="image" content="{{ GRAVATAR_IMAGE }}">
-                {% endif %}
                 Posted on {{ article.date | strftime(DEFAULT_DATE_FORMAT) }} in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
             </p>
         </header>
