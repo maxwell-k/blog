@@ -14,23 +14,14 @@ const paths = {
   unused: ["theme/static/_*.css"],
 };
 
-function pelican(cb) {
-  const cmd = spawn(
-    "uv",
-    [
-      "tool",
-      "run",
-      "--with-requirements=requirements.txt",
-      "pelican",
-      "--autoreload",
-      "--listen",
-    ],
-    { stdio: "inherit" },
-  );
-  cmd.on("close", function (code) {
-    console.log("Server exited with code " + code);
-    cb(code);
-  });
+function _spawn(extraArgs = []) {
+  const args = [
+    "tool",
+    "run",
+    "--with-requirements=requirements.txt",
+    "pelican",
+  ].concat(extraArgs);
+  return spawn("uv", args, { stdio: "inherit" });
 }
 
 const pipelineCss = () =>
@@ -39,8 +30,24 @@ const pipelineCss = () =>
     .pipe(dest("theme", { sourcemaps }));
 const removeUnusedCss = () => rimraf(paths.unused, { glob: true });
 const css = series(pipelineCss, removeUnusedCss);
+const build = series(css, (cb) => {
+  const cmd = _spawn();
+  cmd.on("close", (code) => {
+    if (code !== 0) cb(new Error("Error during build"));
+    else cb();
+  });
+});
 const watchCss = () => watch(paths.styles, css);
-const serve = series(css, parallel(watchCss, pelican));
+const serve = series(
+  css,
+  parallel(watchCss, (cb) => {
+    const cmd = _spawn(["--autoreload", "--listen"]);
+    cmd.on("close", function (code) {
+      console.log("Server exited with code " + code);
+      cb(code);
+    });
+  }),
+);
 
-export { pelican, serve };
+export { build, serve };
 export default css;
