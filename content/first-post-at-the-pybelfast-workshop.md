@@ -107,8 +107,8 @@ Initially this workflow produced the following error:
 
 > `Branch "main" is not allowed to deploy to github-pages due to environment protection rules.`
 
-To resolve this I configured permissions: go to Settings, then Environments,
-then `github-pages` and make sure `main` can deploy to this environment.
+To resolve this I configured permissions: go to ‘Settings’, then ‘Environments’,
+then ‘github-pages‛ and make sure ‘main‛ can deploy to this environment.
 
 <!--
 Commands to commit to git:
@@ -120,7 +120,7 @@ Commands to commit to git:
     && git add .
 -->
 
-Adding `workflow_dispatch:` to allow manually triggering the workflow is helpful
+Allowing manually running the workflow by adding `workflow_dispatch:` is helpful
 for testing the repository settings.
 
 [official]:
