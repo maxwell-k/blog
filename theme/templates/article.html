@@ -3,7 +3,7 @@
 {% block content %}
 <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
-        <h1 itemprop="headline" id="{{ article.slug }}">{{ article.title }}</h1>
+        <h2 itemprop="headline" id="{{ article.slug }}">{{ article.title }}</h2>
         <p>
             <meta itemprop="datePublished" content="{{ article.date.isoformat() }}">
             Posted on {{ article.date | strftime(DEFAULT_DATE_FORMAT) }} in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
