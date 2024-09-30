@@ -38,14 +38,3 @@ h6 a {
 .tags a:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
-
-.highlight {
-  padding: 1.5em;
-  border-radius: 0.3em;
-  overflow: auto;
-  margin-bottom: 1em;
-}
-
-.highlight pre {
-  margin: 0;
-}
