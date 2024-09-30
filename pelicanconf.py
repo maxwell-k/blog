@@ -48,3 +48,6 @@ MARKDOWN = {
     },
     "output_format": "html5",
 }
+
+DIRECT_TEMPLATES = ["index", "categories", "tags", "archives"]
+AUTHOR_SAVE_AS = ""
