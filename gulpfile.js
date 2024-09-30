@@ -12,6 +12,7 @@ const sourcemaps = process.env.SOURCEMAP === "true";
 const paths = {
   styles: ["theme/src/**/*.css"],
   unused: ["theme/static/_*.css"],
+  output: "output",
 };
 
 function _spawn(extraArgs = []) {
@@ -29,8 +30,9 @@ const pipelineCss = () =>
     .pipe(postcss([stylelint, postcssBundler, cssnano]))
     .pipe(dest("theme", { sourcemaps }));
 const removeUnusedCss = () => rimraf(paths.unused, { glob: true });
+const removeOutput = () => rimraf(paths.output);
 const css = series(pipelineCss, removeUnusedCss);
-const build = series(css, (cb) => {
+const build = series(css, removeOutput, (cb) => {
   const cmd = _spawn();
   cmd.on("close", (code) => {
     if (code !== 0) cb(new Error("Error during build"));
@@ -40,6 +42,7 @@ const build = series(css, (cb) => {
 const watchCss = () => watch(paths.styles, css);
 const serve = series(
   css,
+  removeOutput,
   parallel(watchCss, (cb) => {
     const cmd = _spawn(["--autoreload", "--listen"]);
     cmd.on("close", function (code) {
