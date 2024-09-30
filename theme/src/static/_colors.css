@@ -26,15 +26,12 @@ h6 a {
   color: rgba(0, 0, 0, 0.55);
 }
 
-.author a {
-  color: black;
-}
-
 .tags a {
   background-color: rgba(0, 0, 0, 0.07);
   color: rgba(0, 0, 0, 0.6);
 }
 
-.tags a:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+a:hover,
+a:focus {
+  text-decoration: underline;
 }
