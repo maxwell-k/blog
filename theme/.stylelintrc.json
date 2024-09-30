@@ -1,6 +1,7 @@
 {
   "rules": {
     "block-no-empty": null,
+    "color-named": "always-where-possible",
     "color-no-invalid-hex": true,
     "rule-empty-line-before": [
       "always",

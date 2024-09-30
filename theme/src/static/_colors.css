@@ -8,7 +8,7 @@ h3 a,
 h4 a,
 h5 a,
 h6 a {
-  color: #000;
+  color: black;
 }
 
 /* Moss */
@@ -19,7 +19,7 @@ h6 a {
 }
 
 .site-header a {
-  color: #fff;
+  color: white;
 }
 
 .site-footer {
@@ -27,7 +27,7 @@ h6 a {
 }
 
 .author a {
-  color: #000;
+  color: black;
 }
 
 .tags a {
