@@ -6,13 +6,15 @@ import stylelint from "stylelint";
 import postcssBundler from "@csstools/postcss-bundler";
 import postcss from "gulp-postcss";
 import process from "node:process";
+import uglify from "gulp-uglify";
 
 const sourcemaps = process.env.SOURCEMAP === "true";
 
 const paths = {
+  jsInput: "theme/src/static/copy.js",
   cssInputs: ["theme/src/static/*.css"],
   cssBundle: ["theme/src/static/bundle.css"],
-  cssOutput: "theme/static",
+  output: "theme/static",
   pelicanOutput: "output",
 };
 
@@ -29,7 +31,11 @@ function _spawn(extraArgs = []) {
 const css = () =>
   src(paths.cssBundle, { sourcemaps })
     .pipe(postcss([stylelint, postcssBundler, cssnano]))
-    .pipe(dest(paths.cssOutput, { sourcemaps }));
+    .pipe(dest(paths.output, { sourcemaps }));
+const js = () =>
+  src(paths.jsInput, { sourcemaps })
+    .pipe(uglify())
+    .pipe(dest(paths.output, { sourcemaps }));
 const removeOutput = () => rimraf(paths.pelicanOutput);
 const pelican = (cb) => {
   const cmd = _spawn();
@@ -38,7 +44,7 @@ const pelican = (cb) => {
     else cb();
   });
 };
-const build = series(css, removeOutput, pelican);
+const build = series(js, css, removeOutput, pelican);
 const watchCss = () => watch(paths.cssInputs, css);
 const pelicanListen = (cb) => {
   const cmd = _spawn(["--autoreload", "--listen"]);
@@ -47,7 +53,11 @@ const pelicanListen = (cb) => {
     cb(code);
   });
 };
-const serve = series(css, removeOutput, parallel(watchCss, pelicanListen));
+const serve = series(
+  parallel(js, css),
+  removeOutput,
+  parallel(watchCss, pelicanListen),
+);
 
 export { build, serve };
 export default css;
