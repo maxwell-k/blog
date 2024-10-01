@@ -1,13 +1,12 @@
 @font-face {
   font-family: "DejaVu Sans Mono";
-  src: url("/theme/fonts/DejaVuSansMono-book.eot");
+  /* relative paths for GitHub pages */
+  src: url("fonts/DejaVuSansMono-book.eot");
   src:
-    url("/theme/fonts/DejaVuSansMono-book.eot?#iefix")
-      format("embedded-opentype"),
-    url("/theme/fonts/DejaVuSansMono-book.woff") format("woff"),
-    url("/theme/fonts/DejaVuSansMono-book.ttf") format("truetype"),
-    url("/theme/fonts/DejaVuSansMono-book.svg#dejavu_sans_monobook")
-      format("svg");
+    url("fonts/DejaVuSansMono-book.eot?#iefix") format("embedded-opentype"),
+    url("fonts/DejaVuSansMono-book.woff") format("woff"),
+    url("fonts/DejaVuSansMono-book.ttf") format("truetype"),
+    url("fonts/DejaVuSansMono-book.svg#dejavu_sans_monobook") format("svg");
   font-weight: normal;
   font-style: normal;
 }
