@@ -6,11 +6,11 @@
 }
 
 .main-content {
-  padding: 2em 1em;
+  padding: 0 1em;
 }
 
 .site-footer {
-  padding: 2em 1em;
+  padding: 0 1em;
   font-size: 1rem;
 }
 
@@ -22,11 +22,11 @@
   }
 
   .main-content {
-    padding: 2rem 4rem;
+    padding: 0 4rem;
   }
 
   .site-footer {
-    padding: 2rem 4rem;
+    padding: 0 4rem;
   }
 }
 
@@ -39,13 +39,13 @@
 
   .main-content {
     max-width: 54rem;
-    padding: 2rem 6rem;
+    padding: 0 6rem;
     margin: 0 auto;
   }
 
   .site-footer {
     max-width: 54rem;
-    padding: 2rem 6rem;
+    padding: 0 6rem;
     margin: 0 auto;
   }
 }
