@@ -1,8 +1,15 @@
 Conda
+GPG
+Incus
+Kubernetes
+LXD
+Podman
 PowerShell
 PyBelfast
 YAML
 github
+keyrings
 pipx
+systemd
 uv
 yaml
