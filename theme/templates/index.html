@@ -21,6 +21,8 @@ articles_page.object_list %}
   <a class="button" href="{{ SITEURL }}/{{ article.url }}#{{ article.slug }}"
     >Continue reading</a
   >
-  {% else %} {{ article.content }} {% endif %}
+  {% else %} {{ article.content }}
+  <hr />
+  {% endif %}
 </article>
 {% endfor %} {% endblock %}
