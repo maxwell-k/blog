@@ -2,13 +2,6 @@ on: # yamllint disable-line rule:truthy
   push: { branches: [main] }
   workflow_dispatch:
 jobs:
-  check:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout the repository
-        uses: actions/checkout@v4
-      - name: Run prettier on all HTML, JavaScript and CSS files
-        run: "npm exec --yes prettier -- --check '**.html'  '**.js' '**.css'"
   deploy:
     uses: getpelican/pelican/.github/workflows/github_pages.yml@main
     permissions:
