@@ -6,19 +6,10 @@
     "rule-empty-line-before": [
       "always",
       {
-        "except": [
-          "first-nested"
-        ],
-        "ignore": [
-          "after-comment"
-        ]
+        "except": ["first-nested"],
+        "ignore": ["after-comment"]
       }
     ],
-    "unit-allowed-list": [
-      "em",
-      "rem",
-      "%",
-      "px"
-    ]
+    "unit-allowed-list": ["em", "rem", "%", "px"]
   }
 }
