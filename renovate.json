@@ -13,6 +13,15 @@
       "matchStrings": [
         "uses: astral-sh\\/setup-uv@\\S+\\s+with: { version: \"(?<currentValue>\\S+)\" }"
       ]
+    },
+    {
+      "packageNameTemplate": "getpelican/pelican",
+      "fileMatch": ["^.github/workflows/publish.yaml$"],
+      "customType": "regex",
+      "datasourceTemplate": "github-releases",
+      "matchStrings": [
+        "\\n\\s+uses: getpelican\\/pelican\\/[.]github\\/workflows\\/github_pages[.]yml@(?<currentValue>\\S+)\\n"
+      ]
     }
   ]
 }
