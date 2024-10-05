@@ -1,4 +1,18 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"]
+  "extends": ["config:best-practices"],
+  "poetry": {
+    "enabled": false
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["^.github/workflows/check.yaml$"],
+      "datasourceTemplate": "github-releases",
+      "packageNameTemplate": "astral-sh/uv",
+      "matchStrings": [
+        "uses: astral-sh\\/setup-uv@\\S+\\s+with: { version: \"(?<currentValue>\\S+)\" }"
+      ]
+    }
+  ]
 }
