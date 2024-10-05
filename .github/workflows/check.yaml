@@ -7,10 +7,16 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4
-      - name: Run prettier on all HTML, JavaScript and CSS files
+      - name: Run prettier on all CSS, HTML, JavaScript and JSON
         run: >-
           npm exec --yes prettier -- --check
           '**.css'
           '**.html'
           '**.js'
           '**.json'
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+      - name: Run Pelican
+        run: >-
+          uv tool run --with-requirements=requirements.txt
+          pelican --fatal=warnings
