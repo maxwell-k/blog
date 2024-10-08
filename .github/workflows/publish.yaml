@@ -3,7 +3,7 @@ on: # yamllint disable-line rule:truthy
   workflow_dispatch:
 jobs:
   deploy:
-    uses: getpelican/pelican/.github/workflows/github_pages.yml@4.10.1
+    uses: getpelican/pelican/.github/workflows/github_pages.yml@b86383fb28a160eeaf3e13cbf99469a0ed4cfcb2 # 4.10.1
     permissions:
       contents: read
       pages: write
