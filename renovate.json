@@ -23,5 +23,12 @@
         "\\n\\s+uses: getpelican\\/pelican\\/[.]github\\/workflows\\/github_pages[.]yml@(?<currentValue>\\S+)\\n"
       ]
     }
+  ],
+  "packageRules": [
+    {
+      "description": "Automerge upgrades to uv",
+      "matchPackageNames": ["astral-sh/uv"],
+      "automerge": true
+    }
   ]
 }
