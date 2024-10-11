@@ -7,6 +7,8 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4
+      - name: Fail if generated CSS is different to committed CSS
+        run: npm ci && npm exec gulp && git diff --exit-code
       - name: Run prettier on all CSS, HTML, JavaScript and JSON
         run: >-
           npm exec --yes prettier -- --check
@@ -14,8 +16,6 @@ jobs:
           '**.html'
           '**.js'
           '**.json'
-      - name: Fail if generated CSS isn't committed
-        run: npm ci && npm exec gulp && git diff --exit-code
       - name: Check the renovate configuration
         run: npm exec --yes --package renovate -- renovate-config-validator
       - name: Install uv
