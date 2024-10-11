@@ -29,6 +29,11 @@
       "description": "Automerge upgrades to uv",
       "matchPackageNames": ["astral-sh/uv"],
       "automerge": true
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "matchPackageNames": ["*"],
+      "automerge": true
     }
   ]
 }
