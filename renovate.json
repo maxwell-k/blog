@@ -27,12 +27,12 @@
   "packageRules": [
     {
       "description": "Automerge upgrades to uv",
-      "matchPackageNames": ["astral-sh/uv"],
+      "matchPackageNames": ["astral-sh/uv", "astral-sh/setup-uv"],
       "automerge": true
     },
     {
+      "description": "Automerge devDependencies",
       "matchDepTypes": ["devDependencies"],
-      "matchPackageNames": ["*"],
       "automerge": true
     }
   ]
