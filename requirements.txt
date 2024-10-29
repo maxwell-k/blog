@@ -40,7 +40,7 @@ pytz==2024.2
     # via feedgenerator
 pyyaml==6.0.2
     # via pelican-yaml-metadata
-rich==13.9.2
+rich==13.9.3
     # via pelican
 six==1.16.0
     # via python-dateutil
