@@ -11,9 +11,9 @@ import uglify from "gulp-uglify";
 const sourcemaps = process.env.SOURCEMAP === "true";
 
 const paths = {
-  jsInput: "theme/src/static/copy.js",
-  cssInputs: ["theme/src/static/*.css"],
-  cssBundle: ["theme/src/static/bundle.css"],
+  jsInput: "theme/src/copy.js",
+  cssInputs: ["theme/src/*.css"],
+  cssBundle: ["theme/src/bundle.css"],
   output: "theme/static",
   pelicanOutput: "output",
 };
