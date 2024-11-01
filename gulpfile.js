@@ -46,6 +46,7 @@ const pelican = (cb) => {
 };
 const build = series(js, css, removeOutput, pelican);
 const watchCss = () => watch(paths.cssInputs, css);
+const watchJs = () => watch(paths.jsInput, js);
 const pelicanListen = (cb) => {
   const cmd = _spawn(["--autoreload", "--listen"]);
   cmd.on("close", function (code) {
@@ -56,7 +57,7 @@ const pelicanListen = (cb) => {
 const serve = series(
   parallel(js, css),
   removeOutput,
-  parallel(watchCss, pelicanListen),
+  parallel(watchCss, watchJs, pelicanListen),
 );
 
 export { build, serve };

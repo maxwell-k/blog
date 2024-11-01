@@ -42,6 +42,7 @@ Tasks for ~/github.com/maxwell-k/2024-09-18-pybelfast-workshop/gulpfile.js
     ├── removeOutput
     └─┬ <parallel>
       ├── watchCss
+      ├── watchJs
       └── pelicanListen
 ```
 
