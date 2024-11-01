@@ -10,7 +10,7 @@ document.querySelectorAll("div.highlight > pre > code").forEach((node) => {
 });
 
 function copy(event) {
-  const text = event.target.previousSibling.innerText;
+  const text = event.target.previousSibling.innerText.trimEnd();
   navigator.clipboard.writeText(text).then(
     () => {
       const before = event.target.innerText;
