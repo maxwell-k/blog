@@ -29,13 +29,16 @@ cog.outl("\n```\n"+completed.stdout.decode()+"```\n")
 Tasks for ~/github.com/maxwell-k/2024-09-18-pybelfast-workshop/gulpfile.js
 ├─┬ build
 │ └─┬ <series>
+│   ├── js
 │   ├── css
 │   ├── removeOutput
 │   └── pelican
 ├── default
 └─┬ serve
   └─┬ <series>
-    ├── css
+    ├─┬ <parallel>
+    │ ├── js
+    │ └── css
     ├── removeOutput
     └─┬ <parallel>
       ├── watchCss
