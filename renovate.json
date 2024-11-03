@@ -31,6 +31,12 @@
       "automerge": true
     },
     {
+      "description": "Automerge allow-listed PyPI packages",
+      "matchPackageNames": ["rich"],
+      "matchDatasources": ["pypi"],
+      "automerge": true
+    },
+    {
       "description": "Automerge devDependencies",
       "matchDepTypes": ["devDependencies"],
       "automerge": true
