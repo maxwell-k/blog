@@ -7,22 +7,17 @@ articles_page.object_list %}
         >{{ article.title }}</a
       >
     </h2>
-    <p>
-      <meta itemprop="datePublished" content="{{ article.date.isoformat() }}" />
-      {% include "fragments/posted.html" %} in
-      <a href="{{ SITEURL }}/{{ article.category.url }}"
-        >{{ article.category }}</a
-      >
-    </p>
+    {% include "fragments/posted.html" %}
   </header>
-
-  {% if summarise or article.metadata['summary'] or SUMMARY_MAX_LENGTH %} {{
-  article.summary }}
-  <a class="button" href="{{ SITEURL }}/{{ article.url }}#{{ article.slug }}"
-    >Continue reading</a
-  >
-  {% else %} {{ article.content }}
-  <hr />
-  {% endif %}
+  <section id="content" itemprop="mainEntityOfPage">
+    {% if summarise or article.metadata['summary'] or SUMMARY_MAX_LENGTH %} {{
+    article.summary }}
+    <a class="button" href="{{ SITEURL }}/{{ article.url }}#{{ article.slug }}"
+      >Continue reading</a
+    >
+    {% else %} {{ article.content }}
+    <hr />
+    {% endif %}
+  </section>
 </article>
 {% endfor %} {% endblock %}
