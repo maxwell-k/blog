@@ -1,1 +1,2 @@
-Posted on {{ article.date | strftime(DEFAULT_DATE_FORMAT) }}
+Posted on {{ article.date.strftime("%A ") ~ article.date.day ~
+article.date.strftime(" %B %Y") }}

@@ -26,7 +26,6 @@ DEFAULT_PAGINATION = False
 # RELATIVE_URLS = True
 
 IGNORE_FILES = [".*.sw?", ".keep"]
-DEFAULT_DATE_FORMAT = "%A %d %B %Y"
 
 STATIC_PATHS = [
     "images",
