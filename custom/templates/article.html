@@ -10,7 +10,7 @@ endblock %} {% block content %}
     <h2 itemprop="headline" id="{{ article.slug }}">{{ article.title }}</h2>
     <p>
       <meta itemprop="datePublished" content="{{ article.date.isoformat() }}" />
-      Posted on {{ article.date | strftime(DEFAULT_DATE_FORMAT) }} in
+      {% include "fragments/posted.html" %} in
       <a href="{{ SITEURL }}/{{ article.category.url }}"
         >{{ article.category }}</a
       >
