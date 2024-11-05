@@ -118,7 +118,9 @@ pre {
   font-size: 1rem;
 }
 
-#content {
+#content,
+footer,
+article header p {
   font-family: "Source Serif Pro", serif;
 }
 
