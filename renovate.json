@@ -32,7 +32,7 @@
     },
     {
       "description": "Automerge allow-listed PyPI packages",
-      "matchPackageNames": ["rich"],
+      "matchPackageNames": ["rich", "watchfiles"],
       "matchDatasources": ["pypi"],
       "automerge": true
     },
