@@ -24,7 +24,7 @@ mdurl==0.1.2
     # via markdown-it-py
 ordered-set==4.1.0
     # via pelican
-pelican==4.10.1
+pelican==4.10.2
     # via
     #   2024-09-18-pybelfast-workshop (pyproject.toml)
     #   pelican-yaml-metadata
