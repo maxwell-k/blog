@@ -3,6 +3,7 @@ on: # yamllint disable-line rule:truthy
   workflow_dispatch:
 jobs:
   deploy:
+    # yamllint disable-line rule:line-length
     uses: getpelican/pelican/.github/workflows/github_pages.yml@07c7eacab914985942ea776f6606fd5f8a8f9e93 # 4.10.2
     permissions:
       contents: read
