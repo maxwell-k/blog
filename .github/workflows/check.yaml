@@ -25,3 +25,7 @@ jobs:
         run: >-
           uv tool run --with-requirements=requirements.txt
           pelican --fatal=warnings
+      - name: Run yamllint on workflows
+        run: >-
+          uv tool run
+          yamllint -c .github/yamllint-config-file -f github .github/workflows
