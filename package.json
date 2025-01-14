@@ -28,7 +28,7 @@
     "postcss": "8.5.0",
     "prettier": "3.4.2",
     "rimraf": "6.0.1",
-    "stylelint": "16.13.1"
+    "stylelint": "16.13.2"
   },
   "type": "module",
   "overrides": {
