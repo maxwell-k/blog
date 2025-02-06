@@ -1,0 +1,9 @@
+config:
+  target: http://c1.incus
+  phases:
+    - duration: 8
+      arrivalRate: 3
+scenarios:
+  - flow:
+      - get:
+          url: /
