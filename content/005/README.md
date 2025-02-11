@@ -93,52 +93,39 @@ incus launch images:ubuntu/focal/cloud c1 < config.yaml
 ### Load testing software
 
 The latest version of [artillery](https://github.com/artilleryio/artillery) —
-`artillery@2.0.22` — requires a specific version of Node: `>= 22.13.0`. This can
-be installed using [Fast Node Manager](https://github.com/Schniz/fnm).
+`artillery@2.0.22` — requires a specific version of Node.js: `>= 22.13.0`. This
+can be installed using [Fast Node Manager](https://github.com/Schniz/fnm).
 
 <!--
 fnm list-remote
 -->
 
-Commands to install the latest artillery:
+Command to install the specific version of Node.js:
 
-    fnm install v22.13.1 \
-    && fnm exec --using=v22.13.1 npm install artillery@2.0.22
+    fnm install v22.13.1
+
+Command to run the latest artillery:
+
+    fnm exec --using=v22.13.1 npm exec --yes artillery@2.0.22 -- --version
 
 ### Demonstrate the default 503 HTTP response status code
 
-Contents of `artillery.yaml`:
-
-<!-- embedme artillery.yaml -->
-
-```yaml
-config:
-  target: http://c1.incus
-  phases:
-    - duration: 8
-      arrivalRate: 3
-scenarios:
-  - flow:
-      - get:
-          url: /
-```
-
 Command to run the test:
 
-    fnm exec --using=v22.13.1 node_modules/.bin/artillery run artillery.yaml
+    fnm exec --using=v22.13.1 npm exec artillery@2.0.22 -- quick http://c1.incus
 
 Partial output:
 
     ✂
-    http.codes.200: ................................................................ 8
-    http.codes.503: ................................................................ 16
-    http.downloaded_bytes: ......................................................... 2884
-    http.request_rate: ............................................................. 3/sec
-    http.requests: ................................................................. 24
+    http.codes.200: ................................................................ 1
+    http.codes.503: ................................................................ 99
+    http.downloaded_bytes: ......................................................... 20394
+    http.request_rate: ............................................................. 100/sec
+    http.requests: ................................................................. 100
     ✂
 
-The test ran for 8 seconds and sent 3 requests per second for a total of 24
-requests. 8 responses had the 200 HTTP response status code and 16 had the 503
+The test ran for 1 second and sent 100 requests per second for a total of 100
+requests. 1 response had the 200 HTTP response status code and 99 had the 503
 response status code.
 
 ### Configure and demonstrate another HTTP response status code
@@ -173,18 +160,17 @@ Command to reload the NGINX configuration:
 
     incus exec c1 -- systemctl reload nginx
 
-Command to re-run the test with artillery:
-
-    fnm exec --using=v22.13.1 node_modules/.bin/artillery run artillery.yaml
-
-Partial output:
+Partial output from re-running the test with `artillery quick`:
 
     ✂
-    http.codes.200: ................................................................ 8
-    http.codes.429: ................................................................ 16
+    http.codes.200: ................................................................ 1
+    http.codes.429: ................................................................ 99
     ✂
 
 The HTTP response status codes changed from 503 to 429.
+
+_Updated 2025-02-11: use a simple test from the command line without a test
+script._
 
 <!-- vim: set filetype=markdown.embedme.htmlCommentNoSpell.markdown-toc : -->
 
