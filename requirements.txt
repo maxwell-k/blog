@@ -36,7 +36,7 @@ pygments==2.18.0
     #   rich
 python-dateutil==2.9.0.post0
     # via pelican
-pytz==2025.1
+pytz==2025.2
     # via feedgenerator
 pyyaml==6.0.2
     # via pelican-yaml-metadata
