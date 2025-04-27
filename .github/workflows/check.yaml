@@ -20,7 +20,6 @@ jobs:
         run: npm exec --yes --package renovate -- renovate-config-validator
       - name: Install uv
         uses: astral-sh/setup-uv@c7f87aa956e4c323abf06d5dec078e358f6b4d04 # v6
-        with: { version: "0.4.18" }
       - name: Run Pelican
         run: >-
           uv tool run --with-requirements=requirements.txt
