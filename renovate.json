@@ -7,7 +7,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["^.github/workflows/check.yaml$"],
+      "managerFilePatterns": ["/^.github/workflows/check.yaml$/"],
       "datasourceTemplate": "github-releases",
       "packageNameTemplate": "astral-sh/uv",
       "matchStrings": [
@@ -16,7 +16,7 @@
     },
     {
       "packageNameTemplate": "getpelican/pelican",
-      "fileMatch": ["^.github/workflows/publish.yaml$"],
+      "managerFilePatterns": ["/^.github/workflows/publish.yaml$/"],
       "customType": "regex",
       "datasourceTemplate": "github-releases",
       "matchStrings": [
