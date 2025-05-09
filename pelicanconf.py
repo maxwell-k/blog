@@ -25,7 +25,7 @@ DEFAULT_PAGINATION = False
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
 
-IGNORE_FILES = [".*.sw?", ".keep"]
+IGNORE_FILES = [".*.sw?", ".keep", "*.license"]
 
 STATIC_PATHS = [
     "images",
@@ -49,3 +49,7 @@ MARKDOWN = {
 
 DIRECT_TEMPLATES = ["index", "categories", "tags", "archives"]
 AUTHOR_SAVE_AS = ""
+
+# pelicanconf.py
+# Copyright 2024 Keith Maxwell
+# SPDX-License-Identifier: CC0-1.0

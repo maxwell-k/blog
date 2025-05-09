@@ -12,3 +12,6 @@ jobs:
     with:
       settings: pelicanconf.py
       requirements: --requirement requirements.txt
+# .github/workflows/publish.yaml
+# Copyright 2024 Keith Maxwell
+# SPDX-License-Identifier: MPL-2.0

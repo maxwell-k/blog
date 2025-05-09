@@ -4,6 +4,10 @@ date: 2025-02-06T00:00:00.000Z
 category: Computers
 ---
 
+<!--
+Copyright 2025 Keith Maxwell
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
 
 <!-- toc -->
 

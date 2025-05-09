@@ -13,3 +13,7 @@ authors = [
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+# pyproject.toml
+# Copyright 2024 Keith Maxwell
+# SPDX-License-Identifier: CC0-1.0

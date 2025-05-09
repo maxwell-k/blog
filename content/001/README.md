@@ -7,6 +7,10 @@ category: Computers
 I created this repository at a [local meetup]. In this post I am loosely following
 the [instructions] provided by our host Kyle. I did a few things differently and
 I try to document my rationale here.
+<!--
+Copyright 2024 Keith Maxwell
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
 
 [instructions]: https://apoclyps.github.io/pelican-by-example/
 

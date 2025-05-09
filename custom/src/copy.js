@@ -37,3 +37,7 @@ function copy(event) {
 document
   .querySelectorAll("button.clipboard")
   .forEach((e) => e.addEventListener("click", copy));
+
+// custom/src/copy.js
+// Copyright 2024 Keith Maxwell
+// SPDX-License-Identifier: MPL-2.0

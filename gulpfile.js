@@ -62,3 +62,7 @@ const serve = series(
 
 export { build, serve };
 export default css;
+
+// gulpfile.js
+// Copyright 2024 Keith Maxwell
+// SPDX-License-Identifier: MPL-2.0

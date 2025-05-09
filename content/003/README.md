@@ -33,3 +33,8 @@ I have ordered a couple of [cases] too.
   https://thepihut.com/products/usb-to-ttl-serial-cable-debug-console-cable-for-raspberry-pi
 [written about the same topic]:
   https://www.jeffgeerling.com/blog/2021/attaching-raspberry-pis-serial-console-uart-debugging
+
+<!--
+Copyright 2024 Keith Maxwell
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
