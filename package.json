@@ -2,7 +2,7 @@
   "name": "2024-09-18-pybelfast-workshop",
   "version": "0.0.1",
   "description": "2024-09-18 PyBelfast Workshop",
-  "main": "gulpfile.cjs",
+  "main": "gulpfile.js",
   "engines": {
     "node": "^22.0.0",
     "npm": "^11.0.0"
