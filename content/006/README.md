@@ -116,5 +116,9 @@ Command to run Renovate with debugging output:
     LOG_LEVEL=debug \
     npm exec --yes renovate -- --platform=local
 
+<!--
+Copyright 2025 Keith Maxwell
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
 <!-- vim: set filetype=markdown.markdown-toc : -->
 

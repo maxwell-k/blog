@@ -1,3 +1,6 @@
+# .gitignore
+# Copyright 2024 Keith Maxwell
+# SPDX-License-Identifier: CC0-1.0
 *.pyc
 .en.utf-8.add.spl
 /deno.lock

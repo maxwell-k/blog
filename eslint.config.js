@@ -13,3 +13,7 @@ export default [
     files: "custom/static/copy.js",
   },
 ];
+
+// eslint.config.js
+// Copyright 2024 Keith Maxwell
+// SPDX-License-Identifier: MPL-2.0

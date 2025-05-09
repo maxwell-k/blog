@@ -46,4 +46,10 @@ Tasks for ~/github.com/maxwell-k/2024-09-18-pybelfast-workshop/gulpfile.js
       └── pelicanListen
 ```
 
+<!--
+README.md
+Copyright 2024 Keith Maxwell
+SPDX-License-Identifier: CC0-1.0
+-->
+
 <!-- [[[end]]] -->

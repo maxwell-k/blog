@@ -4,3 +4,10 @@ Custom theme for [Pelican](https://getpelican.com/) based upon
 ## License
 
 The MIT License ([LICENSE](LICENSE.txt))
+
+<!--
+custom/README.md
+Copyright 2024 Keith Maxwell
+SPDX-License-Identifier: CC0-1.0
+-->
+<!-- vim: set filetype=markdown.htmlCommentNoSpell : -->

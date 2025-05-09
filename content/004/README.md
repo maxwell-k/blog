@@ -103,3 +103,8 @@ three reasons:
 [online documentation]: https://dns-lexicon.readthedocs.io/en/latest/
 [distinction]: https://news.ycombinator.com/item?id=36675564
 [a range]: https://github.com/AcalephStorage/awesome-devops/issues/8
+
+<!--
+Copyright 2024 Keith Maxwell
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->

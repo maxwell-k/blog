@@ -3,6 +3,11 @@ title: Install soft-serve on Debian
 date: 2024-09-29T00:00:00.000Z
 category: Computers
 ---
+<!--
+Copyright 2024 Keith Maxwell
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+
 This is a simple deployment of [soft-serve] on Debian 12 Bookworm using [Incus].
 Eventually I will install this service onto hardware running Debian directly. At
 this stage Incus is a great way to experiment in disposable system containers.
