@@ -4,13 +4,14 @@ date: 2024-09-18
 category: Computers
 ---
 
-I created this repository at a [local meetup]. In this post I am loosely following
-the [instructions] provided by our host Kyle. I did a few things differently and
-I try to document my rationale here.
 <!--
 Copyright 2024 Keith Maxwell
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
+
+I created this repository at a [local meetup]. In this post I am loosely
+following the [instructions] provided by our host Kyle. I did a few things
+differently and I try to document my rationale here.
 
 [instructions]: https://apoclyps.github.io/pelican-by-example/
 
@@ -73,11 +74,12 @@ Many of the default answers where fine; a couple I defined are:
 
 ### Use YAML metadata
 
-I want to use YAML metadata because it is well supported by [my
-editor configuration]. It is also supported by the [yaml-metadata plugin]. At the
-minute it is possible to just use a `pipx run --spec=pelican-yaml-metadata pelican`
-command because the plugin [depends on] everything necessary. However I prefer
-the more transparent approach below.
+I want to use YAML metadata because it is well supported by [my editor
+configuration]. It is also supported by the [yaml-metadata plugin]. At the
+minute it is possible to just use a
+`pipx run --spec=pelican-yaml-metadata pelican` command because the plugin
+[depends on] everything necessary. However I prefer the more transparent
+approach below.
 
 Command to create a directory to address a warning and run the site locally:
 

@@ -4,7 +4,6 @@ date: 2025-03-26T00:00:00.000Z
 category: Computers
 ---
 
-
 <!-- toc -->
 
 - [A compatible version of Node.js](#a-compatible-version-of-nodejs)
@@ -121,4 +120,3 @@ Copyright 2025 Keith Maxwell
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 <!-- vim: set filetype=markdown.markdown-toc : -->
-
