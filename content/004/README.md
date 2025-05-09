@@ -11,8 +11,8 @@ topic are from 2019!
 I started managing `keithmaxwell.uk` in Route 53 using a web browser. Route 53
 is the managed DNS service from [Amazon Web Services] (AWS). To me, two benefits
 of an infrastructure as code solution see are: traceability and portability.
-Portability would help with a move away from AWS to another [managed
-DNS provider].
+Portability would help with a move away from AWS to another [managed DNS
+provider].
 
 [managed DNS provider]:
   https://en.wikipedia.org/wiki/List_of_managed_DNS_providers
@@ -94,9 +94,9 @@ Pulumi or Open Tofu.
 After reviewing these options I've [decided] to start with `dnscontrol`, for
 three reasons:
 
-1. the high quality documentation especially the migration guide
-2. the absence of a requirement to manage state and
-3. the apparent health of the open source project.
+1. The high quality documentation especially the migration guide
+2. The absence of a requirement to manage state and
+3. The apparent health of the open source project.
 
 [decided]: https://github.com/maxwell-k/dotfiles/pull/121
 [migration guide]: https://docs.dnscontrol.org/getting-started/migrating

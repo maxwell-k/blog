@@ -3,6 +3,7 @@ title: Install soft-serve on Debian
 date: 2024-09-29T00:00:00.000Z
 category: Computers
 ---
+
 <!--
 Copyright 2024 Keith Maxwell
 SPDX-License-Identifier: CC-BY-SA-4.0
@@ -116,9 +117,9 @@ to use HTTPS. Using HTTPS here means that an extra step installing the
 
 ### References
 
-After writing most of this post I found a [blog post] from an engineer at the company
-behind soft serve; it covers similar material to this post.
+After writing most of this post I found a [blog post] from an engineer at the
+company behind soft serve; it covers similar material to this post.
 
 [blog post]: https://charm.sh/blog/self-hosted-soft-serve/
 
-<!-- vim: set filetype=markdown.markdown-toc.htmlCommentNoSpell : -->
+<!-- vim: set filetype=markdown.htmlCommentNoSpell : -->
