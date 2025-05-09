@@ -1,45 +1,45 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:best-practices"],
-  "poetry": {
-    "enabled": false
-  },
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": [".github/workflows/check.yaml"],
       "datasourceTemplate": "github-releases",
-      "packageNameTemplate": "astral-sh/uv",
+      "managerFilePatterns": [".github/workflows/check.yaml"],
       "matchStrings": [
         "uses: astral-sh\\/setup-uv@\\S+\\s+with: { version: \"(?<currentValue>\\S+)\" }"
-      ]
+      ],
+      "packageNameTemplate": "astral-sh/uv"
     },
     {
-      "packageNameTemplate": "getpelican/pelican",
-      "managerFilePatterns": [".github/workflows/publish.yaml"],
       "customType": "regex",
       "datasourceTemplate": "github-releases",
+      "managerFilePatterns": [".github/workflows/publish.yaml"],
       "matchStrings": [
         "\\n\\s+uses: getpelican\\/pelican\\/[.]github\\/workflows\\/github_pages[.]yml@(?<currentValue>\\S+)\\n"
-      ]
+      ],
+      "packageNameTemplate": "getpelican/pelican"
     }
   ],
   "packageRules": [
     {
+      "automerge": true,
       "description": "Automerge upgrades to uv",
-      "matchPackageNames": ["astral-sh/uv", "astral-sh/setup-uv"],
-      "automerge": true
+      "matchPackageNames": ["astral-sh/uv", "astral-sh/setup-uv"]
     },
     {
+      "automerge": true,
       "description": "Automerge allow-listed PyPI packages",
-      "matchPackageNames": ["pytz", "rich", "six", "watchfiles"],
       "matchDatasources": ["pypi"],
-      "automerge": true
+      "matchPackageNames": ["pytz", "rich", "six", "watchfiles"]
     },
     {
+      "automerge": true,
       "description": "Automerge devDependencies",
-      "matchDepTypes": ["devDependencies"],
-      "automerge": true
+      "matchDepTypes": ["devDependencies"]
     }
-  ]
+  ],
+  "poetry": {
+    "enabled": false
+  }
 }
