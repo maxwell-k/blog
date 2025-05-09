@@ -14,8 +14,8 @@ const paths = {
   jsInput: "custom/src/copy.js",
   cssInputs: ["custom/src/*.css"],
   cssBundle: ["custom/src/bundle.css"],
-  output: "custom/static",
-  pelicanOutput: "output",
+  _static: "custom/static",
+  output: "output",
 };
 
 function _spawn(extraArgs = []) {
@@ -31,12 +31,12 @@ function _spawn(extraArgs = []) {
 const css = () =>
   src(paths.cssBundle, { sourcemaps })
     .pipe(postcss([stylelint, postcssBundler, cssnano]))
-    .pipe(dest(paths.output, { sourcemaps }));
+    .pipe(dest(paths._static, { sourcemaps }));
 const js = () =>
   src(paths.jsInput, { sourcemaps })
     .pipe(uglify())
-    .pipe(dest(paths.output, { sourcemaps }));
-const removeOutput = () => rimraf(paths.pelicanOutput);
+    .pipe(dest(paths._static, { sourcemaps }));
+const removeOutput = () => rimraf(paths.output);
 const pelican = (cb) => {
   const cmd = _spawn();
   cmd.on("close", (code) => {
