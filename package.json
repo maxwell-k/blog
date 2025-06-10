@@ -27,7 +27,7 @@
     "gulp-uglify": "3.0.2",
     "postcss": "8.5.4",
     "prettier": "3.5.3",
-    "renovate": "40.48.11",
+    "renovate": "40.49.0",
     "rimraf": "6.0.1",
     "stylelint": "16.20.0"
   },
