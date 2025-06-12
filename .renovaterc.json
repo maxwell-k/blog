@@ -35,8 +35,16 @@
     },
     {
       "automerge": true,
-      "description": "Automerge devDependencies",
-      "matchDepTypes": ["devDependencies"]
+      "description": "Automerge development dependencies except renovate",
+      "matchDepTypes": ["devDependencies"],
+      "matchPackageNames": ["!renovate"]
+    },
+    {
+      "automerge": true,
+      "description": "Automerge renovate on a Saturday",
+      "matchDepTypes": ["devDependencies"],
+      "matchPackageNames": ["renovate"],
+      "schedule": ["* * * * 6"]
     }
   ],
   "poetry": {
