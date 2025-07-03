@@ -29,7 +29,7 @@
     "prettier": "3.6.2",
     "renovate": "41.16.1",
     "rimraf": "6.0.1",
-    "stylelint": "16.21.0"
+    "stylelint": "16.21.1"
   },
   "type": "module"
 }
