@@ -1,11 +1,15 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:best-practices"],
+  "extends": [
+    "config:best-practices"
+  ],
   "customManagers": [
     {
       "customType": "regex",
       "datasourceTemplate": "github-releases",
-      "managerFilePatterns": [".github/workflows/check.yaml"],
+      "managerFilePatterns": [
+        ".github/workflows/check.yaml"
+      ],
       "matchStrings": [
         "uses: astral-sh\\/setup-uv@\\S+\\s+with: { version: \"(?<currentValue>\\S+)\" }"
       ],
@@ -14,7 +18,9 @@
     {
       "customType": "regex",
       "datasourceTemplate": "github-releases",
-      "managerFilePatterns": [".github/workflows/publish.yaml"],
+      "managerFilePatterns": [
+        ".github/workflows/publish.yaml"
+      ],
       "matchStrings": [
         "\\n\\s+uses: getpelican\\/pelican\\/[.]github\\/workflows\\/github_pages[.]yml@(?<currentValue>\\S+)\\n"
       ],
@@ -25,26 +31,46 @@
     {
       "automerge": true,
       "description": "Automerge upgrades to uv",
-      "matchPackageNames": ["astral-sh/uv", "astral-sh/setup-uv"]
+      "matchPackageNames": [
+        "astral-sh/uv",
+        "astral-sh/setup-uv"
+      ]
     },
     {
       "automerge": true,
       "description": "Automerge allow-listed PyPI packages",
-      "matchDatasources": ["pypi"],
-      "matchPackageNames": ["pytz", "rich", "six", "watchfiles"]
+      "matchDatasources": [
+        "pypi"
+      ],
+      "matchPackageNames": [
+        "pytz",
+        "rich",
+        "six",
+        "watchfiles"
+      ]
     },
     {
       "automerge": true,
       "description": "Automerge development dependencies except renovate",
-      "matchDepTypes": ["devDependencies"],
-      "matchPackageNames": ["!renovate"]
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "matchPackageNames": [
+        "!renovate"
+      ]
     },
     {
       "automerge": true,
       "description": "Automerge renovate on a Saturday",
-      "matchDepTypes": ["devDependencies"],
-      "matchPackageNames": ["renovate"],
-      "schedule": ["* * * * 6"]
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "matchPackageNames": [
+        "renovate"
+      ],
+      "schedule": [
+        "* * * * 6"
+      ]
     }
   ],
   "poetry": {
