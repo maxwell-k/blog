@@ -1,4 +1,8 @@
-<!-- vim: set filetype=markdown.htmlCommentNoSpell.cog : -->
+<!--
+README.md
+Copyright 2024 Keith Maxwell
+SPDX-License-Identifier: CC0-1.0
+-->
 
 To include a source map in the generated CSS file, set the `SOURCEMAP`
 environment variable to `true`.
@@ -22,11 +26,18 @@ Expected output:
 [[[cog
 from subprocess import run
 completed = run(["npm", "exec", "gulp", "--", "--tasks"], capture_output=True, check=True)
-cog.outl("\n```\n"+completed.stdout.decode()+"```\n")
+lines = completed.stdout.decode().splitlines()
+cog.outl()
+cog.outl("```")
+cog.outl("Tasks for …/gulpfile.js")
+for line in lines[1:]:
+    cog.outl(line)
+cog.outl("```")
+cog.outl()
 ]]] -->
 
 ```
-Tasks for ~/github.com/maxwell-k/2024-09-18-pybelfast-workshop/gulpfile.js
+Tasks for …/gulpfile.js
 ├─┬ build
 │ └─┬ <series>
 │   ├── js
@@ -46,10 +57,6 @@ Tasks for ~/github.com/maxwell-k/2024-09-18-pybelfast-workshop/gulpfile.js
       └── pelicanListen
 ```
 
-<!--
-README.md
-Copyright 2024 Keith Maxwell
-SPDX-License-Identifier: CC0-1.0
--->
-
 <!-- [[[end]]] -->
+
+<!-- vim: set filetype=markdown.htmlCommentNoSpell.cog : -->
