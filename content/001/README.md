@@ -114,7 +114,7 @@ Initially this workflow produced the following error:
 > `Branch "main" is not allowed to deploy to github-pages due to environment protection rules.`
 
 To resolve this I configured permissions: go to ‘Settings’, then ‘Environments’,
-then ‘github-pages‛ and make sure ‘main‛ can deploy to this environment.
+then ‘github-pages’ and make sure ‘main’ can deploy to this environment.
 
 <!--
 Commands to commit to git:
