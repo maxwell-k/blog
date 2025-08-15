@@ -5,7 +5,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4
       - name: Fail if generated CSS is different to committed CSS
         run: npm ci && npm exec gulp && git diff --exit-code
       - name: Run prettier on all CSS, HTML, JavaScript and JSON files
