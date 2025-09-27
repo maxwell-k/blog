@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
       - name: Fail if generated CSS is different to committed CSS
-        run: npm ci && npm exec gulp && git diff --exit-code
+        run: npm version && npm ci && npm exec gulp && git diff --exit-code
       - name: Run prettier on all CSS, HTML, JavaScript and JSON files
         run: >-
           npm exec --yes prettier -- --check
