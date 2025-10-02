@@ -28,7 +28,6 @@ DEFAULT_PAGINATION = False
 IGNORE_FILES = [".*.sw?", ".keep", "*.license"]
 
 STATIC_PATHS = [
-    "images",
     "extra",
 ]
 EXTRA_PATH_METADATA = {
