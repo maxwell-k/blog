@@ -8,26 +8,20 @@ jobs:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
       - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with: { node-version-file: package.json }
-      - name: Update npm to match package.json
-        run: npm install --global "npm@$(jq -r .engines.npm package.json)"
-      - name: Fail if generated CSS is different to committed CSS
-        run: npm version && npm ci && npm exec gulp && git diff --exit-code
-      - name: Run prettier on all CSS, HTML, JavaScript and JSON files
-        run: >-
+      - run: npm install --global "npm@$(jq -r .engines.npm package.json)"
+      - run: npm version && npm ci && npm exec gulp && git diff --exit-code
+      - run: >-
           npm exec --yes prettier -- --check
           '**.css'
           '**.html'
           '**.js'
           '**.json'
-      - name: Run prettier on all Markdown files
-        run: >-
+      - run: >-
           npm exec --yes prettier -- --check --prose-wrap=always
           '**.md'
-      - name: Check the renovate configuration
-        run: npm exec --yes --package renovate -- renovate-config-validator
+      - run: npm exec --yes --package renovate -- renovate-config-validator
       - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
-      - name: Run Pelican
-        run: >-
+      - run: >-
           uv tool run --with-requirements=requirements.txt
           pelican --fatal=warnings
       - run: uv tool run yamllint .github
