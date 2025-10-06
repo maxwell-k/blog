@@ -44,7 +44,7 @@
       "description": "Automerge renovate on a Saturday",
       "matchDepTypes": ["devDependencies"],
       "matchPackageNames": ["renovate"],
-      "schedule": ["* * * * 6"]
+      "schedule": ["* 0-3 * * 6"]
     }
   ],
   "poetry": {
