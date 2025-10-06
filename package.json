@@ -31,5 +31,15 @@
     "rimraf": "6.0.1",
     "stylelint": "16.25.0"
   },
-  "type": "module"
+  "type": "module",
+  "prettier": {
+    "overrides": [
+      {
+        "files": "**.md",
+        "options": {
+          "proseWrap": "always"
+        }
+      }
+    ]
+  }
 }
