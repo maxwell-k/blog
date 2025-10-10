@@ -45,6 +45,8 @@ const pelican = (cb) => {
   });
 };
 const build = series(js, css, removeOutput, pelican);
+build.description =
+  "Write processed CSS, HTML and JavaScript to the file system.";
 const watchCss = () => watch(paths.cssInputs, css);
 const watchJs = () => watch(paths.jsInput, js);
 const pelicanListen = (cb) => {
@@ -59,7 +61,9 @@ const serve = series(
   removeOutput,
   parallel(watchCss, watchJs, pelicanListen),
 );
+serve.description = "Serve at http://127.0.0.1:8000 and watch for changes.";
 const default_ = parallel(css, js);
+default_.description = "Write processed CSS and JavaScript to the file system.";
 
 export { build, serve };
 export default default_;
