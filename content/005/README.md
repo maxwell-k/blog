@@ -21,8 +21,9 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 **Why?** To better understand rate limiting in NGINX; working through this 2017
 blog post: <https://blog.nginx.org/blog/rate-limiting-nginx>.
 
-**What?** Set up an Ubuntu 20.04 LTS (Focal Fossa) container running NGINX. Load
-test using the [artillery](https://www.artillery.io/) command-line-interface.
+**What?** Set up an Ubuntu 20.04 Long Term Support (Focal Fossa) container
+running NGINX. Load test using the [artillery](https://www.artillery.io/)
+command-line-interface.
 
 **Prerequisites:**
 
