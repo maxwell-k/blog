@@ -4,11 +4,16 @@ Copyright 2024 Keith Maxwell
 SPDX-License-Identifier: CC0-1.0
 -->
 
+Command to setup this shell to use [Fast Node Manager] and install the required
+Node packages:
+
+    eval "$(fnm env --shell zsh)" && fnm use && npm ci
+
 To include a source map in the generated CSS file, set the `SOURCEMAP`
 environment variable to `true`.
 
-Command to run a development server on <http://127.0.0.1:8000> watching for
-changes and source maps:
+Command to run a Pelican development server with source maps on
+<http://127.0.0.1:8000> that watches for changes:
 
     SOURCEMAP=true npm exec gulp serve
 
@@ -58,5 +63,7 @@ Tasks for …/gulpfile.js
 ```
 
 <!-- [[[end]]] -->
+
+[Fast Node Manager]: https://github.com/Schniz/fnm
 
 <!-- vim: set filetype=markdown.htmlCommentNoSpell.cog : -->
