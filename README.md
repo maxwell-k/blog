@@ -43,17 +43,17 @@ cog.outl()
 
 ```
 Tasks for …/gulpfile.js
-├─┬ build
+├─┬ build    Write processed CSS, HTML and JavaScript to the file system.
 │ └─┬ <series>
 │   ├── js
 │   ├── css
 │   ├── removeOutput
 │   └── pelican
-├─┬ default
+├─┬ default  Write processed CSS and JavaScript to the file system.
 │ └─┬ <parallel>
 │   ├── css
 │   └── js
-└─┬ serve
+└─┬ serve    Serve at http://127.0.0.1:8000 and watch for changes.
   └─┬ <series>
     ├─┬ <parallel>
     │ ├── js
