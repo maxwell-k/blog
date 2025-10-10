@@ -17,7 +17,7 @@ Command to run a Pelican development server with source maps on
 
     SOURCEMAP=true npm exec gulp serve
 
-Command to process CSS:
+Command to process CSS and JavaScript:
 
     npm exec gulp
 
@@ -49,7 +49,10 @@ Tasks for …/gulpfile.js
 │   ├── css
 │   ├── removeOutput
 │   └── pelican
-├── default
+├─┬ default
+│ └─┬ <parallel>
+│   ├── css
+│   └── js
 └─┬ serve
   └─┬ <series>
     ├─┬ <parallel>

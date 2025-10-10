@@ -59,9 +59,10 @@ const serve = series(
   removeOutput,
   parallel(watchCss, watchJs, pelicanListen),
 );
+const default_ = parallel(css, js);
 
 export { build, serve };
-export default css;
+export default default_;
 
 // gulpfile.js
 // Copyright 2024 Keith Maxwell
