@@ -47,7 +47,7 @@ with `resolved` [integrated].
 [integrated]:
   https://linuxcontainers.org/incus/docs/main/howto/network_bridge_resolved/
 
-## Launch and configure the OpenWRT container
+### Launch and configure the OpenWRT container
 
 The first step is to launch and configure the container:
 
@@ -81,7 +81,7 @@ Command to launch `o1`:
     && incus exec o1 -- uci commit dhcp \
     && incus exec o1 -- service dnsmasq reload
 
-## Use the OpenWRT container for DNS on the host
+### Use the OpenWRT container for DNS on the host
 
 Commands to point `systemd-resolved` on the host to `o1`:
 
@@ -89,7 +89,7 @@ Commands to point `systemd-resolved` on the host to `o1`:
     | sudo tee -a /etc/systemd/resolved.conf \
     && sudo systemctl restart systemd-resolved
 
-## Check a few DNS queries
+### Check a few DNS queries
 
 Commands to query DNS:
 
@@ -102,7 +102,7 @@ Expected output:
     8.8.8.8
     8.8.4.4
 
-## Clean up
+### Clean up
 
 Commands to manually remove `o1` from the hosts DNS configuration:
 
@@ -114,7 +114,7 @@ Commands to clean up:
     incus stop o1 \
     && incus delete o1
 
-## Troubleshooting
+### Troubleshooting
 
 Commands to turn on logging of DNS queries in the container:
 
@@ -133,7 +133,7 @@ Command to run a DNS query skipping the local `systemd-resolved` cache:
 
     resolvectl query --cache=no c1.example.keithmaxwell.uk
 
-## Explaining the configuration files
+### Explaining the configuration files
 
 The `dnsmasq` service uses the DNS servers configured for the WAN via
 `/tmp/resolv.conf.d/resolv.conf.auto`.
