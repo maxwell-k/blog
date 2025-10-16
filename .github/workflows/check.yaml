@@ -20,8 +20,8 @@ jobs:
       - run: npm exec --yes --package renovate -- renovate-config-validator
       - uses: astral-sh/setup-uv@3259c6206f993105e3a61b142c2d97bf4b9ef83d # v7
       - run: >-
-          uv tool run --with-requirements=requirements.txt
-          pelican --fatal=warnings
+          uv tool run --with-requirements=requirements.txt pelican
+          --fatal=warnings
       - run: uv tool run yamllint .github
       - run: uv tool run reuse lint
 # .github/workflows/check.yaml
