@@ -11,7 +11,10 @@ articles_page.object_list %}
   </header>
   <section id="content" itemprop="mainEntityOfPage">
     {{ article.content }}
-    <hr />
   </section>
+  <footer>
+    {% include "fragments/tags.html" %}
+  </footer>
+  <hr />
 </article>
 {% endfor %} {% endblock %}
