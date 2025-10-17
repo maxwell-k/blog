@@ -124,12 +124,12 @@ article header p {
   font-family: "Source Serif Pro", serif;
 }
 
-#content h1,
-#content h2,
-#content h3,
-#content h4,
-#content h5,
-#content h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Source Sans Pro", sans-serif;
 }
 
