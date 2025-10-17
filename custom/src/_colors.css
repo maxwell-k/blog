@@ -1,5 +1,5 @@
 a {
-  color: #159957;
+  color: var(--colour-primary);
 }
 
 h1 a,
@@ -13,8 +13,8 @@ h6 a {
 
 /* Moss */
 .site-header {
-  background: #134e5e;
-  background: linear-gradient(to left, #134e5e, #71b280);
+  background: var(--colour-right);
+  background: linear-gradient(to left, var(--colour-right), var(--colour-left));
 }
 
 .site-header a {

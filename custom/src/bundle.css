@@ -9,6 +9,12 @@
 @import "_buttons.css";
 @import "_tags.css";
 
+:root {
+  --colour-primary: #159957;
+  --colour-left: #71b280;
+  --colour-right: #134e5e;
+}
+
 /* custom/src/bundle.css
  * Copyright (c) 2016 Eemil Väisänen, 2024 Keith Maxwell
  * SPDX-License-Identifier: MIT */
