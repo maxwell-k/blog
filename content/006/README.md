@@ -1,7 +1,6 @@
 ---
 title: Run Renovate locally
 date: 2025-03-26T00:00:00.000Z
-category: Computers
 ---
 
 <!-- toc -->

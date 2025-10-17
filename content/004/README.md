@@ -1,7 +1,6 @@
 ---
 title: Configuration as code for DNS
 date: 2024-11-06
-category: Computers
 ---
 
 I've wanted to move the DNS configuration for my domain into an open source

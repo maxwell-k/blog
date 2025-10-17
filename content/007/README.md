@@ -1,7 +1,6 @@
 ---
 title: How I double check writing a disk image?
 date: 2025-07-06
-category: Computers
 ---
 
 While I know [USB flash drives] are [unreliable], I still use them as
