@@ -8,14 +8,6 @@ endblock %} {% block content %}
   <section id="content" itemprop="mainEntityOfPage">
     {{ article.content }}
   </section>
-  <footer>
-    {% if article.tags %}
-    <div class="tags">
-      {% for tag in article.tags %}
-      <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag | escape }}</a>
-      {% endfor %}
-    </div>
-    {% endif %}
-  </footer>
+  <footer>{% include "fragments/tags.html" %}</footer>
 </article>
 {% endblock %}
