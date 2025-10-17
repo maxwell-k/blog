@@ -12,12 +12,12 @@ h6 a {
 }
 
 /* Moss */
-.site-header {
+body > header {
   background: var(--colour-right);
   background: linear-gradient(to left, var(--colour-right), var(--colour-left));
 }
 
-.site-header a {
+body > header a {
   color: white;
 }
 
