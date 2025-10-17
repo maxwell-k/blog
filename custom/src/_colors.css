@@ -14,7 +14,6 @@ h6 a {
 /* Moss */
 .site-header {
   background: #134e5e;
-  background: -webkit-linear-gradient(to left, #134e5e, #71b280);
   background: linear-gradient(to left, #134e5e, #71b280);
 }
 
