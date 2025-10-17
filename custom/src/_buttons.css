@@ -7,7 +7,7 @@
 
 .button:hover {
   color: white;
-  background-color: #159957;
+  background-color: var(--colour-primary);
 }
 
 div.highlight button.clipboard {
