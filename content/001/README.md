@@ -1,7 +1,6 @@
 ---
 title: First post at the PyBelfast workshop
 date: 2024-09-18
-category: Computers
 ---
 
 <!--

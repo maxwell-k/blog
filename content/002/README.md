@@ -1,7 +1,6 @@
 ---
 title: Install soft-serve on Debian
 date: 2024-09-29T00:00:00.000Z
-category: Computers
 ---
 
 <!--

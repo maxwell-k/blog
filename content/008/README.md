@@ -1,7 +1,6 @@
 ---
 title: How does Fedora build disk images?
 date: 2025-07-20
-category: Computers
 ---
 
 <!--

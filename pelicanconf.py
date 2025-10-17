@@ -40,6 +40,7 @@ MARKDOWN = {
 
 DIRECT_TEMPLATES = ["index"]
 AUTHOR_SAVE_AS = ""
+CATEGORY_SAVE_AS = ""
 
 # pelicanconf.py
 # Copyright 2024 Keith Maxwell

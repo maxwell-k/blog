@@ -1,7 +1,6 @@
 ---
 title: How do I use the Zig build system to install ncdu?
 date: 2025-10-16
-category: Computers
 ---
 
 <!--

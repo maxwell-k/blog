@@ -1,7 +1,6 @@
 ---
 title: Serial cable for Raspberry Pi 2 B
 date: 2024-11-05
-category: Computers
 ---
 
 I have two or three Raspberry Pi 2 B single board computers. I've had them a

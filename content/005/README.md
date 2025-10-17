@@ -1,7 +1,6 @@
 ---
 title: Exploring rate limiting with NGINX
 date: 2025-02-06T00:00:00.000Z
-category: Computers
 ---
 
 <!--

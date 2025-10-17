@@ -1,7 +1,6 @@
 ---
 title: How do I use Dnsmasq to resolve test domains?
 date: 2025-10-15
-category: Computers
 ---
 
 <!--
