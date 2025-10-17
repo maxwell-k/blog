@@ -5,7 +5,7 @@ body > header {
   text-align: center;
 }
 
-.main-content {
+body > section {
   padding: 0 1em;
 }
 
@@ -21,7 +21,7 @@ body > footer {
     padding: 3rem 4rem;
   }
 
-  .main-content {
+  body > section {
     padding: 0 4rem;
   }
 
@@ -37,7 +37,7 @@ body > footer {
     padding: 5rem 6rem;
   }
 
-  .main-content {
+  body > section {
     max-width: 54rem;
     padding: 0 6rem;
     margin: 0 auto;
