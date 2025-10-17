@@ -5,7 +5,7 @@ const delay = 2000;
 document.querySelectorAll("div.highlight > pre > code").forEach((node) => {
   node.parentNode.parentNode.insertAdjacentHTML(
     "beforeend",
-    '<button class="clipboard">Copy 📋</button>',
+    "<button>Copy 📋</button>",
   );
 });
 
@@ -35,7 +35,7 @@ function copy(event) {
 }
 
 document
-  .querySelectorAll("button.clipboard")
+  .querySelectorAll("button")
   .forEach((e) => e.addEventListener("click", copy));
 
 // custom/src/copy.js
