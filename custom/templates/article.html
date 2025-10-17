@@ -5,9 +5,7 @@ endblock %} {% block content %}
     <h2 itemprop="headline" id="{{ article.slug }}">{{ article.title }}</h2>
     {% include "fragments/posted.html" %}
   </header>
-  <section id="content" itemprop="mainEntityOfPage">
-    {{ article.content }}
-  </section>
+  <section itemprop="mainEntityOfPage">{{ article.content }}</section>
   <footer>{% include "fragments/tags.html" %}</footer>
 </article>
 {% endblock %}
