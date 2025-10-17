@@ -9,12 +9,8 @@ articles_page.object_list %}
     </h2>
     {% include "fragments/posted.html" %}
   </header>
-  <section id="content" itemprop="mainEntityOfPage">
-    {{ article.content }}
-  </section>
-  <footer>
-    {% include "fragments/tags.html" %}
-  </footer>
+  <section itemprop="mainEntityOfPage">{{ article.content }}</section>
+  <footer>{% include "fragments/tags.html" %}</footer>
   <hr />
 </article>
 {% endfor %} {% endblock %}
