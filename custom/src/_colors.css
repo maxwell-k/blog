@@ -25,7 +25,7 @@ body > footer {
   color: rgba(0, 0, 0, 0.55);
 }
 
-.tags a {
+article > footer a {
   background-color: rgba(0, 0, 0, 0.07);
   color: rgba(0, 0, 0, 0.6);
 }
