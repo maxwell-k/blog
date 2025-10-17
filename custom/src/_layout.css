@@ -1,6 +1,6 @@
 /* Mobile */
 
-.site-header {
+body > header {
   padding: 2rem 1rem;
   text-align: center;
 }
@@ -17,7 +17,7 @@
 /* Tablets */
 
 @media screen and (min-width: 42em) and (max-width: 54em) {
-  .site-header {
+  body > header {
     padding: 3rem 4rem;
   }
 
@@ -33,7 +33,7 @@
 /* Desktop */
 
 @media screen and (min-width: 54em) {
-  .site-header {
+  body > header {
     padding: 5rem 6rem;
   }
 
@@ -51,7 +51,7 @@
 }
 
 @media print {
-  .site-header {
+  body > header {
     padding: 0.5rem 0rem;
   }
 }
