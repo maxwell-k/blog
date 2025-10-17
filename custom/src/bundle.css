@@ -7,7 +7,6 @@
 
 @import "_tables.css";
 @import "_buttons.css";
-@import "_tags.css";
 
 :root {
   --colour-primary: #159957;
