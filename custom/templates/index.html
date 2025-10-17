@@ -10,14 +10,8 @@ articles_page.object_list %}
     {% include "fragments/posted.html" %}
   </header>
   <section id="content" itemprop="mainEntityOfPage">
-    {% if summarise or article.metadata['summary'] or SUMMARY_MAX_LENGTH %} {{
-    article.summary }}
-    <a class="button" href="{{ SITEURL }}/{{ article.url }}#{{ article.slug }}"
-      >Continue reading</a
-    >
-    {% else %} {{ article.content }}
+    {{ article.content }}
     <hr />
-    {% endif %}
   </section>
 </article>
 {% endfor %} {% endblock %}
