@@ -134,18 +134,6 @@ response status code.
 
 ### Configure and demonstrate another HTTP response status code
 
-<!--
-Command to make the below change:
-
-    incus file pull c1/etc/nginx/conf.d/c1.conf c1.conf.0 \
-    && incus file push c1.conf.1 c1/etc/nginx/conf.d/c1.conf
-
-Command to recreate the diff:
-
-    diff --label c1.conf --label c1.conf -u c1.conf.0 c1.conf.1
-
--->
-
 Add another directive to the location block:
 
 ```diff
