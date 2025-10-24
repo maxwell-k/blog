@@ -17,8 +17,8 @@ provider].
   https://en.wikipedia.org/wiki/List_of_managed_DNS_providers
 [Amazon Web Services]: https://aws.amazon.com/
 
-I'm aware of [a range] of specialised tools. I've ruled out Terraform because it
-isn't [open source]. Below I share some brief notes that I made about the
+I'm aware of [a range] of specialised tools. I have ruled out Terraform because
+it isn't [open source]. Below I share some brief notes that I made about the
 options:
 
 [open source]: https://opensource.org/osd

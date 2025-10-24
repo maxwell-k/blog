@@ -1,5 +1,5 @@
 ---
-title: How I double check writing a disk image?
+title: How I double check writing a disk image
 date: 2025-07-06
 ---
 
