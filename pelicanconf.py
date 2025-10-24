@@ -38,7 +38,7 @@ MARKDOWN = {
     "output_format": "html5",
 }
 
-DIRECT_TEMPLATES = ["index", "tags", "archives"]
+DIRECT_TEMPLATES = ["index", "tags"]
 AUTHOR_SAVE_AS = ""
 
 # pelicanconf.py
