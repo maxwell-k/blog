@@ -22,7 +22,7 @@ jobs:
       - run: >-
           uv tool run --with-requirements=requirements.txt pelican
           --fatal=warnings
-      - run: uv tool run yamllint .github
+      - run: uv tool run yamllint .
       - run: uv tool run reuse lint
 # .github/workflows/check.yaml
 # Copyright 2024 Keith Maxwell
