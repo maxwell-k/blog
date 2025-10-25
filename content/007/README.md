@@ -46,8 +46,7 @@ This matches the values in the corresponding [checksum file]:
     # Fedora-Workstation-Live-42-1.1.x86_64.iso: 2398523392 bytes
     SHA256 (Fedora-Workstation-Live-42-1.1.x86_64.iso) = 98958d80e8a80eabe61275337f969c8e2212adc3a223d9bbdab9411bb1c95cba
 
-[checksum file]:
-  https://download.fedoraproject.org/pub/fedora/linux/releases/42/Workstation/x86_64/iso/Fedora-Workstation-42-1.1-x86_64-CHECKSUM
+[checksum file]: https://download.fedoraproject.org/pub/fedora/linux/releases/42/Workstation/x86_64/iso/Fedora-Workstation-42-1.1-x86_64-CHECKSUM
 [unreliable]: https://www.theregister.com/2024/02/07/failed_usb_sticks/
 [USB flash drives]: https://en.wikipedia.org/wiki/USB_flash_drive
 

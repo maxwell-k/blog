@@ -88,8 +88,7 @@ Then browse to <http://127.0.0.1:8000/>.
 
 [yaml-metadata plugin]: https://github.com/pelican-plugins/yaml-metadata
 [my editor configuration]: https://codeberg.org/maxwell-k/vimfiles
-[depends on]:
-  https://github.com/pelican-plugins/yaml-metadata/blob/main/pyproject.toml#L29
+[depends on]: https://github.com/pelican-plugins/yaml-metadata/blob/main/pyproject.toml#L29
 
 The command above may output a warning:
 
@@ -128,7 +127,6 @@ Commands to commit to git:
 Allowing manually running the workflow by adding `workflow_dispatch:` is helpful
 for testing the repository settings.
 
-[official]:
-  https://docs.getpelican.com/en/latest/tips.html#publishing-to-github-pages-using-a-custom-github-actions-workflow
+[official]: https://docs.getpelican.com/en/latest/tips.html#publishing-to-github-pages-using-a-custom-github-actions-workflow
 
 <!-- vim: set filetype=markdown.htmlCommentNoSpell : -->

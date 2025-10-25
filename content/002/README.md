@@ -25,8 +25,7 @@ Pre-requisites: curl, GPG, Incus and the Incus / `systemd-resolved`
 
 [LXD]: https://canonical.com/lxd
 [Incus]: https://linuxcontainers.org/incus/
-[integration]:
-  https://linuxcontainers.org/incus/docs/main/howto/network_bridge_resolved/
+[integration]: https://linuxcontainers.org/incus/docs/main/howto/network_bridge_resolved/
 
 ### Process
 

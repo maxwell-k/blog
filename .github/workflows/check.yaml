@@ -10,13 +10,7 @@ jobs:
         with: { node-version-file: package.json }
       - run: npm install --global "npm@$(jq -r .engines.npm package.json)"
       - run: npm version && npm ci && npm exec gulp && git diff --exit-code
-      - run: >-
-          npm exec --yes prettier -- --check
-          '**.css'
-          '**.html'
-          '**.js'
-          '**.json'
-          '**.md'
+      - run: npm exec --no dprint check
       - run: npm exec --no renovate-config-validator
       - uses: astral-sh/setup-uv@2ddd2b9cb38ad8efd50337e8ab201519a34c9f24 # v7
       - run: >-

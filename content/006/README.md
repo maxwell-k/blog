@@ -44,8 +44,7 @@ straightforward to ensure an up to date, pinned, build backend is specified in
 suitable credentials.
 
 [setuptools]: https://pypi.org/project/setuptools/#history
-[dropped]:
-  https://setuptools.pypa.io/en/stable/history.html#deprecations-and-removals
+[dropped]: https://setuptools.pypa.io/en/stable/history.html#deprecations-and-removals
 [Renovate]: https://github.com/renovatebot/renovate/
 
 **Prerequisites:**

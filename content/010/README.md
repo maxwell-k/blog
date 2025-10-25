@@ -22,8 +22,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 [first]: https://packages.fedoraproject.org/pkgs/ncdu/ncdu/
 [Ghostty]: https://ghostty.org/
 [Zig]: https://ziglang.org/
-[Uber using]:
-  https://www.uber.com/en-GB/blog/bootstrapping-ubers-infrastructure-on-arm64-with-zig/
+[Uber using]: https://www.uber.com/en-GB/blog/bootstrapping-ubers-infrastructure-on-arm64-with-zig/
 
 I have an old Linux system that I intend to backup and then update. Before
 performing a manual backup I like to understand disk usage. I have used a few

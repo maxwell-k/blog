@@ -13,8 +13,7 @@ of an infrastructure as code solution see are: traceability and portability.
 Portability would help with a move away from AWS to another [managed DNS
 provider].
 
-[managed DNS provider]:
-  https://en.wikipedia.org/wiki/List_of_managed_DNS_providers
+[managed DNS provider]: https://en.wikipedia.org/wiki/List_of_managed_DNS_providers
 [Amazon Web Services]: https://aws.amazon.com/
 
 I'm aware of [a range] of specialised tools. I have ruled out Terraform because
@@ -48,8 +47,7 @@ options:
 - MIT licensed
 - project appears active, originated at "StackOverflow / StackExchange"
 
-[detailed documentation]:
-  https://docs.dnscontrol.org/getting-started/getting-started
+[detailed documentation]: https://docs.dnscontrol.org/getting-started/getting-started
 
 <https://github.com/Netflix/denominator>
 
