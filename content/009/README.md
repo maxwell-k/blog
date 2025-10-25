@@ -43,8 +43,7 @@ This rest of this post assumes that Incus is already installed and configured,
 with `resolved` [integrated].
 
 [Incus]: https://linuxcontainers.org/incus/
-[integrated]:
-  https://linuxcontainers.org/incus/docs/main/howto/network_bridge_resolved/
+[integrated]: https://linuxcontainers.org/incus/docs/main/howto/network_bridge_resolved/
 
 ### Launch and configure the OpenWRT container
 

@@ -75,11 +75,9 @@ I gather that in the future Fedora may use Image Builder.
 [fedora.conf]: https://pagure.io/pungi-fedora/blob/main/f/fedora.conf
 [pungi-fedora]: https://pagure.io/pungi-fedora
 [OSTree]: https://en.wikipedia.org/wiki/OSTree
-[doesn't]:
-  https://discussion.fedoraproject.org/t/f42-change-proposal-koji-uses-red-hat-image-builder-locally-system-wide/142031/7
+[doesn't]: https://discussion.fedoraproject.org/t/f42-change-proposal-koji-uses-red-hat-image-builder-locally-system-wide/142031/7
 [fedora-kiwi-descriptions]: https://pagure.io/fedora-kiwi-descriptions/
 [PR]: https://pagure.io/pungi-fedora/pull-request/1419
-[some confusion]:
-  https://www.reddit.com/r/Fedora/comments/1g5qt1g/confusing_image_release_ecosystem/
+[some confusion]: https://www.reddit.com/r/Fedora/comments/1g5qt1g/confusing_image_release_ecosystem/
 [YubiKey Guide]: https://github.com/drduh/YubiKey-Guide
 [first release]: https://fedoraproject.org/wiki/Changes/LivemediaCreator

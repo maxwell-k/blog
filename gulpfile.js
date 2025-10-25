@@ -1,12 +1,12 @@
-import { rimraf } from "rimraf";
-import { spawn } from "node:child_process";
-import { dest, parallel, series, src, watch } from "gulp";
-import cssnano from "cssnano";
-import stylelint from "stylelint";
 import postcssBundler from "@csstools/postcss-bundler";
+import cssnano from "cssnano";
+import { dest, parallel, series, src, watch } from "gulp";
 import postcss from "gulp-postcss";
-import process from "node:process";
 import uglify from "gulp-uglify";
+import { spawn } from "node:child_process";
+import process from "node:process";
+import { rimraf } from "rimraf";
+import stylelint from "stylelint";
 
 const sourcemaps = process.env.SOURCEMAP === "true";
 
@@ -45,13 +45,12 @@ const pelican = (cb) => {
   });
 };
 const build = series(js, css, removeOutput, pelican);
-build.description =
-  "Write processed CSS, HTML and JavaScript to the file system.";
+build.description = "Write processed CSS, HTML and JavaScript to the file system.";
 const watchCss = () => watch(paths.cssInputs, css);
 const watchJs = () => watch(paths.jsInput, js);
 const pelicanListen = (cb) => {
   const cmd = _spawn(["--autoreload", "--listen"]);
-  cmd.on("close", function (code) {
+  cmd.on("close", function(code) {
     console.log("Server exited with code " + code);
     cb(code);
   });

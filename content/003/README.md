@@ -21,17 +21,12 @@ explanation about serial communication.
 
 I have ordered a couple of [cases] too.
 
-[cases]:
-  https://shop.cyntech.co.uk/products/raspberry-pi-case-model-b-compatible
+[cases]: https://shop.cyntech.co.uk/products/raspberry-pi-case-model-b-compatible
 [forum post]: https://forums.raspberrypi.com/viewtopic.php?t=177360#p1130559
-[schematic]:
-  https://datasheets.raspberrypi.com/rpi2/raspberry-pi-2-b-reduced-schematics.pdf
-[2021 blog post]:
-  https://rickcarlino.com/2021/practices-that-make-raspberry-pi-work-easier.html
-[USB to serial converter]:
-  https://thepihut.com/products/usb-to-ttl-serial-cable-debug-console-cable-for-raspberry-pi
-[written about the same topic]:
-  https://www.jeffgeerling.com/blog/2021/attaching-raspberry-pis-serial-console-uart-debugging
+[schematic]: https://datasheets.raspberrypi.com/rpi2/raspberry-pi-2-b-reduced-schematics.pdf
+[2021 blog post]: https://rickcarlino.com/2021/practices-that-make-raspberry-pi-work-easier.html
+[USB to serial converter]: https://thepihut.com/products/usb-to-ttl-serial-cable-debug-console-cable-for-raspberry-pi
+[written about the same topic]: https://www.jeffgeerling.com/blog/2021/attaching-raspberry-pis-serial-console-uart-debugging
 
 <!--
 Copyright 2024 Keith Maxwell

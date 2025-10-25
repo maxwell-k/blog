@@ -31,8 +31,7 @@ command-line-interface.
 2. Local networking [configured] to integrate Incus and `resolved`.
 
 [Incus]: https://linuxcontainers.org/incus/
-[configured]:
-  https://linuxcontainers.org/incus/docs/main/howto/network_bridge_resolved/
+[configured]: https://linuxcontainers.org/incus/docs/main/howto/network_bridge_resolved/
 
 ### A system container
 
