@@ -1,10 +1,10 @@
-import postcssBundler from "@csstools/postcss-bundler";
-import cssnano from "cssnano";
+import fs from "fs/promises";
 import { dest, parallel, series, src, watch } from "gulp";
-import postcss from "gulp-postcss";
 import uglify from "gulp-uglify";
+import { bundle } from "lightningcss";
 import { spawn } from "node:child_process";
 import process from "node:process";
+import path from "path";
 import { rimraf } from "rimraf";
 import stylelint_ from "stylelint";
 
@@ -32,10 +32,22 @@ async function stylelint() {
   }
 }
 
-const css_ = () =>
-  src(paths.css[0], { sourcemaps })
-    .pipe(postcss([postcssBundler, cssnano]))
-    .pipe(dest(paths._static, { sourcemaps }));
+async function css_() {
+  const target = path.join(paths._static, path.basename(paths.css[0]));
+  const { code, map } = bundle({
+    filename: paths.css[0],
+    minify: !sourcemaps,
+    sourceMap: sourcemaps,
+  });
+  await fs.writeFile(target, code);
+  if (map) {
+    let trailer = `\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,`;
+    trailer += map.toString("base64");
+    trailer += ` */\n`;
+    await fs.appendFile(target, trailer);
+  }
+}
+
 const css = parallel(css_, stylelint);
 const js = () =>
   src(paths.jsInput, { sourcemaps })

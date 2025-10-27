@@ -24,9 +24,8 @@
     "eslint": "9.38.0",
     "globals": "16.4.0",
     "gulp": "5.0.1",
-    "gulp-postcss": "10.0.0",
     "gulp-uglify": "3.0.2",
-    "postcss": "8.5.6",
+    "lightningcss": "^1.30.2",
     "renovate": "41.159.3",
     "rimraf": "6.0.1",
     "stylelint": "16.25.0"
