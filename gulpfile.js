@@ -12,8 +12,7 @@ const sourcemaps = process.env.SOURCEMAP === "true";
 
 const paths = {
   jsInput: "theme/src/copy.js",
-  cssInputs: ["theme/src/*.css"],
-  cssBundle: ["theme/src/bundle.css"],
+  css: ["theme/src/main.css", "theme/src/_*.css"],
   _static: "theme/static",
   output: "output",
 };
@@ -23,7 +22,7 @@ function _spawn(extraArgs = []) {
 }
 
 const css = () =>
-  src(paths.cssBundle, { sourcemaps })
+  src(paths.css[0], { sourcemaps })
     .pipe(postcss([stylelint, postcssBundler, cssnano]))
     .pipe(dest(paths._static, { sourcemaps }));
 const js = () =>
@@ -40,7 +39,7 @@ const pelican = (cb) => {
 };
 const build = series(js, css, removeOutput, pelican);
 build.description = "Write processed CSS, HTML and JavaScript to the file system.";
-const watchCss = () => watch(paths.cssInputs, css);
+const watchCss = () => watch(paths.css, css);
 const watchJs = () => watch(paths.jsInput, js);
 const pelicanListen = (cb) => {
   const cmd = _spawn(["--autoreload", "--listen"]);
