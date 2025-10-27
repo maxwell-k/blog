@@ -71,6 +71,11 @@ div.highlight {
   overflow: auto;
 }
 
+ul,
+ol {
+  padding-left: 2rem;
+}
+
 /* src/_layout.css
  * Copyright (c) 2016 Eemil Väisänen, 2024 Keith Maxwell
  * SPDX-License-Identifier: MIT */
