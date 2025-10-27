@@ -38,6 +38,6 @@ document
   .querySelectorAll("button")
   .forEach((e) => e.addEventListener("click", copy));
 
-// theme/src/copy.js
+// src/copy.js
 // Copyright 2024 Keith Maxwell
 // SPDX-License-Identifier: MPL-2.0
