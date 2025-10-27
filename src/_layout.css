@@ -11,7 +11,6 @@ body > section {
 
 body > footer {
   padding: 0 1em;
-  font-size: 1rem;
 }
 
 /* Tablets */
@@ -57,12 +56,19 @@ body > footer {
 }
 
 article > footer a {
-  font-size: 0.8em;
   border-radius: 0.3em;
   border: none;
   display: inline-block;
   padding: 0.4em 0.75em;
   margin-top: 0.4rem;
+}
+
+div.highlight {
+  padding-top: 1.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-bottom: 0;
+  overflow: auto;
 }
 
 /* src/_layout.css

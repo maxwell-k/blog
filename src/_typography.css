@@ -17,14 +17,6 @@ body {
   font-size: 1.25em;
 }
 
-div.highlight {
-  padding-top: 1.5em;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  padding-bottom: 0;
-  overflow: auto;
-}
-
 h1,
 h2,
 h3,
@@ -114,6 +106,14 @@ article header p {
   font-family: "Source Serif Pro", serif;
 }
 
+body > footer {
+  font-size: 1rem;
+}
+
+article > footer a {
+  font-size: 0.8em;
+}
+
 h1,
 h2,
 h3,
@@ -125,6 +125,24 @@ h6 {
 
 body > header h1 {
   font-size: 1.75rem;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+table {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+table caption {
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+th {
+  font-weight: bold;
 }
 
 /* Tablets */
