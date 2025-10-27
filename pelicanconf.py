@@ -5,6 +5,7 @@ SITEURL = ""
 SUMMARY_MAX_LENGTH = 0
 
 THEME = "theme"
+THEME_STATIC_DIR = ""
 PATH = "content"
 
 TIMEZONE = "Europe/London"
