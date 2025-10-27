@@ -8,12 +8,6 @@ table {
   border-spacing: 0;
 }
 
-table caption {
-  margin: 1rem 0 0.5rem 0;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.55);
-}
-
 th,
 td {
   border: 1px solid #e9ebec;
