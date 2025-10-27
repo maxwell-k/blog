@@ -12,7 +12,7 @@ const sourcemaps = process.env.SOURCEMAP === "true";
 
 const paths = {
   jsInput: "src/copy.js",
-  css: ["theme/src/main.css", "theme/src/_*.css"],
+  css: ["src/main.css", "src/_*.css"],
   _static: "theme/static",
   output: "output",
 };
