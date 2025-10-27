@@ -1,3 +1,4 @@
+#!/usr/bin/env -S uv tool run --with-requirements=requirements.txt pelican --settings
 AUTHOR = "Keith Maxwell"
 SITENAME = "2024-09-18-pybelfast-workshop"
 SITEURL = ""
