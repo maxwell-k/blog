@@ -10,7 +10,7 @@ export default [
         ...globals.browser,
       },
     },
-    files: "custom/static/copy.js",
+    files: "theme/static/copy.js",
   },
 ];
 

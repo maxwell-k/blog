@@ -1,9 +1,9 @@
 AUTHOR = "Keith Maxwell"
 SITENAME = "2024-09-18-pybelfast-workshop"
 SITEURL = ""
-THEME = "./custom"
 SUMMARY_MAX_LENGTH = 0
 
+THEME = "theme"
 PATH = "content"
 
 TIMEZONE = "Europe/London"

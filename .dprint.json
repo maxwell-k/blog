@@ -9,7 +9,7 @@
     "**/node_modules",
     "**/*-lock.json",
     "**/*.svg",
-    "custom/static/copy.js"
+    "theme/static/copy.js"
   ],
   "plugins": [
     "https://plugins.dprint.dev/typescript-0.95.11.wasm",

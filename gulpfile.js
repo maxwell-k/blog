@@ -11,10 +11,10 @@ import stylelint from "stylelint";
 const sourcemaps = process.env.SOURCEMAP === "true";
 
 const paths = {
-  jsInput: "custom/src/copy.js",
-  cssInputs: ["custom/src/*.css"],
-  cssBundle: ["custom/src/bundle.css"],
-  _static: "custom/static",
+  jsInput: "theme/src/copy.js",
+  cssInputs: ["theme/src/*.css"],
+  cssBundle: ["theme/src/bundle.css"],
+  _static: "theme/static",
   output: "output",
 };
 
