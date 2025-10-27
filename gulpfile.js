@@ -19,13 +19,7 @@ const paths = {
 };
 
 function _spawn(extraArgs = []) {
-  const args = [
-    "tool",
-    "run",
-    "--with-requirements=requirements.txt",
-    "pelican",
-  ].concat(extraArgs);
-  return spawn("uv", args, { stdio: "inherit" });
+  return spawn("./pelicanconf.py", extraArgs, { stdio: "inherit" });
 }
 
 const css = () =>
