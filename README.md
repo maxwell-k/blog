@@ -52,18 +52,24 @@ Tasks for …/gulpfile.js
 ├─┬ build    Write processed CSS, HTML and JavaScript to the file system.
 │ └─┬ <series>
 │   ├── js
-│   ├── css
+│   ├─┬ <parallel>
+│   │ ├── css_
+│   │ └── stylelint
 │   ├── removeOutput
 │   └── pelican
 ├─┬ default  Write processed CSS and JavaScript to the file system.
 │ └─┬ <parallel>
-│   ├── css
+│   ├─┬ <parallel>
+│   │ ├── css_
+│   │ └── stylelint
 │   └── js
 └─┬ serve    Serve at http://127.0.0.1:8000 and watch for changes.
   └─┬ <series>
     ├─┬ <parallel>
     │ ├── js
-    │ └── css
+    │ └─┬ <parallel>
+    │   ├── css_
+    │   └── stylelint
     ├── removeOutput
     └─┬ <parallel>
       ├── watchCss

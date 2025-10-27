@@ -6,7 +6,7 @@ import uglify from "gulp-uglify";
 import { spawn } from "node:child_process";
 import process from "node:process";
 import { rimraf } from "rimraf";
-import stylelint from "stylelint";
+import stylelint_ from "stylelint";
 
 const sourcemaps = process.env.SOURCEMAP === "true";
 
@@ -21,10 +21,22 @@ function _spawn(extraArgs = []) {
   return spawn("./pelicanconf.py", extraArgs, { stdio: "inherit" });
 }
 
-const css = () =>
+async function stylelint() {
+  const result = await stylelint_.lint({ files: paths.css, formatter: "string" });
+  if (result.report) {
+    console.log(result.report);
+  }
+  if (result.errored) {
+    console.info("Check again with:\nnpm exec stylelint " + paths.css.join(" "));
+    throw new Error("Stylelint failed.");
+  }
+}
+
+const css_ = () =>
   src(paths.css[0], { sourcemaps })
-    .pipe(postcss([stylelint, postcssBundler, cssnano]))
+    .pipe(postcss([postcssBundler, cssnano]))
     .pipe(dest(paths._static, { sourcemaps }));
+const css = parallel(css_, stylelint);
 const js = () =>
   src(paths.jsInput, { sourcemaps })
     .pipe(uglify())
