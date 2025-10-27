@@ -5,6 +5,7 @@ import { bundle } from "lightningcss";
 import { spawn } from "node:child_process";
 import process from "node:process";
 import path from "path";
+import { PurgeCSS } from "purgecss";
 import { rimraf } from "rimraf";
 import stylelint_ from "stylelint";
 
@@ -61,7 +62,23 @@ const pelican = (cb) => {
     else cb();
   });
 };
-const build = series(js, css, removeOutput, pelican);
+
+async function purge() {
+  const result = await new PurgeCSS().purge({
+    content: ["output/**/*.html"],
+    css: ["src/*.css"],
+    rejected: true,
+    safelist: {
+      standard: ["img", "h5", "h6", "dl"],
+    },
+  });
+  const rejected = result.map((i) => i.rejected).flat().map((i) => i.trim());
+  if (rejected.length > 0) {
+    console.log(rejected.join("\n"));
+    throw new Error("Unused CSS detected.");
+  }
+}
+const build = series(js, css, removeOutput, pelican, purge);
 build.description = "Write processed CSS, HTML and JavaScript to the file system.";
 const watchCss = () => watch(paths.css, css);
 const watchJs = () => watch(paths.jsInput, js);

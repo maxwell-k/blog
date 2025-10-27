@@ -56,7 +56,8 @@ Tasks for …/gulpfile.js
 │   │ ├── css_
 │   │ └── stylelint
 │   ├── removeOutput
-│   └── pelican
+│   ├── pelican
+│   └── purge
 ├─┬ default  Write processed CSS and JavaScript to the file system.
 │ └─┬ <parallel>
 │   ├─┬ <parallel>
