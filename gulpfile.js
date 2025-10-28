@@ -9,7 +9,7 @@ import { PurgeCSS } from "purgecss";
 import { rimraf } from "rimraf";
 import stylelint_ from "stylelint";
 
-const sourcemaps = process.env.SOURCEMAP === "true";
+const sourcemaps = process.env.SOURCEMAPS === "true";
 
 const paths = {
   jsInput: "src/copy.js",
