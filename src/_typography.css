@@ -138,6 +138,12 @@ h6 {
   font-family: "Source Sans 3", sans-serif;
 }
 
+div.highlight button {
+  /* purgecss ignore current */
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0.83rem;
+}
+
 body > header h1 {
   font-size: 1.75rem;
 }
