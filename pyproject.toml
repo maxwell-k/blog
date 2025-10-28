@@ -7,7 +7,7 @@ dependencies = [
   "pelican-yaml-metadata",
 ]
 authors = [
-  {name = "Keith Maxwell", email = "keith.maxwell@gmail.com"},
+  { name = "Keith Maxwell", email = "keith.maxwell@gmail.com" },
 ]
 
 [build-system]
