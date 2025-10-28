@@ -16,6 +16,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.djlint]
+profile = "jinja"
 indent = 2
 max_line_length = 80
 ignore = "H006,H010,H016,H022"
