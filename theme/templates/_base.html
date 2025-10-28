@@ -1,20 +1,34 @@
+{% set title | trim %}
+  {% block title %}
+    {{ SITENAME }}
+  {% endblock title %}
+{% endset %}
+{% set header %}
+  {% include "fragments/header.html" %}
+{% endset %}
+{% set default_head %}
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{{ title }}</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/main.css">
+  <link rel="icon" href="{{ SITEURL }}/favicon.ico">
+  <script src="{{ SITEURL }}/copy.js" async></script>
+{% endset %}
 <!DOCTYPE html>
 <html lang="{{ DEFAULT_LANG }}">
   <head>
-    {% block head %}
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/main.css">
-    <link rel="icon" href="{{ SITEURL }}/favicon.ico">
-    <script src="{{ SITEURL }}/copy.js" async></script>
-    {% endblock %}
+    {% block head -%}
+      {{ default_head }}
+    {%- endblock head %}
   </head>
   <body itemscope itemtype="http://schema.org/Blog">
-    {% include "fragments/header.html" %}
-    <main>{% block content %}{% endblock %}</main>
+    {{ header | indent(4) }}
+    <main>
+      {% block content %}
+      {% endblock content %}
+    </main>
     <footer>
       <p>
         Written by <a href="https://github.com/maxwell-k">Keith Maxwell</a>.

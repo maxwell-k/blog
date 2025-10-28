@@ -79,7 +79,16 @@ async function purge() {
     throw new Error("Unused CSS detected.");
   }
 }
-const build = series(js, css, removeOutput, pelican, purge);
+function djlintLintOutput(cb) {
+  const args = "uv tool run --with-requirements=requirements.txt djlint --lint output"
+    .split(" ");
+  const cmd = spawn(args[0], args.slice(1), { stdio: "inherit" });
+  cmd.on("close", (code) => {
+    if (code !== 0) cb(new Error("Error during build"));
+    else cb();
+  });
+}
+const build = series(js, css, removeOutput, pelican, purge, djlintLintOutput);
 build.description = "Write processed CSS, HTML and JavaScript to the file system.";
 const watchCss = () => watch(paths.css, css);
 const watchJs = () => watch(paths.jsInput, js);
