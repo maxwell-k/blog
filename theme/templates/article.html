@@ -2,7 +2,7 @@
 endblock %} {% block content %}
 <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
   <header>
-    <h2 itemprop="headline" id="{{ article.slug }}">{{ article.title }}</h2>
+    <h1 itemprop="headline" id="{{ article.slug }}">{{ article.title }}</h1>
     {% include "fragments/posted.html" %}
   </header>
   <section itemprop="mainEntityOfPage">{{ article.content }}</section>
