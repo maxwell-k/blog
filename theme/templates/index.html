@@ -15,7 +15,12 @@
         {{ posted }}
       </header>
       <section itemprop="mainEntityOfPage">
-        {{ article.content | indent(8) }}
+        {# djlint:off #}
+        {# to avoid extra characters in pre elements #}
+
+{{ article.content }}
+
+        {# djlint:on #}
       </section>
       {% include "fragments/footer.html" %}
       <hr>
