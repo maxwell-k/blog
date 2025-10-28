@@ -12,6 +12,8 @@ import stylelint_ from "stylelint";
 const sourcemaps = process.env.SOURCEMAPS === "true";
 const loopback = "http://127.0.0.1:8000";
 
+const callbacks = [];
+
 const paths = {
   jsInput: "src/copy.js",
   css: ["src/*.css"],
@@ -20,10 +22,34 @@ const paths = {
   output: "output",
 };
 
-function _spawn(extraArgs = []) {
-  const siteUrl = `--extra-settings=SITEURL="${loopback}"`;
-  return spawn("./pelicanconf.py", [siteUrl, ...extraArgs], { stdio: "inherit" });
+function _spawnPelican(extraArgs = []) {
+  const args = [
+    `--extra-settings=SITEURL="${loopback}"`,
+    ...extraArgs,
+  ];
+  return spawn("./pelicanconf.py", args, { stdio: "inherit" });
 }
+const pelican = (cb) => {
+  const child = _spawnPelican(["--fatal=warnings"]);
+  child.on("close", (code) => {
+    if (code === 0) cb();
+    else cb(new Error());
+  });
+};
+const pelicanListen = (cb) => {
+  let server = undefined;
+  process.on("SIGINT", () => {
+    if (server) server.kill();
+    for (const cb of callbacks) cb();
+    process.exit();
+  });
+  callbacks.push(cb);
+  server = _spawnPelican(["--autoreload", "--listen"]);
+  server.on("close", (code) => {
+    if (code === 0) cb();
+    else cb(new Error());
+  });
+};
 
 async function stylelint() {
   const result = await stylelint_.lint({ files: paths.css, formatter: "string" });
@@ -31,12 +57,12 @@ async function stylelint() {
     console.log(result.report);
   }
   if (result.errored) {
-    console.info("Check again with: `nnpm exec stylelint`.");
+    console.info("Check again with: `npm exec stylelint`.");
     throw new Error("Stylelint failed.");
   }
 }
 
-async function css_() {
+async function css(cb) {
   const target = path.join(paths._static, path.basename(paths.cssMain));
   const { code, map } = bundle({
     filename: paths.cssMain,
@@ -50,21 +76,14 @@ async function css_() {
     trailer += ` */\n`;
     await fs.appendFile(target, trailer);
   }
+  cb();
 }
 
-const css = parallel(css_, stylelint);
 const js = () =>
   src(paths.jsInput, { sourcemaps })
     .pipe(uglify())
     .pipe(dest(paths._static, { sourcemaps }));
 const removeOutput = () => rimraf(paths.output);
-const pelican = (cb) => {
-  const cmd = _spawn();
-  cmd.on("close", (code) => {
-    if (code !== 0) cb(new Error("Error during build"));
-    else cb();
-  });
-};
 
 async function purge() {
   const result = await new PurgeCSS().purge({
@@ -81,36 +100,54 @@ async function purge() {
     throw new Error("Unused CSS detected.");
   }
 }
-function djlintLintOutput(cb) {
-  const args = "uv tool run --with-requirements=requirements.txt djlint --lint theme output"
-    .split(" ");
-  const cmd = spawn(args[0], args.slice(1), { stdio: "inherit" });
-  cmd.on("close", (code) => {
-    if (code !== 0) cb(new Error("Error during build"));
-    else cb();
+function _run(cb, cmd) {
+  const args = cmd.split(" ");
+  const child = spawn(args[0], args.slice(1), { stdio: "pipe" });
+  let stdout = "";
+  let stderr = "";
+  child.stdout.on("data", data => stdout += data.toString());
+  child.stderr.on("data", data => stderr += data.toString());
+  child.on("close", (code) => {
+    if (code === 0) cb();
+    else {
+      console.log(stdout.trim());
+      console.error(stderr.trim());
+      throw new Error(`Error during '${cmd}'`);
+    }
   });
 }
-const build = series(js, css, removeOutput, pelican, purge, djlintLintOutput);
-build.description = "Write processed CSS, HTML and JavaScript to the file system.";
-const watchCss = () => watch(paths.css, css);
-const watchJs = () => watch(paths.jsInput, js);
-const pelicanListen = (cb) => {
-  const cmd = _spawn(["--autoreload", "--listen"]);
-  cmd.on("close", function(code) {
-    console.log("Server exited with code " + code);
-    cb(code);
-  });
+const uv = "uv tool run --with-requirements=requirements.txt";
+const djlintLint = (cb) => _run(cb, `${uv} djlint --lint theme output`);
+const djlintCheck = (cb) => _run(cb, `${uv} djlint --check theme`);
+const reuse = (cb) => _run(cb, `${uv} reuse lint`);
+const yamllint = (cb) => _run(cb, `${uv} yamllint --strict .`);
+const renovateConfigValidator = (cb) => _run(cb, `npm exec --no renovate-config-validator`);
+const dprint = (cb) => _run(cb, `npm exec --no dprint check`);
+const watchCss = (cb) => {
+  callbacks.push(cb);
+  return watch(paths.css, css);
 };
-const serve = series(
-  parallel(js, css),
-  removeOutput,
-  parallel(watchCss, watchJs, pelicanListen),
-);
-serve.description = `Serve at ${loopback} and watch for changes.`;
-const default_ = parallel(css, js);
-default_.description = "Write processed CSS and JavaScript to the file system.";
+const watchJs = (cb) => {
+  callbacks.push(cb);
+  return watch(paths.jsInput, js);
+};
 
-export { build, serve };
+const check = parallel(
+  djlintCheck,
+  djlintLint,
+  dprint,
+  purge,
+  renovateConfigValidator,
+  reuse,
+  stylelint,
+  yamllint,
+);
+const tasks = [parallel(js, css), removeOutput, pelican, check];
+const default_ = series(...tasks);
+default_.description = "Build then run all checks";
+const serve = series(...tasks, parallel(watchCss, watchJs, pelicanListen));
+serve.description = `Build, check then serve at ${loopback} and watch for changes.`;
+export { serve };
 export default default_;
 
 // gulpfile.js

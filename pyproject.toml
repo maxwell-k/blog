@@ -6,6 +6,8 @@ dependencies = [
   "pelican[markdown]",
   "pelican-yaml-metadata",
   "djlint",
+  "reuse",
+  "yamllint",
 ]
 authors = [
   { name = "Keith Maxwell", email = "keith.maxwell@gmail.com" },
