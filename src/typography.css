@@ -135,6 +135,7 @@ div.highlight button {
 }
 
 body > header p {
+  font-family: "Source Sans 3", sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
 }
