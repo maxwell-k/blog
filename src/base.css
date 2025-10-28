@@ -47,6 +47,11 @@ div.highlight {
   overflow: auto;
 }
 
+div.highlight pre {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
 ul,
 ol {
   padding-left: 2rem;
