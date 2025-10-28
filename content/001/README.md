@@ -14,7 +14,7 @@ differently and I try to document my rationale here.
 
 [instructions]: https://apoclyps.github.io/pelican-by-example/
 
-### Use a new directory
+## Use a new directory
 
 For what its worth; I think that it is important to work in a new directory; to
 treat this workshop as a separate project.
@@ -27,7 +27,7 @@ working directory and set up an empty git repository:
     && git init \
     && git branch -m main
 
-### Use ‘uv tool run’
+## Use ‘uv tool run’
 
 In my experience running entry-level Python workshops, initial setup is always
 time consuming. Especially installing an appropriate version of Python, possibly
@@ -71,7 +71,7 @@ Many of the default answers where fine; a couple I defined are:
 > Do you want to generate a tasks.py/Makefile to automate generation and
 > publishing? (Y/n) n
 
-### Use YAML metadata
+## Use YAML metadata
 
 I want to use YAML metadata because it is well supported by [my editor
 configuration]. It is also supported by the [yaml-metadata plugin]. At the
@@ -99,7 +99,7 @@ Commands to address the warning:
     mkdir --parents content/images \
     && touch content/images/.keep
 
-### Use the official GitHub actions workflow
+## Use the official GitHub actions workflow
 
 I adopted the [official] workflow —
 <https://github.com/getpelican/pelican/blob/main/.github/workflows/github_pages.yml>.

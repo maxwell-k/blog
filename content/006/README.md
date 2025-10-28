@@ -60,7 +60,7 @@ Command to install pre-requisites on Fedora 40:
         nodejs-npm \
         python3-keyring
 
-### A compatible version of Node.js
+## A compatible version of Node.js
 
 Install a version of Node.js that matches the [engines] key in `package.json`.
 Today that is:
@@ -80,7 +80,7 @@ Example output:
 If a suitable version is not available from the system package manager then I
 recommend [fnm](https://github.com/Schniz/fnm).
 
-### A GitHub authentication token
+## A GitHub authentication token
 
 Depending upon the repository configuration, if Renovate is run without a GitHub
 token it will either display a warning or fail. A example warning message is
@@ -105,7 +105,7 @@ Command to retrieve the token used by `gh`:
 
 [specified]: https://github.com/renovatebot/renovate/blob/main/package.json#L138
 
-### A suitable shell command
+## A suitable shell command
 
 Command to run Renovate with debugging output:
 

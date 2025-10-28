@@ -27,7 +27,7 @@ Pre-requisites: curl, GPG, Incus and the Incus / `systemd-resolved`
 [Incus]: https://linuxcontainers.org/incus/
 [integration]: https://linuxcontainers.org/incus/docs/main/howto/network_bridge_resolved/
 
-### Process
+## Process
 
 Command to download the GPG key and remove the base 64 encoding:
 
@@ -92,16 +92,16 @@ Command to connect interactively:
 
     ssh -p 23231 c1.incus
 
-### Decisions
+## Decisions
 
-#### Decided to use https for the apt repository
+### Decided to use https for the apt repository
 
 HTTP is sometimes preferred for apt package distribution so that package data
 can be cached. For this repository HTTP redirects to HTTPS; so it is necessary
 to use HTTPS. Using HTTPS here means that an extra step installing the
 `ca-certificates` package is required.
 
-#### Keyring is stored in ‘/etc/apt/keyrings’
+### Keyring is stored in ‘/etc/apt/keyrings’
 
 > The recommended locations for keyrings are /usr/share/keyrings for keyrings
 > managed by packages, and /etc/apt/keyrings for keyrings managed by the system
@@ -113,7 +113,7 @@ to use HTTPS. Using HTTPS here means that an extra step installing the
 [soft-serve]: https://github.com/charmbracelet/soft-serve
 [Incus]: https://linuxcontainers.org/incus/
 
-### References
+## References
 
 After writing most of this post I found a [blog post] from an engineer at the
 company behind soft serve; it covers similar material to this post.

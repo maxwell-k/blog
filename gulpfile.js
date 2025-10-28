@@ -69,7 +69,7 @@ async function purge() {
     css: ["src/*.css"],
     rejected: true,
     safelist: {
-      standard: ["img", "h5", "h6", "dl"],
+      standard: ["img", "h4", "h5", "h6", "dl"],
     },
   });
   const rejected = result.map((i) => i.rejected).flat().map((i) => i.trim());

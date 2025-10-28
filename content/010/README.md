@@ -54,7 +54,7 @@ chose Fedora Linux 42, released on 15 April 2025, because it is the [first]
 version to package the Zig ncdu implementation, so system-level dependencies
 should be straight forward.
 
-### Launch a container and install system-level dependencies
+## Launch a container and install system-level dependencies
 
 Command to launch a container:
 
@@ -71,7 +71,7 @@ Command to install the required system-level dependencies:
       make \
       gcc
 
-### Download the latest ncdu and Zig releases
+## Download the latest ncdu and Zig releases
 
 Command to download Zig 0.15.1 and a signature:
 
@@ -108,7 +108,7 @@ annotated git tag:
 
     warning: refs/tags/v2.9.1 79a0f4f623adfef4488593c3bbfda21e74f34f5c is not a commit!
 
-### Build and install
+## Build and install
 
 Command to run the build:
 
@@ -118,13 +118,13 @@ Command to install the resulting binary on the host system:
 
     incus file pull c1/root/ncdu/zig-out/bin/ncdu ~/.local/bin
 
-### Clean up
+## Clean up
 
 Command to stop and delete the container:
 
     incus stop c1 && incus delete c1
 
-### Why install GCC above?
+## Why install GCC above?
 
 I install GCC to avoid an [issue](https://github.com/ziglang/zig/issues/23849)
 relating to the linker script installed as `/usr/lib64/libncursesw.so`. Although
@@ -163,7 +163,7 @@ Contents of `/usr/lib64/libncursesw.so` as described in the issue report:
 
 </details>
 
-### Commentary
+## Commentary
 
 At first I ignored the Makefile; but I ran into an
 `error: failed to parse shared library: UnexpectedEndOfFile` because I was

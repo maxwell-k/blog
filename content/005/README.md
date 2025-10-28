@@ -33,7 +33,7 @@ command-line-interface.
 [Incus]: https://linuxcontainers.org/incus/
 [configured]: https://linuxcontainers.org/incus/docs/main/howto/network_bridge_resolved/
 
-### A system container
+## A system container
 
 In brief the following steps will use Incus and <https://cloud-init.io/> to:
 
@@ -93,7 +93,7 @@ Command to launch an Incus container called `c1` using the above configuration:
 incus launch images:ubuntu/focal/cloud c1 < config.yaml
 ```
 
-### Load testing software
+## Load testing software
 
 The latest version of [artillery](https://github.com/artilleryio/artillery) —
 `artillery@2.0.22` — requires a specific version of Node.js: `>= 22.13.0`. This
@@ -111,7 +111,7 @@ Command to run the latest artillery:
 
     fnm exec --using=v22.13.1 npm exec --yes artillery@2.0.22 -- --version
 
-### Demonstrate the default 503 HTTP response status code
+## Demonstrate the default 503 HTTP response status code
 
 Command to run the test:
 
@@ -131,7 +131,7 @@ The test ran for 1 second and sent 100 requests per second for a total of 100
 requests. 1 response had the 200 HTTP response status code and 99 had the 503
 response status code.
 
-### Configure and demonstrate another HTTP response status code
+## Configure and demonstrate another HTTP response status code
 
 Add another directive to the location block:
 
