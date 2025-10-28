@@ -6,6 +6,6 @@ endblock %} {% block content %}
     {% include "fragments/posted.html" %}
   </header>
   <section itemprop="mainEntityOfPage">{{ article.content }}</section>
-  <footer>{% include "fragments/tags.html" %}</footer>
+  {% include "fragments/footer.html" %}
 </article>
 {% endblock %}
