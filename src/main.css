@@ -1,13 +1,12 @@
 @import "../node_modules/modern-normalize/modern-normalize.css";
 
-@import "_base.css";
-@import "_syntax.css";
-@import "_media.css";
-@import "_typography.css";
-@import "_colors.css";
+@import "base.css";
+@import "syntax.css";
+@import "media.css";
+@import "typography.css";
+@import "colors.css";
 
-@import "_tables.css";
-@import "_buttons.css";
+@import "tables.css";
 
 :root {
   --colour-primary: #159957;

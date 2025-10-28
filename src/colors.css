@@ -21,6 +21,7 @@ body > header a {
   color: white;
 }
 
+article header p,
 body > footer {
   color: rgba(0, 0, 0, 0.55);
 }
@@ -35,6 +36,6 @@ a:focus {
   text-decoration: underline;
 }
 
-/* src/_colors.css
+/* src/colors.css
  * Copyright (c) 2016 Eemil Väisänen, 2024 Keith Maxwell
  * SPDX-License-Identifier: MIT */
