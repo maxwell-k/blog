@@ -8,7 +8,8 @@
            itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 itemprop="headline" id="{{ article.slug }}">{{ article.title }}</h1>
-      {% include "fragments/posted.html" %}
+      <meta itemprop="datePublished" content="{{ article.date.isoformat() }}">
+      <p>Posted on {{ article.date.strftime("%A %-d %B %Y") }}.</p>
     </header>
     <section itemprop="mainEntityOfPage">
       {# djlint:off #}
