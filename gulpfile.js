@@ -80,7 +80,7 @@ async function purge() {
   }
 }
 function djlintLintOutput(cb) {
-  const args = "uv tool run --with-requirements=requirements.txt djlint --lint output"
+  const args = "uv tool run --with-requirements=requirements.txt djlint --lint theme output"
     .split(" ");
   const cmd = spawn(args[0], args.slice(1), { stdio: "inherit" });
   cmd.on("close", (code) => {
