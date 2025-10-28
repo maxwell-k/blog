@@ -19,7 +19,10 @@ build-backend = "hatchling.build"
 profile = "jinja"
 indent = 2
 max_line_length = 80
-ignore = "H006,H010,H016,H022"
+# https://djlint.com/docs/linter/
+# H010 some links include mixed case query parameters (likely a djlint bug)
+# H022 sometimes I want to serve http from localhost
+ignore = "H010,H022"
 
 # pyproject.toml
 # Copyright 2024 Keith Maxwell
