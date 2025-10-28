@@ -1,7 +1,4 @@
 <meta itemprop="datePublished" content="{{ article.date.isoformat() }}">
-<p>
-  Posted on {{ article.date.strftime("%A ") ~ article.date.day ~
-  article.date.strftime(" %B %Y") }}.
-</p>
+<p>Posted on {{ article.date.strftime("%A %-d %B %Y") }}.</p>
 {# Copyright (c) 2016 Eemil Väisänen, 2024 Keith Maxwell #}
 {# SPDX-License-Identifier: MIT #}
