@@ -9,19 +9,8 @@ jobs:
       - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6
         with: { node-version-file: package.json }
       - run: npm install --global "npm@$(jq -r .engines.npm package.json)"
-      - run: npm version && npm ci && npm exec gulp && git diff --exit-code
-      - run: npm exec --no dprint check
-      - run: npm exec --no renovate-config-validator
       - uses: astral-sh/setup-uv@85856786d1ce8acfbcc2f13a5f3fbd6b938f9f41 # v7
-      - run: >-
-          uv tool run --with-requirements=requirements.txt pelican
-          --fatal=warnings
-      - run: >-
-          uv tool run --with-requirements=requirements.txt djlint --check theme
-      - run: >-
-          uv tool run --with-requirements=requirements.txt djlint --lint theme
-      - run: uv tool run yamllint .
-      - run: uv tool run reuse lint
+      - run: npm version && npm ci && npm exec gulp && git diff --exit-code
 # .github/workflows/check.yaml
 # Copyright 2024 Keith Maxwell
 # SPDX-License-Identifier: MPL-2.0

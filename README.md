@@ -49,29 +49,38 @@ cog.outl()
 
 ```
 Tasks for …/gulpfile.js
-├─┬ build    Write processed CSS, HTML and JavaScript to the file system.
+├─┬ default  Build then run all checks
 │ └─┬ <series>
-│   ├── js
 │   ├─┬ <parallel>
-│   │ ├── css_
-│   │ └── stylelint
+│   │ ├── js
+│   │ └── css
 │   ├── removeOutput
 │   ├── pelican
-│   └── purge
-├─┬ default  Write processed CSS and JavaScript to the file system.
-│ └─┬ <parallel>
-│   ├─┬ <parallel>
-│   │ ├── css_
-│   │ └── stylelint
-│   └── js
-└─┬ serve    Serve at http://127.0.0.1:8000 and watch for changes.
+│   └─┬ <parallel>
+│     ├── djlintCheck
+│     ├── djlintLint
+│     ├── dprint
+│     ├── purge
+│     ├── renovateConfigValidator
+│     ├── reuse
+│     ├── stylelint
+│     └── yamllint
+└─┬ serve    Build, check then serve at http://127.0.0.1:8000 and watch for changes.
   └─┬ <series>
     ├─┬ <parallel>
     │ ├── js
-    │ └─┬ <parallel>
-    │   ├── css_
-    │   └── stylelint
+    │ └── css
     ├── removeOutput
+    ├── pelican
+    ├─┬ <parallel>
+    │ ├── djlintCheck
+    │ ├── djlintLint
+    │ ├── dprint
+    │ ├── purge
+    │ ├── renovateConfigValidator
+    │ ├── reuse
+    │ ├── stylelint
+    │ └── yamllint
     └─┬ <parallel>
       ├── watchCss
       ├── watchJs
@@ -81,5 +90,7 @@ Tasks for …/gulpfile.js
 <!-- [[[end]]] -->
 
 [Fast Node Manager]: https://github.com/Schniz/fnm
+
+Test for compatibility with screen sizes from `320px` to `1920px`.
 
 <!-- vim: set filetype=markdown.htmlCommentNoSpell.cog : -->
