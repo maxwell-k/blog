@@ -4,5 +4,8 @@
     <img src="{{ SITELOGO }}" alt="{{ SITENAME }}" title="{{ SITENAME }}">
   </a>
   {% endif %}
-  <p itemprop="name"><a href="{{ SITEURL }}">{{ SITENAME }}</a></p>
+  <p itemprop="name">
+    {% if SITEURL %}<a href="{{ SITEURL }}">{{ SITENAME }}</a>{% else %}{{
+    SITENAME }}{% endif %}
+  </p>
 </header>
