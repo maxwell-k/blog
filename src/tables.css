@@ -1,17 +1,18 @@
 table {
-  margin-bottom: 1.3rem;
-  display: inline-block;
-  vertical-align: top;
-  max-width: 100%;
-  overflow-x: auto;
+  width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
+  margin-bottom: 1.3rem;
 }
 
 th,
 td {
-  border: 1px solid #e9ebec;
+  border: 1px solid rgba(0, 0, 0, 0.3);
   padding: 0.5rem 1rem;
+}
+
+th {
+  text-align: left;
 }
 
 /* src/tables.css
