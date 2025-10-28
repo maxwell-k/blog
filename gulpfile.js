@@ -13,7 +13,8 @@ const sourcemaps = process.env.SOURCEMAPS === "true";
 
 const paths = {
   jsInput: "src/copy.js",
-  css: ["src/main.css", "src/_*.css"],
+  css: ["src/*.css"],
+  cssMain: "src/main.css",
   _static: "theme/static",
   output: "output",
 };
@@ -28,15 +29,15 @@ async function stylelint() {
     console.log(result.report);
   }
   if (result.errored) {
-    console.info("Check again with:\nnpm exec stylelint " + paths.css.join(" "));
+    console.info("Check again with: `nnpm exec stylelint`.");
     throw new Error("Stylelint failed.");
   }
 }
 
 async function css_() {
-  const target = path.join(paths._static, path.basename(paths.css[0]));
+  const target = path.join(paths._static, path.basename(paths.cssMain));
   const { code, map } = bundle({
-    filename: paths.css[0],
+    filename: paths.cssMain,
     minify: !sourcemaps,
     sourceMap: sourcemaps,
   });

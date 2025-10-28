@@ -3,20 +3,14 @@
   font-family: "Source Sans 3";
   font-style: normal;
   font-weight: 400;
-  src: url("source-sans-3-v19-latin-regular.woff2")
-    format(
-      "woff2"
-    ); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("source-sans-3-v19-latin-regular.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "Source Sans 3";
   font-style: normal;
   font-weight: 700;
-  src: url("source-sans-3-v19-latin-700.woff2")
-    format(
-      "woff2"
-    ); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("source-sans-3-v19-latin-700.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
@@ -105,10 +99,6 @@ ul {
   list-style-type: disc;
 }
 
-article header p {
-  color: rgba(0, 0, 0, 0.55);
-}
-
 pre,
 code {
   font-family: "DejaVu Sans Mono", monospace;
@@ -176,6 +166,6 @@ th {
   }
 }
 
-/* src/_typography.css
+/* src/typography.css
  * Copyright (c) 2016 Eemil Väisänen, 2024 Keith Maxwell
  * SPDX-License-Identifier: MIT */

@@ -47,6 +47,23 @@ ol {
   padding-left: 2rem;
 }
 
-/* src/_base.css
+div.highlight button {
+  /* purgecss ignore current */
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: 0.2em;
+  margin-bottom: 0.5em;
+
+  opacity: 0;
+}
+
+div.highlight button:focus,
+div.highlight:hover button {
+  /* purgecss ignore current */
+  opacity: 1;
+}
+
+/* src/base.css
  * Copyright (c) 2016 Eemil Väisänen, 2024 Keith Maxwell
  * SPDX-License-Identifier: MIT */
