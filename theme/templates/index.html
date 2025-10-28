@@ -4,15 +4,13 @@
     {% set href | trim %}
       {{ SITEURL }}/{{ article.url }}#{{ article.slug }}
     {% endset %}
-    {% set posted | indent(8) %}
-      {% include "fragments/posted.html" %}
-    {% endset %}
     <article>
       <header>
         <h1>
           <a href="{{ href }}">{{ article.title }}</a>
         </h1>
-        {{ posted }}
+        <meta itemprop="datePublished" content="{{ article.date.isoformat() }}">
+        <p>Posted on {{ article.date.strftime("%A %-d %B %Y") }}.</p>
       </header>
       <section itemprop="mainEntityOfPage">
         {# djlint:off #}
