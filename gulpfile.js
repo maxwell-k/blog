@@ -21,7 +21,8 @@ const paths = {
 };
 
 function _spawn(extraArgs = []) {
-  return spawn("./pelicanconf.py", extraArgs, { stdio: "inherit" });
+  const siteUrl = `--extra-settings=SITEURL="${loopback}"`;
+  return spawn("./pelicanconf.py", [siteUrl, ...extraArgs], { stdio: "inherit" });
 }
 
 async function stylelint() {
@@ -94,8 +95,7 @@ build.description = "Write processed CSS, HTML and JavaScript to the file system
 const watchCss = () => watch(paths.css, css);
 const watchJs = () => watch(paths.jsInput, js);
 const pelicanListen = (cb) => {
-  const siteUrl = `--extra-settings=SITEURL="${loopback}"`;
-  const cmd = _spawn(["--autoreload", "--listen", siteUrl]);
+  const cmd = _spawn(["--autoreload", "--listen"]);
   cmd.on("close", function(code) {
     console.log("Server exited with code " + code);
     cb(code);
