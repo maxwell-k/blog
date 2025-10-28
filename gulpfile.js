@@ -10,6 +10,7 @@ import { rimraf } from "rimraf";
 import stylelint_ from "stylelint";
 
 const sourcemaps = process.env.SOURCEMAPS === "true";
+const loopback = "http://127.0.0.1:8000";
 
 const paths = {
   jsInput: "src/copy.js",
@@ -93,7 +94,8 @@ build.description = "Write processed CSS, HTML and JavaScript to the file system
 const watchCss = () => watch(paths.css, css);
 const watchJs = () => watch(paths.jsInput, js);
 const pelicanListen = (cb) => {
-  const cmd = _spawn(["--autoreload", "--listen"]);
+  const siteUrl = `--extra-settings=SITEURL="${loopback}"`;
+  const cmd = _spawn(["--autoreload", "--listen", siteUrl]);
   cmd.on("close", function(code) {
     console.log("Server exited with code " + code);
     cb(code);
@@ -104,7 +106,7 @@ const serve = series(
   removeOutput,
   parallel(watchCss, watchJs, pelicanListen),
 );
-serve.description = "Serve at http://127.0.0.1:8000 and watch for changes.";
+serve.description = `Serve at ${loopback} and watch for changes.`;
 const default_ = parallel(css, js);
 default_.description = "Write processed CSS and JavaScript to the file system.";
 

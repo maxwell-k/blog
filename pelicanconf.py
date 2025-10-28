@@ -1,6 +1,8 @@
 #!/usr/bin/env -S uv tool run --with-requirements=requirements.txt pelican --settings
 AUTHOR = "Keith Maxwell"
 SITENAME = "2024-09-18-pybelfast-workshop"
+# SITEURL is set by the GitHub pages action, see:
+# https://github.com/getpelican/pelican/blob/4.11.0/.github/workflows/github_pages.yml#L30
 SITEURL = ""
 SUMMARY_MAX_LENGTH = 0
 
