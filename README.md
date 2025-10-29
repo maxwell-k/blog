@@ -133,7 +133,7 @@ Command to configure the staging project as a git remote:
 
 Command to publish the current commit to the staging environment:
 
-    git push --force-with-lease staging HEAD:main
+    git push --force staging HEAD:main
 
 Command to disable:
 
