@@ -58,7 +58,7 @@ pathspec==0.12.1
     # via
     #   djlint
     #   yamllint
-pelican==4.11.0
+pelican==4.11.0.post0
     # via
     #   2024-09-18-pybelfast-workshop (pyproject.toml)
     #   pelican-yaml-metadata
