@@ -19,36 +19,39 @@ practically never the same size. It is straightforward to use `stat`, `head` and
 `sha256sum` from [GNU coreutils](https://www.gnu.org/software/coreutils/) to
 implement this process.
 
-This example uses `~/Downloads/Fedora-Workstation-Live-42-1.1.x86_64.iso` as
-left behind after creating a bootable Fedora 42 Workstation USB with Fedora
-Media Writer.
+This example uses `~/Downloads/Fedora-Workstation-Live-43-1.6.x86_64.iso` as
+left behind after creating a bootable Fedora Workstation 43 USB.
 
 Command to display the size of the ISO in bytes:
 
-    stat --format=%s ~/Downloads/Fedora-Workstation-Live-42-1.1.x86_64.iso
+    stat --format=%s ~/Downloads/Fedora-Workstation-Live-43-1.6.x86_64.iso
 
 Output:
 
-    2398523392
+    2742190080
 
-Command to read 2,398,523,392 bytes from the drive and generate checksums:
+Command to read 2,742,190,080 bytes from the drive and then generate checksums
+for that data and the image file:
 
-    sudo head --bytes=2398523392 /dev/sda \
-    | sha256sum - ~/Downloads/Fedora-Workstation-Live-42-1.1.x86_64.iso
+    sudo head --bytes=2742190080 /dev/sda \
+    | sha256sum - ~/Downloads/Fedora-Workstation-Live-43-1.6.x86_64.iso
 
 Output:
 
-    98958d80e8a80eabe61275337f969c8e2212adc3a223d9bbdab9411bb1c95cba  -
-    98958d80e8a80eabe61275337f969c8e2212adc3a223d9bbdab9411bb1c95cba  /home/maxwell-k/Downloads/Fedora-Workstation-Live-42-1.1.x86_64.iso
+    2a4a16c009244eb5ab2198700eb04103793b62407e8596f30a3e0cc8ac294d77  -
+    2a4a16c009244eb5ab2198700eb04103793b62407e8596f30a3e0cc8ac294d77  /home/maxwell-k/Downloads/Fedora-Workstation-Live-43-1.6.x86_64.iso
 
 This matches the values in the corresponding [checksum file]:
 
-    # Fedora-Workstation-Live-42-1.1.x86_64.iso: 2398523392 bytes
-    SHA256 (Fedora-Workstation-Live-42-1.1.x86_64.iso) = 98958d80e8a80eabe61275337f969c8e2212adc3a223d9bbdab9411bb1c95cba
+    # Fedora-Workstation-Live-43-1.6.x86_64.iso: 2742190080 bytes
+    SHA256 (Fedora-Workstation-Live-43-1.6.x86_64.iso) = 2a4a16c009244eb5ab2198700eb04103793b62407e8596f30a3e0cc8ac294d77
 
-[checksum file]: https://download.fedoraproject.org/pub/fedora/linux/releases/42/Workstation/x86_64/iso/Fedora-Workstation-42-1.1-x86_64-CHECKSUM
+[checksum file]: https://download.fedoraproject.org/pub/fedora/linux/releases/43/Workstation/x86_64/iso/Fedora-Workstation-43-1.6-x86_64-CHECKSUM
 [unreliable]: https://www.theregister.com/2024/02/07/failed_usb_sticks/
 [USB flash drives]: https://en.wikipedia.org/wiki/USB_flash_drive
+
+_This page has been updated since initial publication to use more recent Fedora
+Linux images._
 
 <!--
 Copyright 2025 Keith Maxwell
