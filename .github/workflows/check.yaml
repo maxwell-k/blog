@@ -9,7 +9,7 @@ jobs:
       - uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6
         with: { node-version-file: package.json }
       - run: npm install --global "npm@$(jq -r .engines.npm package.json)"
-      - uses: astral-sh/setup-uv@681c641aba71e4a1c380be3ab5e12ad51f415867 # v7
+      - uses: astral-sh/setup-uv@61cb8a9741eeb8a550a1b8544337180c0fc8476b # v7
       - run: npm version && npm ci && npm exec gulp && git diff --exit-code
 # .github/workflows/check.yaml
 # Copyright 2024 Keith Maxwell
