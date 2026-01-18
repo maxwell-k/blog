@@ -102,5 +102,5 @@ unidecode==1.4.0
     # via pelican
 watchfiles==1.1.1
     # via pelican
-yamllint==1.37.1
+yamllint==1.38.0
     # via 2024-09-18-pybelfast-workshop (pyproject.toml)
