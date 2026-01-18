@@ -79,7 +79,7 @@ pyyaml==6.0.3
     #   djlint
     #   pelican-yaml-metadata
     #   yamllint
-regex==2025.11.3
+regex==2026.1.15
     # via djlint
 reuse==6.2.0
     # via 2024-09-18-pybelfast-workshop (pyproject.toml)
