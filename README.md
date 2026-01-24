@@ -40,14 +40,18 @@ and JavaScript files include source maps:
 
 Command to process CSS and JavaScript, build all HTML and run all checks:
 
-    npm exec gulp
+    npm run build
+
+Command to serve a preview and watch for changes:
+
+    npm start
 
 <details>
 <summary>Build steps</summary>
 
 Command to view build tasks
 
-    npm exec gulp -- --tasks
+    npm run build -- --tasks
 
 Expected output:
 
