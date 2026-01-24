@@ -11,6 +11,15 @@ jobs:
       - run: npm install --global "npm@$(jq -r .engines.npm package.json)"
       - uses: astral-sh/setup-uv@61cb8a9741eeb8a550a1b8544337180c0fc8476b # v7
       - run: npm version && npm ci && npm exec gulp && git diff --exit-code
+  zizmor:
+    runs-on: ubuntu-24.04
+    # https://github.com/zizmorcore/zizmor-action#permissions
+    permissions: { security-events: write }
+    steps:
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+        with: { persist-credentials: false }
+      # yamllint disable-line rule:line-length
+      - uses: zizmorcore/zizmor-action@135698455da5c3b3e55f73f4419e481ab68cdd95 # v0.4.1
 # .github/workflows/check.yaml
 # Copyright 2024 Keith Maxwell
 # SPDX-License-Identifier: MPL-2.0
