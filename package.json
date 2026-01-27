@@ -29,7 +29,7 @@
     "gulp-uglify": "3.0.2",
     "lightningcss": "1.31.1",
     "modern-normalize": "3.0.1",
-    "purgecss": "7.0.2",
+    "purgecss": "8.0.0",
     "renovate": "42.86.0",
     "rimraf": "6.1.2",
     "stylelint": "17.0.0"
