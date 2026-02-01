@@ -83,7 +83,7 @@ regex==2026.1.15
     # via djlint
 reuse==6.2.0
     # via 2024-09-18-pybelfast-workshop (pyproject.toml)
-rich==14.3.1
+rich==14.3.2
     # via pelican
 six==1.17.0
     # via
