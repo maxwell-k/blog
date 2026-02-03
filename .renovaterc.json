@@ -31,7 +31,7 @@
       "automerge": true,
       "description": "Automerge allow-listed PyPI packages",
       "matchDatasources": ["pypi"],
-      "matchPackageNames": ["pytz", "rich", "six", "watchfiles"]
+      "matchPackageNames": ["pytz", "rich", "six", "watchfiles", "tqdm"]
     },
     {
       "automerge": true,
