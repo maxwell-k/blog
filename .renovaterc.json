@@ -24,8 +24,8 @@
   "packageRules": [
     {
       "automerge": true,
-      "description": "Automerge upgrades to uv",
-      "matchPackageNames": ["astral-sh/uv", "astral-sh/setup-uv"]
+      "description": "Automerge upgrades to actions/checkout and uv",
+      "matchPackageNames": ["actions/checkout", "astral-sh/uv", "astral-sh/setup-uv"]
     },
     {
       "automerge": true,
