@@ -24,8 +24,8 @@
   "packageRules": [
     {
       "automerge": true,
-      "description": "Automerge upgrades to actions/checkout and uv",
-      "matchPackageNames": ["actions/checkout", "astral-sh/uv", "astral-sh/setup-uv"]
+      "description": "Automerge changes to .github/workflows/check.yaml",
+      "matchFileNames": [".github/workflows/check.yaml"]
     },
     {
       "automerge": true,
