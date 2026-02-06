@@ -89,7 +89,7 @@ config:
 
 Command to launch an Incus container called `c1` using the above configuration:
 
-```sh
+```
 incus launch images:ubuntu/focal/cloud c1 < config.yaml
 ```
 
