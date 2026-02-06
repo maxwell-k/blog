@@ -45,6 +45,8 @@ MARKDOWN = {
 DIRECT_TEMPLATES = ["index"]
 AUTHOR_SAVE_AS = ""
 CATEGORY_SAVE_AS = ""
+PLUGIN_PATHS = ["plugins"]
+PLUGINS = ["language_allow_list"]
 
 # pelicanconf.py
 # Copyright 2024 Keith Maxwell

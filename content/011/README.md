@@ -72,7 +72,7 @@ The most relevant [part of abuild] is from line 1894 onwards showing how stream
 2 is created, abuild-sign is called and then streams 1 and 2 are prepended to
 stream 3:
 
-```sh
+```
 apk_tar -T - < .metafiles | abuild-tar --cut \
             | $gzip -n -9 > control.tar.gz
 abuild-sign -q control.tar.gz || exit 1
@@ -85,7 +85,7 @@ cat control.tar.gz data.tar.gz > "$REPODEST/$repo/$(arch2dir "$subpkgarch")/$apk
 The most relevant part of abuild-sign is from [line 42] showing how stream 1
 is created and prepended to stream 2:
 
-```sh
+```
 apk_tar --owner=0 --group=0 --numeric-owner "$sig" | abuild-tar --cut | $gzip -n -9 > "$tmptargz"
 tmpsigned=$(mktemp)
 cat "$tmptargz" "$i" > "$tmpsigned"
