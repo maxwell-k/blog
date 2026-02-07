@@ -13,6 +13,13 @@ from pelican import signals
 
 logger = logging.getLogger(__name__)
 
+PAIRS = (
+    (
+        '<div class="highlight"><pre><span></span><code>',
+        '<div class="highlight"><pre><code>',
+    ),
+)
+
 
 def remove_empty_spans(path_: str, context: dict) -> None:
     """Remove empty spands from HTML output."""
@@ -20,10 +27,15 @@ def remove_empty_spans(path_: str, context: dict) -> None:
     if path.suffix != ".html":
         return
 
-    text = path.read_text()
-    path.write_text(text.replace("<span></span>", ""))
     if context["DEBUG"]:
-        logger.debug("Removed any empty spans from %s", path)
+        logger.debug("Processing %s", path)
+    lines = path.read_text().splitlines()
+    for before, after in PAIRS:
+        for i in range(len(lines)):
+            line = lines[i]
+            if line.startswith(before):
+                lines[i] = after + line.removeprefix(before)
+    path.write_text("\n".join(lines))
 
 
 def register() -> None:
