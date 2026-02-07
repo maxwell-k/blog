@@ -64,7 +64,7 @@ pelican==4.11.0.post0
     #   pelican-yaml-metadata
 pelican-yaml-metadata==2.1.2
     # via blog (pyproject.toml)
-pygments==2.18.0
+pygments==2.19.2
     # via
     #   pelican
     #   rich
