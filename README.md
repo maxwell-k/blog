@@ -120,8 +120,7 @@ Tasks for …/gulpfile.js
 
 The production environment uses GitHub pages. Pushing commits to the main branch
 will trigger [`.github/workflows/publish.yaml`](/.github/workflows/publish.yaml). That workflow
-deploys to
-<https://maxwell-k.github.io/2024-09-18-pybelfast-workshop/>.
+deploys to <https://maxwell-k.github.io/blog/>.
 
 ### Staging
 

@@ -1,7 +1,7 @@
 {
-  "name": "2024-09-18-pybelfast-workshop",
+  "name": "blog",
   "version": "0.0.1",
-  "description": "2024-09-18 PyBelfast Workshop",
+  "description": "Keith Maxwell’s Blog",
   "main": "gulpfile.js",
   "engines": {
     "node": "^24.0.0",
