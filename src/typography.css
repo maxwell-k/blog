@@ -76,6 +76,7 @@ h6 {
   margin-right: 0;
 }
 
+body > header p,
 h1 {
   font-size: 2.5em;
 }
@@ -122,10 +123,6 @@ ul {
 /* tags */
 article > footer a {
   font-size: 0.8em;
-}
-
-body > header p {
-  font-size: 1.75rem;
 }
 
 blockquote {
