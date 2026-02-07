@@ -118,8 +118,7 @@ code {
 }
 
 article,
-footer,
-article header p {
+footer {
   font-family: "Source Serif 4", serif;
 }
 
