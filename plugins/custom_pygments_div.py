@@ -21,7 +21,7 @@ PAIRS = (
 )
 
 
-def remove_empty_spans(path_: str, context: dict) -> None:
+def custom_pygments_div(path_: str, context: dict) -> None:
     """Remove empty spands from HTML output."""
     path = Path(path_)
     if path.suffix != ".html":
@@ -40,9 +40,9 @@ def remove_empty_spans(path_: str, context: dict) -> None:
 
 def register() -> None:
     """Register the plugin from this file."""
-    signals.content_written.connect(remove_empty_spans)
+    signals.content_written.connect(custom_pygments_div)
 
 
-# plugins/remove_empty_spans.py
+# plugins/custom_pygments_div.py
 # Copyright 2026 Keith Maxwell
 # SPDX-License-Identifier: MPL-2.0

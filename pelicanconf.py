@@ -44,7 +44,7 @@ CATEGORY_SAVE_AS = ""
 PLUGIN_PATHS = ["plugins"]
 PLUGINS = [
     "language_allow_list",
-    "remove_empty_spans",
+    "custom_pygments_div",
 ]
 
 SOURCEMAPS = getenv("SOURCEMAPS", "false") == "true"
