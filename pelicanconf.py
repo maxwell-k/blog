@@ -48,6 +48,7 @@ CATEGORY_SAVE_AS = ""
 PLUGIN_PATHS = ["plugins"]
 PLUGINS = [
     "language_allow_list",
+    "remove_empty_spans",
 ]
 
 # pelicanconf.py
