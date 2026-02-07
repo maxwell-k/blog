@@ -55,6 +55,14 @@ body > header p {
   margin-bottom: 0;
 }
 
+details {
+  margin-block-start: 1rem;
+}
+
+details[open] > summary {
+  margin-bottom: 1rem;
+}
+
 /* layout.css
  * Copyright (c) 2016 Eemil Väisänen, 2024–2026 Keith Maxwell
  * SPDX-License-Identifier: MIT */
