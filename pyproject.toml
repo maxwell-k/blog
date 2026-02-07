@@ -3,9 +3,9 @@ name = "blog"
 version = "0.0.1"
 requires-python = ">= 3.12"
 dependencies = [
-  "pelican[markdown]",
-  "pelican-yaml-metadata",
   "djlint",
+  "pelican-yaml-metadata",
+  "pelican[markdown]",
   "reuse",
   "yamllint",
 ]
