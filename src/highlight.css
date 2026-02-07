@@ -4,6 +4,8 @@ div.highlight {
   padding-right: 1.5em;
   padding-bottom: 0;
   overflow: auto;
+  border: thin solid black;
+  border-top-left-radius: 0.5em;
 }
 
 div.highlight pre {
