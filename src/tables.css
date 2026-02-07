@@ -13,6 +13,7 @@ td {
 
 th {
   text-align: left;
+  font-weight: bold;
 }
 
 /* src/tables.css

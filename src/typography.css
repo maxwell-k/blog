@@ -129,10 +129,6 @@ blockquote {
   font-style: italic;
 }
 
-th {
-  font-weight: bold;
-}
-
 /* src/typography.css
  * Copyright (c) 2016 Eemil Väisänen, 2024 Keith Maxwell
  * SPDX-License-Identifier: MIT */
