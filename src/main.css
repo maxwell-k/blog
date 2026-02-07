@@ -5,14 +5,7 @@
 @import "media.css";
 @import "typography.css";
 @import "colors.css";
-
 @import "tables.css";
-
-:root {
-  --colour-primary: #159957;
-  --colour-left: #71b280;
-  --colour-right: #134e5e;
-}
 
 /* src/main.css
  * Copyright (c) 2016 Eemil Väisänen, 2024 Keith Maxwell
