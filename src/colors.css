@@ -1,8 +1,3 @@
-:root {
-  --colour-left: #71b280;
-  --colour-right: #134e5e;
-}
-
 a {
   color: #2457f5;
 }
@@ -14,16 +9,6 @@ h4 a,
 h5 a,
 h6 a {
   color: inherit;
-}
-
-/* Moss */
-body > header {
-  background: var(--colour-right);
-  background: linear-gradient(to left, var(--colour-right), var(--colour-left));
-}
-
-body > header a {
-  color: white;
 }
 
 article header p, /* Posted on … */
