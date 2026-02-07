@@ -56,11 +56,6 @@ div.highlight pre {
   margin-block-end: 0;
 }
 
-ul,
-ol {
-  padding-left: 2rem;
-}
-
 div.highlight button {
   /* purgecss ignore current */
   display: block;
