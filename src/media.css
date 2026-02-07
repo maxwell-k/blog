@@ -1,11 +1,10 @@
 body > header {
-  padding: 2rem 1rem;
-  text-align: center;
+  padding-top: 1rem;
 }
 
+body > header,
 body > main,
 body > footer {
-  padding: 0 1em;
   margin: 0 auto;
   max-width: 54rem;
 }
