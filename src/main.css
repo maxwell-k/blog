@@ -1,11 +1,11 @@
 @import "../node_modules/modern-normalize/modern-normalize.css";
 
-@import "base.css";
 @import "layout.css";
 @import "syntax.css";
 @import "tables.css";
 @import "colors.css";
 @import "font-face-font-family.css";
+@import "highlight.css";
 
 /* src/main.css
  * Copyright (c) 2016 Eemil Väisänen, 2024 Keith Maxwell
