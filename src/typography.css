@@ -40,8 +40,7 @@
 
 /* font-family {{{1 */
 
-article,
-footer {
+body {
   font-family: "Source Serif 4", serif;
 }
 
