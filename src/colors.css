@@ -1,11 +1,10 @@
 :root {
-  --colour-primary: #159957;
   --colour-left: #71b280;
   --colour-right: #134e5e;
 }
 
 a {
-  color: var(--colour-primary);
+  color: #2457f5;
 }
 
 h1 a,
