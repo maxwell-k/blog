@@ -13,7 +13,7 @@
     "**/*-lock.json",
     "**/*.svg",
     "theme/static/copy.js",
-    "theme/static/main.css"
+    "theme/templates/main.css"
   ],
   "plugins": [
     "https://plugins.dprint.dev/typescript-0.95.11.wasm",
