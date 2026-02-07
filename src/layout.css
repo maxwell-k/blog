@@ -27,10 +27,6 @@ ul {
   list-style-type: disc;
 }
 
-article > footer a {
-  font-size: 0.8em;
-}
-
 blockquote {
   font-style: italic;
 }
