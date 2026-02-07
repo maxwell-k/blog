@@ -38,9 +38,10 @@ and JavaScript files include source maps:
 
     export SOURCEMAPS=true
 
-Command to process CSS and JavaScript, build all HTML and run all checks:
+Command to process CSS and JavaScript, build all HTML, run all checks and exit
+with code 1 on differences:
 
-    npm run build
+    npm test
 
 Command to serve a preview and watch for changes:
 
@@ -51,7 +52,7 @@ Command to serve a preview and watch for changes:
 
 Command to view build tasks
 
-    npm run build -- --tasks
+    npm exec gulp -- --tasks
 
 Expected output:
 

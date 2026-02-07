@@ -12,7 +12,7 @@ jobs:
         with: { node-version-file: package.json }
       - run: npm install --global "npm@$(jq -r .engines.npm package.json)"
       - uses: astral-sh/setup-uv@eac588ad8def6316056a12d4907a9d4d84ff7a3b # v7
-      - run: npm version && npm ci && npm exec gulp && git diff --exit-code
+      - run: npm version && npm ci && npm test
   zizmor:
     runs-on: ubuntu-24.04
     # https://github.com/zizmorcore/zizmor-action#permissions
