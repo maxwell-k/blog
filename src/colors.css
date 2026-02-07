@@ -20,6 +20,14 @@ body > header p a {
   color: #00547c;
 }
 
+blockquote {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+hr {
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
 /* src/colors.css
  * Copyright (c) 2016 Eemil Väisänen, 2024 Keith Maxwell
  * SPDX-License-Identifier: MIT */
