@@ -2,13 +2,6 @@
 
 const delay = 2000;
 
-document.querySelectorAll("div.highlight > pre > code").forEach((node) => {
-  node.parentNode.parentNode.insertAdjacentHTML(
-    "beforeend",
-    "<button>Copy 📋</button>",
-  );
-});
-
 function copy(event) {
   const text = event.target.previousSibling.innerText.trimEnd();
   navigator.clipboard.writeText(text).then(

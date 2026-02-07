@@ -55,7 +55,6 @@ code {
 }
 
 div.highlight button {
-  /* purgecss ignore current */
   font-family: "DejaVu Sans Mono", monospace;
 }
 

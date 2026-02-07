@@ -15,7 +15,6 @@ div.highlight pre {
 }
 
 div.highlight button {
-  /* purgecss ignore current */
   position: absolute;
   top: 0.5em;
   right: 0.5em;
@@ -25,7 +24,6 @@ div.highlight button {
 
 div.highlight button:focus,
 div.highlight:hover button {
-  /* purgecss ignore current */
   opacity: 1;
 }
 
