@@ -26,8 +26,8 @@ body > header a {
   color: white;
 }
 
-article header p,
-body > footer {
+article header p, /* Posted on … */
+body > footer /* © … */ {
   color: rgba(0, 0, 0, 0.55);
 }
 
