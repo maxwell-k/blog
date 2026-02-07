@@ -18,6 +18,10 @@ PAIRS = (
         '<div class="highlight"><pre><span></span><code>',
         '<div class="highlight"><pre><code>',
     ),
+    (
+        "</code></pre></div>",
+        "</code></pre><button>Copy 📋</button></div>",
+    ),
 )
 
 
