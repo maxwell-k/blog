@@ -127,6 +127,7 @@ article > footer a {
   font-size: 0.8em;
 }
 
+body > header p, /* navigation bar */
 h1, /* article heading */
 h2,
 h3,
@@ -142,7 +143,6 @@ div.highlight button {
 }
 
 body > header p {
-  font-family: "Source Sans 3", sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
 }
