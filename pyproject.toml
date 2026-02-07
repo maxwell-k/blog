@@ -1,5 +1,5 @@
 [project]
-name = "2024-09-18-pybelfast-workshop"
+name = "blog"
 version = "0.0.1"
 requires-python = ">= 3.12"
 dependencies = [

@@ -19,7 +19,7 @@ colorama==0.4.6
 cssbeautifier==1.15.4
     # via djlint
 djlint==1.36.4
-    # via 2024-09-18-pybelfast-workshop (pyproject.toml)
+    # via blog (pyproject.toml)
 docutils==0.22.4
     # via pelican
 editorconfig==0.17.1
@@ -60,10 +60,10 @@ pathspec==1.0.4
     #   yamllint
 pelican==4.11.0.post0
     # via
-    #   2024-09-18-pybelfast-workshop (pyproject.toml)
+    #   blog (pyproject.toml)
     #   pelican-yaml-metadata
 pelican-yaml-metadata==2.1.2
-    # via 2024-09-18-pybelfast-workshop (pyproject.toml)
+    # via blog (pyproject.toml)
 pygments==2.18.0
     # via
     #   pelican
@@ -82,7 +82,7 @@ pyyaml==6.0.3
 regex==2026.1.15
     # via djlint
 reuse==6.2.0
-    # via 2024-09-18-pybelfast-workshop (pyproject.toml)
+    # via blog (pyproject.toml)
 rich==14.3.2
     # via pelican
 six==1.17.0
@@ -101,4 +101,4 @@ unidecode==1.4.0
 watchfiles==1.1.1
     # via pelican
 yamllint==1.38.0
-    # via 2024-09-18-pybelfast-workshop (pyproject.toml)
+    # via blog (pyproject.toml)
