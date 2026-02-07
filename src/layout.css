@@ -19,6 +19,42 @@ blockquote {
   font-style: italic;
 }
 
+article {
+  margin-bottom: 4rem;
+}
+
+body > header a,
+h1 a {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+blockquote {
+  display: block;
+  margin: 1rem auto;
+}
+
+hr {
+  width: 50%;
+  height: 0;
+  border: 0;
+  margin: 2em auto;
+}
+
+body > header p {
+  margin-bottom: 0;
+}
+
 /* layout.css
  * Copyright (c) 2016 Eemil Väisänen, 2024–2026 Keith Maxwell
  * SPDX-License-Identifier: MIT */
