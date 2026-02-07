@@ -1,7 +1,13 @@
+"""Error if an language isn't in ALLOW_LIST.
+
+Not all of of the language syntax higlighting is desirable. This plugin allows
+some of it to be avoided.
+"""
+
 from pathlib import Path
 
 from pelican import signals
-from pelican.contents import Article
+from pelican.contents import Article, Content
 
 FENCE = "```"
 
@@ -12,12 +18,13 @@ ALLOW_LIST = {
 }
 
 
-def on_content_init(content):
+def language_allow_list(content: Content) -> None:
+    """Error if content has a fenced code block with a language not allow listed."""
     if not isinstance(content, Article):
         return
 
     path = content.source_path
-    if path is None:
+    if path is None or not path.endswith(".md"):
         return
 
     text = Path(path).read_text()
@@ -29,8 +36,10 @@ def on_content_init(content):
         raise ValueError(msg)
 
 
-def register():
-    signals.content_object_init.connect(on_content_init)
+def register() -> None:
+    """Register the plugin from this file."""
+    signals.content_object_init.connect(language_allow_list)
+
 
 # plugins/language_allow_list.py
 # Copyright 2026 Keith Maxwell
