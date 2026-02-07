@@ -31,12 +31,6 @@ body > footer /* © … */ {
   color: rgba(0, 0, 0, 0.55);
 }
 
-article p a,
-a:hover,
-a:focus {
-  text-decoration: underline;
-}
-
 /* src/colors.css
  * Copyright (c) 2016 Eemil Väisänen, 2024 Keith Maxwell
  * SPDX-License-Identifier: MIT */
