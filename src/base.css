@@ -2,11 +2,11 @@ article {
   margin: 3rem 0;
 }
 
-a {
+body > header a,
+h1 a {
   text-decoration: none;
 }
 
-article p a,
 a:hover,
 a:focus {
   text-decoration: underline;
