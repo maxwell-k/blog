@@ -36,6 +36,7 @@ article > footer a {
   color: rgba(0, 0, 0, 0.6);
 }
 
+article p a,
 a:hover,
 a:focus {
   text-decoration: underline;
