@@ -24,13 +24,6 @@ AUTHOR_FEED_RSS = None
 
 IGNORE_FILES = [".*.sw?", ".keep", "*.license"]
 
-STATIC_PATHS = [
-    "extra",
-]
-EXTRA_PATH_METADATA = {
-    "extra/favicon.ico": {"path": "favicon.ico"},  # and this
-}
-
 MARKDOWN = {
     "extension_configs": {
         "markdown.extensions.codehilite": {
