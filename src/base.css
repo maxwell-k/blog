@@ -35,6 +35,10 @@ body > header p {
   margin-top: 0;
 }
 
+body > header {
+  padding-top: 1rem;
+}
+
 article > footer a {
   border-radius: 0.3em;
   border: none;

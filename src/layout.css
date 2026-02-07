@@ -1,16 +1,13 @@
-body > header {
-  padding-top: 1rem;
-}
-
-body > header,
-body > main,
-body > footer {
+body {
   margin: 0 auto;
   max-width: 54rem;
 }
 
-body {
-  line-height: 1.3;
+p,
+ol,
+ul,
+dl {
+  line-height: 1.58;
 }
 
 h1,
@@ -48,13 +45,6 @@ h5 {
 
 h6 {
   font-size: 0.93rem;
-}
-
-p,
-ol,
-ul,
-dl {
-  line-height: 1.58;
 }
 
 div.highlight,
