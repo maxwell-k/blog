@@ -16,6 +16,10 @@ body > footer /* © … */ {
   color: rgba(0, 0, 0, 0.55);
 }
 
+body > header p a {
+  color: #00547c;
+}
+
 /* src/colors.css
  * Copyright (c) 2016 Eemil Väisänen, 2024 Keith Maxwell
  * SPDX-License-Identifier: MIT */
