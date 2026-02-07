@@ -1,4 +1,6 @@
 #!/usr/bin/env -S uv tool run --with-requirements=requirements.txt pelican --settings
+from os import getenv
+
 AUTHOR = "Keith Maxwell"
 SITENAME = "Keith Maxwell’s Blog"
 # SITEURL is typically set using --extra-settings, including on GitHub actions:
@@ -8,6 +10,7 @@ SUMMARY_MAX_LENGTH = 0
 
 THEME = "theme"
 THEME_STATIC_DIR = ""
+THEME_STATIC_PATHS = ["static"]
 PATH = "content"
 
 TIMEZONE = "Europe/London"
@@ -44,6 +47,9 @@ PLUGINS = [
     "remove_empty_spans",
 ]
 
+SOURCEMAPS = getenv("SOURCEMAPS", "false") == "true"
+if SOURCEMAPS:
+    THEME_STATIC_PATHS.append("templates/main.css")
 # pelicanconf.py
 # Copyright 2024 Keith Maxwell
 # SPDX-License-Identifier: CC0-1.0

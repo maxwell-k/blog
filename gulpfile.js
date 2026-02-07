@@ -19,6 +19,7 @@ const paths = {
   css: ["src/*.css"],
   cssMain: "src/main.css",
   _static: "theme/static",
+  _templates: "theme/templates/",
   output: "output",
 };
 
@@ -63,7 +64,7 @@ async function stylelint() {
 }
 
 async function css(cb) {
-  const target = path.join(paths._static, path.basename(paths.cssMain));
+  const target = path.join(paths._templates, path.basename(paths.cssMain));
   const { code, map } = bundle({
     filename: paths.cssMain,
     minify: !sourcemaps,
