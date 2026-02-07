@@ -20,10 +20,6 @@ body > header p a {
   color: #00547c;
 }
 
-blockquote {
-  color: rgba(0, 0, 0, 0.5);
-}
-
 hr {
   border-top: 1px solid rgba(0, 0, 0, 0.3);
 }
