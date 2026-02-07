@@ -128,7 +128,7 @@ article > footer a {
   font-size: 0.8em;
 }
 
-h1,
+h1, /* article heading */
 h2,
 h3,
 h4,
