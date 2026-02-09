@@ -1,3 +1,4 @@
+import { mkdirSync } from "fs";
 import fs from "fs/promises";
 import { dest, parallel, series, src, watch } from "gulp";
 import uglify from "gulp-uglify";
@@ -24,6 +25,7 @@ const paths = {
 };
 
 function _spawnPelican(extraArgs = []) {
+  mkdirSync("content/images", { recursive: true }); // avoid a warning
   const args = [
     `--extra-settings=SITEURL="${loopback}"`,
     ...extraArgs,
