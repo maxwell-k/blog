@@ -1,12 +1,11 @@
 div.highlight {
-  padding-top: 1.5em;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  padding-bottom: 1.5em;
+  padding-top: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 0;
   overflow: auto;
   border: thin solid black;
   border-top-left-radius: 0.5em;
-  position: relative;
 }
 
 div.highlight pre {
@@ -14,12 +13,29 @@ div.highlight pre {
   margin-block-end: 0;
 }
 
-div.highlight button {
-  position: absolute;
-  top: 0.5em;
-  right: 0.5em;
+.highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  opacity: 0;
+.highlight pre {
+  align-self: flex-start;
+}
+
+div.highlight button {
+  opacity: 1; /* mobile */
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* desktop */
+@media (min-width: 769px) {
+  div.highlight button {
+    opacity: 0;
+  }
 }
 
 div.highlight button:focus,
