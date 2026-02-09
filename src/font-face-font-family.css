@@ -16,7 +16,36 @@
   font-weight: 400;
   src: url("source-serif-4-v14-latin-regular.woff2") format("woff2");
 }
+/* The following two font-face blocks are generated with the help of:
+ * https://github.com/seek-oss/capsize#createfontstack
+ *
+ * To regenerate these blocks, run the command below, in a directory that does
+ * not have a `node_modules` subdirectory:
 
+deno run - <<EOF
+import { createFontStack } from "npm:@capsizecss/core@4.1.3";
+import timesNewRoman from "npm:@capsizecss/metrics@3.6.2/timesNewRoman";
+import sourceSerif4 from "npm:@capsizecss/metrics@3.6.2/sourceSerif4";
+import nunito from "npm:@capsizecss/metrics@3.6.2/nunito/900";
+import arial from "npm:@capsizecss/metrics@3.6.2/arial";
+
+const serif = createFontStack([
+  sourceSerif4,
+  timesNewRoman,
+]);
+console.log(serif.fontFamily);
+console.log(serif.fontFaces);
+const sans = createFontStack([
+  nunito,
+  arial,
+]);
+console.log(sans.fontFamily);
+console.log(sans.fontFaces);
+EOF
+
+ * Find other font names in
+ * https://www.npmjs.com/package/@capsizecss/metrics?activeTab=code
+ */
 @font-face {
   font-display: optional;
   font-family: "DejaVu Sans Mono";
@@ -25,10 +54,33 @@
   font-style: normal;
 }
 
-/* font-family {{{1 */
+@font-face {
+  font-family: "Source Serif 4 Fallback";
+  src:
+    local("Times New Roman"),
+    local("TimesNewRomanPSMT");
+  ascent-override: 87.8653%;
+  descent-override: 28.4121%;
+  line-gap-override: 0%;
+  size-adjust: 117.9077%;
+}
+
+@font-face {
+  font-family: "Nunito Fallback";
+  src:
+    local("Arial"),
+    local("ArialMT");
+  ascent-override: 91.6066%;
+  descent-override: 31.9853%;
+  line-gap-override: 0%;
+  size-adjust: 110.3632%;
+}
+
+/* font-face }}} */
 
 body {
-  font-family: "Source Serif 4", serif;
+  font-family:
+    "Source Serif 4", "Source Serif 4 Fallback", "Times New Roman", serif;
 }
 
 body > header p, /* navigation bar */
@@ -38,7 +90,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Nunito", sans-serif;
+  font-family: Nunito, "Nunito Fallback", Arial, sans-serif;
 }
 
 pre,
