@@ -89,7 +89,7 @@ Contents of `99-preserve-hostname.cfg`:
 
 <!-- embedme 99-preserve-hostname.cfg -->
 
-```
+```yaml
 preserve_hostname: true
 ```
 
