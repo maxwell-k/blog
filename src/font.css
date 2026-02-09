@@ -92,12 +92,9 @@ h6 {
   font-weight: 900;
 }
 
+div.highlight button,
 pre,
 code {
-  font-family: "DejaVu Sans Mono", monospace;
-}
-
-div.highlight button {
   font-family: "DejaVu Sans Mono", monospace;
 }
 
