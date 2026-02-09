@@ -95,7 +95,10 @@ h6 {
 div.highlight button,
 pre,
 code {
-  font-family: "DejaVu Sans Mono", monospace;
+  /* DejaVu Sans Mono in front of the fonts from modern-normalize */
+  font-family:
+    "DejaVu Sans Mono", ui-monospace, SFMono-Regular, Consolas,
+    "Liberation Mono", Menlo, monospace;
 }
 
 /* src/typography.css
