@@ -18,7 +18,7 @@
 }
 
 @font-face {
-  font-display: swap;
+  font-display: optional;
   font-family: "DejaVu Sans Mono";
   src: url("DejaVuSansMono.woff2") format("woff2");
   font-weight: normal;
