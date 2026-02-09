@@ -19,14 +19,6 @@
 
 @font-face {
   font-display: swap;
-  font-family: "Source Serif 4";
-  font-style: normal;
-  font-weight: 700;
-  src: url("source-serif-4-v14-latin-700.woff2") format("woff2");
-}
-
-@font-face {
-  font-display: swap;
   font-family: "DejaVu Sans Mono";
   src: url("DejaVuSansMono.woff2") format("woff2");
   font-weight: normal;
