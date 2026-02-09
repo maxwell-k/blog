@@ -70,7 +70,7 @@ pygments==2.18.0
     #   rich
 python-dateutil==2.9.0.post0
     # via pelican
-python-debian==1.0.1
+python-debian==1.1.0
     # via reuse
 python-magic==0.4.27
     # via reuse
