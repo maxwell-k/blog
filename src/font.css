@@ -1,6 +1,5 @@
 /* vim: set foldmethod=marker : */
 /* font-face {{{1 */
-
 @font-face {
   font-display: swap;
   font-family: "Nunito";
@@ -75,8 +74,7 @@ EOF
   line-gap-override: 0%;
   size-adjust: 110.3632%;
 }
-
-/* font-face }}} */
+/* font-face }}}1 */
 
 body {
   font-family:
@@ -103,7 +101,6 @@ div.highlight button {
   font-family: "DejaVu Sans Mono", monospace;
 }
 
-/* }}}1 */
 /* src/typography.css
  * Copyright (c) 2016 Eemil Väisänen, 2024 Keith Maxwell
  * SPDX-License-Identifier: MIT */
