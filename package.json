@@ -30,7 +30,7 @@
     "modern-normalize": "3.0.1",
     "purgecss": "8.0.0",
     "renovate": "43.8.1",
-    "rimraf": "6.1.2",
+    "rimraf": "6.1.3",
     "stylelint": "17.3.0"
   },
   "type": "module"
