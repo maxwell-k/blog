@@ -21,7 +21,7 @@
     "@csstools/postcss-bundler": "3.0.0",
     "@eslint/js": "10.0.1",
     "cssnano": "7.1.2",
-    "dprint": "0.51.1",
+    "dprint": "0.52.0",
     "eslint": "10.0.2",
     "globals": "17.3.0",
     "gulp": "5.0.1",
