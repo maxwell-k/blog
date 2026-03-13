@@ -11,7 +11,7 @@ jobs:
       - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6
         with: { node-version-file: package.json }
       - run: npm install --global "npm@$(jq -r .engines.npm package.json)"
-      - uses: astral-sh/setup-uv@6ee6290f1cbc4156c0bdd66691b2c144ef8df19a # v7
+      - uses: astral-sh/setup-uv@e06108dd0aef18192324c70427afc47652e63a82 # v7
       - run: npm version && npm ci && npm test
   zizmor:
     runs-on: ubuntu-24.04
