@@ -79,7 +79,7 @@ pyyaml==6.0.3
     #   djlint
     #   pelican-yaml-metadata
     #   yamllint
-regex==2026.2.28
+regex==2026.3.32
     # via djlint
 reuse==6.2.0
     # via blog (pyproject.toml)
