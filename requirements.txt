@@ -83,7 +83,7 @@ regex==2026.4.4
     # via djlint
 reuse==6.2.0
     # via blog (pyproject.toml)
-rich==14.3.4
+rich==15.0.0
     # via pelican
 six==1.17.0
     # via
