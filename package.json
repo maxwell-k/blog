@@ -20,7 +20,7 @@
   "devDependencies": {
     "@csstools/postcss-bundler": "3.0.0",
     "@eslint/js": "10.0.1",
-    "cssnano": "7.1.4",
+    "cssnano": "7.1.5",
     "dprint": "0.54.0",
     "eslint": "10.2.0",
     "globals": "17.5.0",
