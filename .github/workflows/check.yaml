@@ -12,7 +12,7 @@ jobs:
         with: { node-version-file: package.json }
       - run: npm install --global "npm@$(jq -r .engines.npm package.json)"
       # yamllint disable-line rule:line-length
-      - uses: astral-sh/setup-uv@cec208311dfd045dd5311c1add060b2062131d57 # v8.0.0
+      - uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
       - run: npm version && npm ci && npm test
   zizmor:
     runs-on: ubuntu-24.04
