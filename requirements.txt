@@ -58,7 +58,7 @@ pathspec==1.0.4
     # via
     #   djlint
     #   yamllint
-pelican==4.11.0.post0
+pelican==4.12.0
     # via
     #   blog (pyproject.toml)
     #   pelican-yaml-metadata
