@@ -28,7 +28,7 @@ editorconfig==0.17.1
     #   jsbeautifier
 feedgenerator==2.2.1
     # via pelican
-idna==3.11
+idna==3.13
     # via anyio
 jinja2==3.1.6
     # via
