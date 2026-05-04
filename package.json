@@ -23,7 +23,7 @@
     "cssnano": "7.1.7",
     "dprint": "0.54.0",
     "eslint": "10.3.0",
-    "globals": "17.5.0",
+    "globals": "17.6.0",
     "gulp": "5.0.1",
     "gulp-uglify": "3.0.2",
     "lightningcss": "1.32.0",
