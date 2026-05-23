@@ -34,6 +34,9 @@ MARKDOWN = {
             "guess_lang": False,
         },
         "markdown.extensions.extra": {},
+        "markdown.extensions.footnotes": {
+            "BACKLINK_TEXT": "↩",
+        },
     },
     "output_format": "html5",
 }
@@ -45,6 +48,7 @@ PLUGIN_PATHS = ["plugins"]
 PLUGINS = [
     "language_allow_list",
     "custom_pygments_div",
+    "unicode_nbsp",
 ]
 
 SOURCEMAPS = getenv("SOURCEMAPS", "false") == "true"
