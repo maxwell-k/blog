@@ -9,7 +9,14 @@
     <header>
       <h1 itemprop="headline" id="{{ article.slug }}">{{ article.title }}</h1>
       <meta itemprop="datePublished" content="{{ article.date.isoformat() }}">
-      <p>Posted on {{ article.date.strftime("%A %-d %B %Y") }}.</p>
+      <p>
+        Posted on {{ article.date.strftime("%A %-d %B %Y") }}
+        {% if article.modified %}
+          ; edited on {{ article.modified.strftime("%A %-d %B %Y") }}.
+        {% else %}
+          .
+        {% endif %}
+      </p>
     </header>
     <section itemprop="mainEntityOfPage">
       {# djlint:off #}
