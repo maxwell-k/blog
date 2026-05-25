@@ -248,6 +248,6 @@ Command to dry-run Renovate against a remote GitHub repository:
 [why I run Renovate locally]: {filename}/006/README.md
 
 <!--
-Copyright 2025 Keith Maxwell
+Copyright 2026 Keith Maxwell
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
