@@ -24,7 +24,7 @@ The cloud service uses the latest version of Renovate [^6]. From time to time,
 I intend to update this post to the latest release of Renovate. For that, two
 pieces of information are required:
 
-1. The latest version number; today **43.195.1** and
+1. The latest version number; today **43.195.6** and
 2. A supported engine; today Node.js **24.16.0** — the version pinned in
    [.nvmrc].
 
@@ -122,10 +122,10 @@ build the project, set and export environment variables and configure an alias f
 both `renovate` and `renovate-config-validator`:
 
     cd renovate \
-    && git checkout 43.195.1 \
+    && git checkout 43.195.6 \
     && eval "$(fnm env)" \
     && fnm install 24.16.0 \
-    && fnm exec --using=24.16.0 npm --no-git-tag-version version 43.195.1 \
+    && fnm exec --using=24.16.0 npm --no-git-tag-version version 43.195.6 \
     && fnm exec --using=24.16.0 npm exec --yes pnpm install \
     && fnm exec --using=24.16.0 npm exec --yes pnpm build \
     && RENOVATE_GITHUB_COM_TOKEN="$(keyring get gh:github.com "")" \
@@ -147,7 +147,7 @@ Command to check the renovate version:
 
 Expected output:
 
-    43.195.1
+    43.195.6
 
 Command to validate a repository configuration file:
 
