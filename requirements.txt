@@ -18,7 +18,7 @@ colorama==0.4.6
     # via djlint
 cssbeautifier==1.15.4
     # via djlint
-djlint==1.39.0
+djlint==1.39.2
     # via blog (pyproject.toml)
 docutils==0.23
     # via pelican
