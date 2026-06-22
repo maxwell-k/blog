@@ -16,7 +16,7 @@ click==8.4.1
     #   reuse
 colorama==0.4.6
     # via djlint
-cssbeautifier==1.15.4
+cssbeautifier==2.0.1
     # via djlint
 djlint==1.39.2
     # via blog (pyproject.toml)
