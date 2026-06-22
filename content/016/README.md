@@ -28,7 +28,7 @@ don't need to be complicated. In the example in this post the only step in
 between is to copy the executable onto PATH. Different contexts require
 different levels of sophistication.
 
-The rest of this post is a set of instructions for building version 0.31 of
+The rest of this post is a set of instructions for building version 0.32 of
 [jbig2enc]. These steps are loosely based on the relevant Alpine Linux
 [APKBUILD]. The posts uses an Incus container so that the steps are repeatable.
 
@@ -57,7 +57,7 @@ Commands to clone the repository and build the `jbig2enc` software inside the
 container:
 
     incus exec c1 -- su - fedora --command "git config set --global advice.detachedHead false \
-        && git clone --revision 0.31 https://github.com/agl/jbig2enc.git \
+        && git clone --revision 0.32 https://github.com/agl/jbig2enc.git \
         && cd jbig2enc \
         && ./autogen.sh \
         && ./configure --prefix=/home/fedora/.local \
@@ -74,11 +74,11 @@ That command, above, results in two executables in `~/.local/bin`:
 <summary>Reviewing build output</summary>
 
 ```
-warning: refs/tags/0.31 e5122e826030d607a22c3eb630886b8e79bb6b4c is not a commit!
+warning: refs/tags/0.32 23e5e92f11cfcf28f0a519b1cf85fc0f3bee3b51 is not a commit!
 ```
 
-It is safe to ignore the above warning because 0.31 is an annotated tag.
-Ordinarily I would use `0.31^{}` to peel the reference but neither `--branch` or
+It is safe to ignore the above warning because 0.32 is an annotated tag.
+Ordinarily I would use `0.32^{}` to peel the reference but neither `--branch` or
 `--revision` accept that argument.
 
 ```
@@ -107,6 +107,8 @@ found" in the output of `ldd ~/.local/bin/jbig2`.
 [jbig2enc]: https://github.com/agl/jbig2enc
 [APKBUILD]: https://gitlab.alpinelinux.org/alpine/aports/-/blob/master/community/jbig2enc/APKBUILD
 [CloudInit]: https://cloudinit.readthedocs.io/en/latest/index.html
+
+_Updated 2025-06-22: update to release 0.32._
 
 <!--
 Copyright 2026 Keith Maxwell
