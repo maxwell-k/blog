@@ -34,7 +34,7 @@ jinja2==3.1.6
     # via
     #   pelican
     #   reuse
-jsbeautifier==2.0.1
+jsbeautifier==2.0.3
     # via
     #   cssbeautifier
     #   djlint
