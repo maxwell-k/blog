@@ -94,7 +94,7 @@ tomlkit==0.15.0
     # via reuse
 tqdm==4.68.4
     # via djlint
-typing-extensions==4.15.0
+typing-extensions==4.16.0
     # via anyio
 unidecode==1.4.0
     # via pelican
