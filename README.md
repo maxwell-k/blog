@@ -20,10 +20,14 @@ SPDX-License-Identifier: CC0-1.0
 
 ## Prerequisites for local development
 
-Command to setup this shell to use [Fast Node Manager] and the correct versions
-of Node.js and `npm`:
+Command to setup this shell to use [Fast Node Manager] and the correct version
+of Node.js:
 
     eval "$(fnm env)" && fnm use
+
+Command to install the correct version of `npm`:
+
+    npm install --global "npm@$(jq -r .engines.npm package.json)"
 
 Command to install the required packages:
 
