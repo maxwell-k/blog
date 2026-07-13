@@ -22,7 +22,7 @@
     "@eslint/js": "10.0.1",
     "cssnano": "8.0.2",
     "dprint": "0.55.1",
-    "eslint": "10.6.0",
+    "eslint": "10.7.0",
     "globals": "17.7.0",
     "gulp": "5.0.1",
     "gulp-uglify": "3.0.2",
