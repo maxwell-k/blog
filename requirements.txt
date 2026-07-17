@@ -92,7 +92,7 @@ six==1.17.0
     #   python-dateutil
 tomlkit==0.15.0
     # via reuse
-tqdm==4.68.4
+tqdm==4.69.0
     # via djlint
 typing-extensions==4.16.0
     # via anyio
