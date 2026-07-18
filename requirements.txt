@@ -90,7 +90,7 @@ six==1.17.0
     #   cssbeautifier
     #   jsbeautifier
     #   python-dateutil
-tomlkit==0.15.0
+tomlkit==0.15.1
     # via reuse
 tqdm==4.69.0
     # via djlint
