@@ -24,8 +24,8 @@ The cloud service uses the latest version of Renovate [^6]. From time to time,
 I intend to update this post to the latest release of Renovate. For that, two
 pieces of information are required:
 
-1. The latest version number; today **43.195.6** and
-2. A supported engine; today Node.js **24.16.0** — the version pinned in
+1. The latest version number; today **43.272.4** and
+2. A supported engine; today Node.js **24.18.0** — the version pinned in
    [.nvmrc].
 
 <details markdown=1>
@@ -115,7 +115,7 @@ keyring can be removed once everything is running on Fedora Linux 43 or later:
 
 Command to download a recent copy of the Renovate git repository:
 
-    git clone --branch 43.195.6 https://github.com/renovatebot/renovate.git
+    git clone --branch 43.272.4 https://github.com/renovatebot/renovate.git
 
 Command to install the correct version of Node.js, install dependencies from NPM,
 build the project, set and export environment variables and configure an alias for
@@ -123,17 +123,17 @@ both `renovate` and `renovate-config-validator`:
 
     cd renovate \
     && eval "$(fnm env)" \
-    && fnm install 24.16.0 \
-    && fnm exec --using=24.16.0 npm --no-git-tag-version version 43.195.6 \
-    && fnm exec --using=24.16.0 npm exec --yes pnpm install \
-    && fnm exec --using=24.16.0 npm exec --yes pnpm build \
+    && fnm install 24.18.0 \
+    && fnm exec --using=24.18.0 npm --no-git-tag-version version 43.272.4 \
+    && fnm exec --using=24.18.0 npm exec --yes pnpm install \
+    && fnm exec --using=24.18.0 npm exec --yes pnpm build \
     && RENOVATE_GITHUB_COM_TOKEN="$(keyring get gh:github.com "")" \
     && RENOVATE_PLATFORM=local \
     && LOG_LEVEL=debug \
     && export RENOVATE_GITHUB_COM_TOKEN RENOVATE_PLATFORM LOG_LEVEL \
     && alias \
-      renovate="fnm exec --using=24.16.0 node $PWD/lib/renovate.ts" \
-      renovate-config-validator="fnm exec --using=24.16.0 node $PWD/lib/config-validator.ts" \
+      renovate="fnm exec --using=24.18.0 node $PWD/lib/renovate.ts" \
+      renovate-config-validator="fnm exec --using=24.18.0 node $PWD/lib/config-validator.ts" \
     && cd ..
 
 <details markdown=1>
@@ -146,7 +146,7 @@ Command to check the renovate version:
 
 Expected output:
 
-    43.195.6
+    43.272.4
 
 Command to validate a repository configuration file:
 
