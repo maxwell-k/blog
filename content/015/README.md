@@ -115,7 +115,8 @@ keyring can be removed once everything is running on Fedora Linux 43 or later:
 
 Command to download a recent copy of the Renovate git repository:
 
-    git clone --branch 43.272.4 https://github.com/renovatebot/renovate.git
+    git clone --depth 1 --single-branch --branch 43.272.4 --config advice.detachedHead=false \
+      https://github.com/renovatebot/renovate.git
 
 Command to install the correct version of Node.js, install dependencies from NPM,
 build the project, set and export environment variables and configure an alias for
