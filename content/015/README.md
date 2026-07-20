@@ -115,7 +115,8 @@ keyring can be removed once everything is running on Fedora Linux 43 or later:
 
 Command to download a recent copy of the Renovate git repository:
 
-    git clone --depth 1 --single-branch --branch 43.272.4 --config advice.detachedHead=false \
+    git clone --depth 1 --single-branch --branch 43.272.4 \
+      --config advice.detachedHead=false \
       https://github.com/renovatebot/renovate.git
 
 Command to install the correct version of Node.js, install dependencies from NPM,
@@ -125,16 +126,17 @@ both `renovate` and `renovate-config-validator`:
     cd renovate \
     && eval "$(fnm env)" \
     && fnm install 24.18.0 \
-    && fnm exec --using=24.18.0 npm --no-git-tag-version version 43.272.4 \
-    && fnm exec --using=24.18.0 npm exec --yes pnpm install \
-    && fnm exec --using=24.18.0 npm exec --yes pnpm build \
+    && fnm use 24.18.0 \
+    && npm --no-git-tag-version version 43.272.4 \
+    && npm exec --yes pnpm install \
+    && npm exec --yes pnpm build \
     && RENOVATE_GITHUB_COM_TOKEN="$(keyring get gh:github.com "")" \
     && RENOVATE_PLATFORM=local \
     && LOG_LEVEL=debug \
     && export RENOVATE_GITHUB_COM_TOKEN RENOVATE_PLATFORM LOG_LEVEL \
     && alias \
-      renovate="fnm exec --using=24.18.0 node $PWD/lib/renovate.ts" \
-      renovate-config-validator="fnm exec --using=24.18.0 node $PWD/lib/config-validator.ts" \
+      renovate="node $PWD/lib/renovate.ts" \
+      renovate-config-validator="node $PWD/lib/config-validator.ts" \
     && cd ..
 
 <details markdown=1>
