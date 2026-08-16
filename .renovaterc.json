@@ -32,6 +32,7 @@
       "description": "Automerge allow-listed PyPI packages",
       "matchDatasources": ["pypi"],
       "matchPackageNames": [
+        "charset-normalizer",
         "djlint",
         "pytz",
         "rich",
