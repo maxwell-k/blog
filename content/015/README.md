@@ -24,8 +24,8 @@ The cloud service uses the latest version of Renovate [^6]. From time to time,
 I intend to update this post to the latest release of Renovate. For that, two
 pieces of information are required:
 
-1. The latest version number; today **43.272.4** and
-2. A supported engine; today Node.js **24.18.0** — the version pinned in
+1. The latest version number; today **44.79.2** and
+2. A supported engine; today Node.js **24.21.0** — the version pinned in
    [.nvmrc].
 
 <details markdown=1>
@@ -115,7 +115,7 @@ keyring can be removed once everything is running on Fedora Linux 43 or later:
 
 Command to download a recent copy of the Renovate git repository:
 
-    git clone --depth 1 --single-branch --branch 43.272.4 \
+    git clone --depth 1 --single-branch --branch 44.79.2 \
       --config advice.detachedHead=false \
       https://github.com/renovatebot/renovate.git
 
@@ -125,9 +125,9 @@ both `renovate` and `renovate-config-validator`:
 
     cd renovate \
     && eval "$(fnm env)" \
-    && fnm install 24.18.0 \
-    && fnm use 24.18.0 \
-    && npm --no-git-tag-version version 43.272.4 \
+    && fnm install 24.21.0 \
+    && fnm use 24.21.0 \
+    && npm --no-git-tag-version version 44.79.2 \
     && npm exec --yes pnpm install \
     && npm exec --yes pnpm build \
     && RENOVATE_GITHUB_COM_TOKEN="$(keyring get gh:github.com "")" \
@@ -149,7 +149,7 @@ Command to check the renovate version:
 
 Expected output:
 
-    43.272.4
+    44.79.2
 
 Command to validate a repository configuration file:
 
@@ -159,7 +159,7 @@ Expected output:
 
     ✂
     INFO: Validating /home/maxwell-k/github.com/maxwell-k/dotfiles/.renovaterc.json as repo config
-    INFO: Config validated successfully
+    INFO: Config validated successfully against 1 file(s)
 
 Command to run Renovate against the current working directory with debug output
 shown on-screen and written to `log.txt`:
