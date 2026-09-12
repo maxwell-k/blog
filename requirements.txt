@@ -10,7 +10,7 @@ boolean-py==5.0
     # via license-expression
 charset-normalizer==3.5.1
     # via python-debian
-click==8.4.2
+click==8.5.0
     # via
     #   djlint
     #   reuse
