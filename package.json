@@ -18,7 +18,6 @@
   "author": "Keith Maxwell <keith.maxwell@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@csstools/postcss-bundler": "3.0.0",
     "@eslint/js": "10.0.1",
     "dprint": "0.57.4",
     "eslint": "10.10.0",
