@@ -8,7 +8,6 @@ import path from "node:path";
 import process from "node:process";
 import { PurgeCSS } from "purgecss";
 import { rimraf } from "rimraf";
-import stylelint_ from "stylelint";
 
 const sourcemaps = process.env.SOURCEMAPS === "true";
 const loopback = "http://127.0.0.1:8000";
@@ -53,17 +52,6 @@ const pelicanListen = (cb) => {
     else cb(new Error());
   });
 };
-
-async function stylelint() {
-  const result = await stylelint_.lint({ files: [paths.cssGlob], formatter: "string" });
-  if (result.report) {
-    console.log(result.report);
-  }
-  if (result.errored) {
-    console.info("Check again with: `npm exec stylelint`.");
-    throw new Error("Stylelint failed.");
-  }
-}
 
 async function css(cb) {
   const target = path.join(paths._templates, path.basename(paths.cssMain));
@@ -127,6 +115,7 @@ const yamllint = (cb) => _run(cb, `${uv} yamllint --strict .`);
 const renovateConfigValidator = (cb) => _run(cb, `npm exec --no renovate-config-validator`);
 const dprint = (cb) => _run(cb, `npm exec --no dprint check`);
 const eslint = (cb) => _run(cb, `npm exec --no eslint .`);
+const stylelint = (cb) => _run(cb, `npm exec --no stylelint ${paths.cssGlob}`);
 const watchCss = (cb) => {
   callbacks.push(cb);
   return watch([paths.cssGlob], css);
