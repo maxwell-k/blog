@@ -12,6 +12,7 @@ export default [
     },
     files: ["theme/static/copy.js"],
   },
+  { ignores: [".venv/**"] },
 ];
 
 // eslint.config.js
