@@ -1,11 +1,11 @@
-import { mkdirSync } from "fs";
-import fs from "fs/promises";
 import { dest, parallel, series, src, watch } from "gulp";
 import uglify from "gulp-uglify";
 import { bundle } from "lightningcss";
 import { spawn } from "node:child_process";
+import { mkdirSync } from "node:fs";
+import fs from "node:fs/promises";
+import path from "node:path";
 import process from "node:process";
-import path from "path";
 import { PurgeCSS } from "purgecss";
 import { rimraf } from "rimraf";
 import stylelint_ from "stylelint";
