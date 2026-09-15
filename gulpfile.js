@@ -126,6 +126,7 @@ const reuse = (cb) => _run(cb, `${uv} reuse lint`);
 const yamllint = (cb) => _run(cb, `${uv} yamllint --strict .`);
 const renovateConfigValidator = (cb) => _run(cb, `npm exec --no renovate-config-validator`);
 const dprint = (cb) => _run(cb, `npm exec --no dprint check`);
+const eslint = (cb) => _run(cb, `npm exec --no eslint .`);
 const watchCss = (cb) => {
   callbacks.push(cb);
   return watch(paths.css, css);
@@ -139,6 +140,7 @@ const check = parallel(
   djlintCheck,
   djlintLint,
   dprint,
+  eslint,
   purge,
   renovateConfigValidator,
   reuse,
