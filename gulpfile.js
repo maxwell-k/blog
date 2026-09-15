@@ -17,7 +17,7 @@ const callbacks = [];
 
 const paths = {
   jsInput: "src/copy.js",
-  css: ["src/*.css"],
+  cssGlob: "src/*.css",
   cssMain: "src/main.css",
   _static: "theme/static",
   _templates: "theme/templates/",
@@ -55,7 +55,7 @@ const pelicanListen = (cb) => {
 };
 
 async function stylelint() {
-  const result = await stylelint_.lint({ files: paths.css, formatter: "string" });
+  const result = await stylelint_.lint({ files: [paths.cssGlob], formatter: "string" });
   if (result.report) {
     console.log(result.report);
   }
@@ -129,7 +129,7 @@ const dprint = (cb) => _run(cb, `npm exec --no dprint check`);
 const eslint = (cb) => _run(cb, `npm exec --no eslint .`);
 const watchCss = (cb) => {
   callbacks.push(cb);
-  return watch(paths.css, css);
+  return watch([paths.cssGlob], css);
 };
 const watchJs = (cb) => {
   callbacks.push(cb);
