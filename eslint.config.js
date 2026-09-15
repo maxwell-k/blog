@@ -10,7 +10,11 @@ export default [
         ...globals.browser,
       },
     },
-    files: ["theme/static/copy.js"],
+    files: [
+      "output/copy.js",
+      "src/copy.js",
+      "theme/static/copy.js",
+    ],
   },
   { ignores: [".venv/**"] },
 ];
