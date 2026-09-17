@@ -10,7 +10,7 @@ import { PurgeCSS } from "purgecss";
 import { rimraf } from "rimraf";
 
 const sourcemaps = process.env.SOURCEMAPS === "true";
-const loopback = "http://127.0.0.1:8000";
+const siteurl = process.env.SITEURL || "http://127.0.0.1:8000";
 
 const callbacks = [];
 
@@ -26,7 +26,7 @@ const paths = {
 function _spawnPelican(extraArgs = []) {
   mkdirSync("content/images", { recursive: true }); // avoid a warning
   const args = [
-    `--extra-settings=SITEURL="${loopback}"`,
+    `--extra-settings=SITEURL="${siteurl}"`,
     ...extraArgs,
   ];
   return spawn("./pelicanconf.py", args, { stdio: "inherit" });
@@ -140,7 +140,7 @@ const tasks = [parallel(js, css), removeOutput, pelican, check];
 const default_ = series(...tasks);
 default_.description = "Build then run all checks";
 const serve = series(...tasks, parallel(watchCss, watchJs, pelicanListen));
-serve.description = `Build, check then serve at ${loopback} and watch for changes.`;
+serve.description = `Build, check then serve at ${siteurl} and watch for changes.`;
 export { serve };
 export default default_;
 
