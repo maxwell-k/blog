@@ -48,6 +48,10 @@ def custom_pygments_div(path_: str, context: dict) -> None:
         if not line and output[-2:] == [INSERT_COPY_BUTTON[1], ""]:
             logger.debug("Ignoring a second blank line before pygments div.")
             continue
+        if line.startswith(REMOVE_EMPTY_SPAN[1]) and output[-2:] == ["", ""]:
+            logger.debug("Removing second blank line before pygments div.")
+            output.pop()
+
         output.append(line)
 
     path.write_text("\n".join(output))
