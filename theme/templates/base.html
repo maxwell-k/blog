@@ -5,7 +5,7 @@
 {% endset %}
 {% set header %}
   {% set content | trim %}
-    {% if SITEURL.endswith('staging') %}
+    {% if SITEURL.endswith("staging") %}
       <a href="{{ SITEURL }}">Staging Environment</a>
     {% elif SITEURL %}
       <a href="{{ SITEURL }}">{{ SITENAME }}</a>
