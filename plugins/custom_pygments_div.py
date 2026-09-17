@@ -16,7 +16,7 @@ from pelican import signals
 
 logger = logging.getLogger(__name__)
 
-BUTTON = "</code></pre><button>Copy 📋</button></div>"
+BUTTON = '</code></pre><button type="button">Copy 📋</button></div>'
 PAIRS = (
     (  # empty spans
         '<div class="highlight"><pre><span></span><code>',
