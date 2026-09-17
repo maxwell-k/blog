@@ -16,16 +16,13 @@ from pelican import signals
 
 logger = logging.getLogger(__name__)
 
-BUTTON = '</code></pre><button type="button">Copy 📋</button></div>'
-PAIRS = (
-    (  # empty spans
-        '<div class="highlight"><pre><span></span><code>',
-        '<div class="highlight"><pre><code>',
-    ),
-    (  # insert the copy button
-        "</code></pre></div>",
-        BUTTON,
-    ),
+REMOVE_EMPTY_SPAN = (
+    '<div class="highlight"><pre><span></span><code>',
+    '<div class="highlight"><pre><code>',
+)
+INSERT_COPY_BUTTON = (
+    "</code></pre></div>",
+    '</code></pre><button type="button">Copy 📋</button></div>',
 )
 
 
@@ -40,16 +37,16 @@ def custom_pygments_div(path_: str, context: dict) -> None:
 
     lines = path.read_text().splitlines()
 
-    for before, after in PAIRS:
+    for before, after in (REMOVE_EMPTY_SPAN, INSERT_COPY_BUTTON):
         for i in range(len(lines)):
             line = lines[i]
             if line.startswith(before):
                 lines[i] = after + line.removeprefix(before)
 
-    # only one blank line after the button
     output = []
     for line in lines:
-        if not line and output[-2:] == [BUTTON, ""]:
+        if not line and output[-2:] == [INSERT_COPY_BUTTON[1], ""]:
+            logger.debug("Ignoring a second blank line before pygments div.")
             continue
         output.append(line)
 
