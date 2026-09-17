@@ -26,9 +26,9 @@
 {% endset %}
 {% set style | trim %}
   {% if SOURCEMAPS %}
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/main.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/main.css">
   {% else %}
-    <style type="text/css">{% include "main.css" %}</style>
+    <style>{% include "main.css" %}</style>
   {% endif %}
 {% endset %}
 {# djlint:off H016,H030,H031 #}
