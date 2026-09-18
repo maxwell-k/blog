@@ -17,7 +17,7 @@ jobs:
       - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
       - run: npm version && npm ci && npm test
   zizmor:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     # https://github.com/zizmorcore/zizmor-action#permissions
     permissions: { security-events: write }
     steps:
