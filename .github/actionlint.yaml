@@ -1,0 +1,4 @@
+self-hosted-runner: { labels: [ubuntu-26.04] }
+# .github/actionlint.yaml
+# Copyright 2026 Keith Maxwell
+# SPDX-License-Identifier: CC0-1.0
