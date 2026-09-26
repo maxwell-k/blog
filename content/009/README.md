@@ -142,7 +142,9 @@ Command to start a shell inside `o1`:
 
 Commands to display the `dnsmasq` command line from the above shell:
 
-    tr '\0' ' ' </proc/$(cat /var/run/dnsmasq/dnsmasq.*.pid)/cmdline && echo
+```
+tr '\0' ' ' </proc/$(cat /var/run/dnsmasq/dnsmasq.*.pid)/cmdline && echo
+```
 
 Example output:
 
