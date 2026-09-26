@@ -37,8 +37,7 @@ jobs:
         with:
           path: ${{ runner.temp }}/artifact.tar
           name: ${{ env.ARTIFACT_NAME }}
-      # the below calls to uv should match the shebang in ./pelicanconf.py
-      - run: uv tool run --with-requirements=requirements.txt pelican --version
+      # the uv command below should match the shebang in pelicanconf.py
       - run: uv tool run --with-requirements=requirements.txt python --version
   zizmor:
     runs-on: ubuntu-26.04
