@@ -26,6 +26,9 @@ jobs:
           path: ${{ runner.temp }}/artifact.tar
           name: github-pages
           if-no-files-found: error
+      # the below calls to uv should match the shebang in ./pelicanconf.py
+      - run: uv tool run --with-requirements=requirements.txt pelican --version
+      - run: uv tool run --with-requirements=requirements.txt python --version
   zizmor:
     runs-on: ubuntu-26.04
     # https://github.com/zizmorcore/zizmor-action#permissions
