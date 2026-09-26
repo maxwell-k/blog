@@ -15,7 +15,11 @@ jobs:
           | xargs -I{} npm --global install "npm@{}"
       # yamllint disable-line rule:line-length
       - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+      # yamllint disable-line rule:line-length
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
+        id: extract_metadata
       - run: npm version && npm ci && npm test
+        env: { SITEURL: "${{ steps.extract_metadata.outputs.base_url }}" }
       - run: chmod -R +rX output/
       - run: >
           tar --dereference --hard-dereference --directory output/
