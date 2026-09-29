@@ -22,7 +22,7 @@ jobs:
         env: { SITEURL: "${{ steps.extract_metadata.outputs.base_url }}" }
       - run: chmod -R +rX output/
       - run: >
-          tar --dereference --hard-dereference --directory output/
+          tar --sort=name --dereference --hard-dereference --directory output/
           -cvf "$RUNNER_TEMP/artifact.tar" .
       # yamllint disable-line rule:line-length
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
