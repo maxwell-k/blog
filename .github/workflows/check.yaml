@@ -30,6 +30,13 @@ jobs:
           path: ${{ runner.temp }}/artifact.tar
           name: github-pages
           if-no-files-found: error
+      - run: echo "ARTIFACT_NAME=${BRANCH//[^A-Za-z0-9-]/-}" >> "$GITHUB_ENV"
+        env: { BRANCH: "${{ github.head_ref || github.ref_name }}" }
+      # yamllint disable-line rule:line-length
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+        with:
+          path: ${{ runner.temp }}/artifact.tar
+          name: ${{ env.ARTIFACT_NAME }}
       # the below calls to uv should match the shebang in ./pelicanconf.py
       - run: uv tool run --with-requirements=requirements.txt pelican --version
       - run: uv tool run --with-requirements=requirements.txt python --version
