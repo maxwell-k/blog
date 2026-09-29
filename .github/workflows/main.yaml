@@ -40,6 +40,18 @@ jobs:
           name: ${{ env.ARTIFACT_NAME }}
       # the uv command below should match the shebang in pelicanconf.py
       - run: uv tool run --with-requirements=requirements.txt python --version
+  publish:
+    needs: [check]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-26.04
+    concurrency: { group: pages, cancel-in-progress: false }
+    permissions: { contents: read, pages: write, id-token: write }
+    steps:
+      - id: one
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5
+    environment:
+      name: github-pages
+      url: ${{ steps.one.outputs.page_url }}
   zizmor:
     runs-on: ubuntu-26.04
     # https://github.com/zizmorcore/zizmor-action#permissions
