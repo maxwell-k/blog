@@ -87,6 +87,7 @@ Tasks for …/gulpfile.js
 │     ├── djlintCheck
 │     ├── djlintLint
 │     ├── dprint
+│     ├── eslint
 │     ├── purge
 │     ├── renovateConfigValidator
 │     ├── reuse
@@ -103,6 +104,7 @@ Tasks for …/gulpfile.js
     │ ├── djlintCheck
     │ ├── djlintLint
     │ ├── dprint
+    │ ├── eslint
     │ ├── purge
     │ ├── renovateConfigValidator
     │ ├── reuse
