@@ -38,7 +38,7 @@ jsbeautifier==2.0.3
     # via
     #   cssbeautifier
     #   djlint
-json5==0.15.0
+json5==0.17.3
     # via djlint
 license-expression==30.4.4
     # via reuse
