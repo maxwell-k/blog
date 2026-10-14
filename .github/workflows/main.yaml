@@ -26,7 +26,7 @@ jobs:
           --mtime='1980-01-01 00:00:00Z' --owner=0 --group=0 --numeric-owner
           -cvf "$RUNNER_TEMP/artifact.tar" .
       # yamllint disable-line rule:line-length
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           path: ${{ runner.temp }}/artifact.tar
           name: github-pages
@@ -34,7 +34,7 @@ jobs:
       - run: echo "ARTIFACT_NAME=${BRANCH//[^A-Za-z0-9-]/-}" >> "$GITHUB_ENV"
         env: { BRANCH: "${{ github.head_ref || github.ref_name }}" }
       # yamllint disable-line rule:line-length
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           path: ${{ runner.temp }}/artifact.tar
           name: ${{ env.ARTIFACT_NAME }}
