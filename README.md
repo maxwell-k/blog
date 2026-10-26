@@ -125,7 +125,8 @@ Tasks for …/gulpfile.js
 ### Production
 
 The production environment uses GitHub pages. Pushing commits to the main branch
-will trigger [`.github/workflows/publish.yaml`](/.github/workflows/publish.yaml). That workflow
+will trigger the publish job in
+[`.github/workflows/main.yaml`](/.github/workflows/main.yaml). That workflow
 deploys to <https://maxwell-k.github.io/blog/>.
 
 ### Staging
