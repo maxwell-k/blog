@@ -10,15 +10,6 @@
         "uses: astral-sh\\/setup-uv@\\S+\\s+with: { version: \"(?<currentValue>\\S+)\" }"
       ],
       "packageNameTemplate": "astral-sh/uv"
-    },
-    {
-      "customType": "regex",
-      "datasourceTemplate": "github-releases",
-      "managerFilePatterns": [".github/workflows/publish.yaml"],
-      "matchStrings": [
-        "\\n\\s+uses: getpelican\\/pelican\\/[.]github\\/workflows\\/github_pages[.]yml@(?<currentValue>\\S+)\\n"
-      ],
-      "packageNameTemplate": "getpelican/pelican"
     }
   ],
   "packageRules": [
