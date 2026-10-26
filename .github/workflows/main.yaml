@@ -68,6 +68,6 @@ jobs:
         with: { persist-credentials: false }
       # yamllint disable-line rule:line-length
       - uses: kjanat/actionlint@v1
-# .github/workflows/check.yaml
+# .github/workflows/main.yaml
 # Copyright 2024 Keith Maxwell
 # SPDX-License-Identifier: MPL-2.0
