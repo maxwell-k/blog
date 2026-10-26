@@ -67,7 +67,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with: { persist-credentials: false }
       # yamllint disable-line rule:line-length
-      - uses: kjanat/actionlint@v1
+      - uses: kjanat/actionlint@722799fa4b8cc6734debb97bae24aca9e0dbaf59 # v1
 # .github/workflows/main.yaml
 # Copyright 2024 Keith Maxwell
 # SPDX-License-Identifier: MPL-2.0
