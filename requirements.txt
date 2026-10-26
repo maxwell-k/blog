@@ -68,7 +68,7 @@ pygments==2.19.2
     # via
     #   pelican
     #   rich
-python-dateutil==2.9.0.post0
+python-dateutil==3.0.0
     # via pelican
 python-debian==1.1.1
     # via reuse
