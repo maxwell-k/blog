@@ -29,7 +29,7 @@
     "purgecss": "8.0.0",
     "renovate": "44.190.0",
     "rimraf": "6.1.3",
-    "stylelint": "17.16.0"
+    "stylelint": "18.0.0"
   },
   "type": "module"
 }
