@@ -27,7 +27,7 @@
     "lightningcss": "1.33.0",
     "modern-normalize": "3.0.1",
     "purgecss": "9.1.0",
-    "renovate": "44.190.0",
+    "renovate": "44.234.1",
     "rimraf": "6.1.4",
     "stylelint": "18.0.0"
   },
