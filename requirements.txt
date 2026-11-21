@@ -74,7 +74,7 @@ python-debian==1.1.1
     # via reuse
 python-magic==0.4.27
     # via reuse
-pyyaml==6.0.3
+pyyaml==6.0.4
     # via
     #   djlint
     #   pelican-yaml-metadata
